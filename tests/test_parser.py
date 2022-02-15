@@ -1,3 +1,5 @@
+from typing import Tuple, List
+
 from code_blocks.parser import Parser, Definition
 
 
@@ -8,14 +10,11 @@ def bar():
     """
 
     path = ("test", "foo.py")
+    sources = [(source, path)]
 
-    p = Parser()
-    p.consume(source, path)
+    expected_definitions = [Definition(2, 0, tuple(), path, "bar", "function")]
 
-    expected_definitions = [
-        Definition(2, 0, tuple(), path, "bar", "function")
-    ]
-    assert p.definitions == expected_definitions
+    assert_got_expected_definitions_from_sources(sources, expected_definitions)
 
 
 def test_class_def_detection():
@@ -25,14 +24,11 @@ class Test:
     """
 
     path = ("test", "foo.py")
+    sources = [(source, path)]
 
-    p = Parser()
-    p.consume(source, path)
+    expected_definitions = [Definition(2, 0, tuple(), path, "Test", "class")]
 
-    expected_definitions = [
-        Definition(2, 0, tuple(), path, "Test", "class")
-    ]
-    assert p.definitions == expected_definitions
+    assert_got_expected_definitions_from_sources(sources, expected_definitions)
 
 
 def test_scope_detection():
@@ -44,14 +40,13 @@ class Test:
 
     path = ("test", "foo.py")
 
-    p = Parser()
-    p.consume(source, path)
-
+    sources = [(source, path)]
     expected_definitions = [
         Definition(2, 0, tuple(), path, "Test", "class"),
         Definition(3, 4, ("Test",), path, "foo", "function"),
     ]
-    assert p.definitions == expected_definitions
+
+    assert_got_expected_definitions_from_sources(sources, expected_definitions)
 
 
 def test_definition_eq():
@@ -82,15 +77,22 @@ class Test:
         pass
 """
     path2 = ("test", "baz.py")
+    sources = [(source1, path1), (source2, path2)]
 
-    p = Parser()
-    p.consume(source1, path1)
-    p.consume(source2, path2)
-
-    expected_function_definitions = [
+    expected_definitions = [
         Definition(2, 0, tuple(), path1, "bar", "function"),
         Definition(2, 0, tuple(), path2, "Test", "class"),
         Definition(3, 4, ("Test",), path2, "foo", "function"),
     ]
 
-    assert p.definitions == expected_function_definitions
+    assert_got_expected_definitions_from_sources(sources, expected_definitions)
+
+
+def assert_got_expected_definitions_from_sources(
+    sources: List[Tuple[str, Tuple[str, ...]]], expected_definitions: List[Definition]
+):
+    p = Parser()
+    for source, path in sources:
+        p.consume(source, path)
+
+    assert p.definitions == expected_definitions
