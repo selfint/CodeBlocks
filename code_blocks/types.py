@@ -8,3 +8,10 @@ class Definition(NamedTuple):
     path: Tuple[str, ...]
     name: str
     kind: str
+
+
+class Reference(NamedTuple):
+    row: int
+    col: int
+    scope: Tuple[str, ...]
+    path: Tuple[str, ...]

@@ -1,7 +1,27 @@
 from typing import Tuple, List, Set
 
 from code_blocks.parser import Parser
-from code_blocks.types import Definition
+from code_blocks.types import Definition, Reference
+
+
+def assert_got_expected_definitions_from_sources(
+    sources: List[Tuple[str, Tuple[str, ...]]], expected_definitions: Set[Definition]
+):
+    p = Parser()
+    for source, path in sources:
+        p.consume(source, path)
+
+    assert p.definitions == expected_definitions
+
+
+def assert_got_expected_references_from_sources(
+    sources: List[Tuple[str, Tuple[str, ...]]], expected_references: Set[Reference]
+):
+    p = Parser()
+    for source, path in sources:
+        p.consume(source, path)
+
+    assert p.references == expected_references
 
 
 def test_function_def_detection():
@@ -89,11 +109,17 @@ class Test:
     assert_got_expected_definitions_from_sources(sources, expected_definitions)
 
 
-def assert_got_expected_definitions_from_sources(
-    sources: List[Tuple[str, Tuple[str, ...]]], expected_definitions: Set[Definition]
-):
-    p = Parser()
-    for source, path in sources:
-        p.consume(source, path)
+def test_references():
+    source = """
+def foo():
+    pass
+    
+foo()
+    """
 
-    assert p.definitions == expected_definitions
+    path = ("bar.py",)
+    sources = [(source, path)]
+
+    expected_references = {Reference(5, 0, tuple(), path)}
+
+    assert_got_expected_references_from_sources(sources, expected_references)
