@@ -1,18 +1,11 @@
 from __future__ import annotations
-from typing import List, NamedTuple, Union, Any, Tuple, Set
 
 import ast
+from typing import List, Union, Any, Tuple, Set
+
+from code_blocks.types import Definition
 
 DefinitionNode = Union[ast.FunctionDef, ast.ClassDef]
-
-
-class Definition(NamedTuple):
-    row: int
-    col: int
-    scope: Tuple[str, ...]
-    path: Tuple[str, ...]
-    name: str
-    kind: str
 
 
 class Visitor(ast.NodeVisitor):

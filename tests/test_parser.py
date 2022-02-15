@@ -1,6 +1,7 @@
 from typing import Tuple, List, Set
 
-from code_blocks.parser import Parser, Definition
+from code_blocks.parser import Parser
+from code_blocks.types import Definition
 
 
 def test_function_def_detection():
