@@ -33,7 +33,7 @@ def bar():
     path = ("test", "foo.py")
     sources = [(source, path)]
 
-    expected_definitions = {Definition(2, 0, tuple(), path, "bar", "function")}
+    expected_definitions = {Definition(2, 4, tuple(), path, "bar", "function")}
 
     assert_got_expected_definitions_from_sources(sources, expected_definitions)
 
@@ -47,7 +47,7 @@ class Test:
     path = ("test", "foo.py")
     sources = [(source, path)]
 
-    expected_definitions = {Definition(2, 0, tuple(), path, "Test", "class")}
+    expected_definitions = {Definition(2, 6, tuple(), path, "Test", "class")}
 
     assert_got_expected_definitions_from_sources(sources, expected_definitions)
 
@@ -63,8 +63,8 @@ class Test:
 
     sources = [(source, path)]
     expected_definitions = {
-        Definition(2, 0, tuple(), path, "Test", "class"),
-        Definition(3, 4, ("Test",), path, "foo", "function"),
+        Definition(2, 6, tuple(), path, "Test", "class"),
+        Definition(3, 8, ("Test",), path, "foo", "function"),
     }
 
     assert_got_expected_definitions_from_sources(sources, expected_definitions)
@@ -101,9 +101,9 @@ class Test:
     sources = [(source1, path1), (source2, path2)]
 
     expected_definitions = {
-        Definition(2, 0, tuple(), path1, "bar", "function"),
-        Definition(2, 0, tuple(), path2, "Test", "class"),
-        Definition(3, 4, ("Test",), path2, "foo", "function"),
+        Definition(2, 4, tuple(), path1, "bar", "function"),
+        Definition(2, 6, tuple(), path2, "Test", "class"),
+        Definition(3, 8, ("Test",), path2, "foo", "function"),
     }
 
     assert_got_expected_definitions_from_sources(sources, expected_definitions)

@@ -37,12 +37,14 @@ class Visitor(ast.NodeVisitor):
     def _visit_definition(self, node: DefinitionNode):
         if isinstance(node, ast.FunctionDef):
             kind = "function"
+            keyword_offset = len("def ")
         else:
             kind = "class"
+            keyword_offset = len("class ")
 
         location = Definition(
             row=node.lineno,
-            col=node.col_offset,
+            col=node.col_offset + keyword_offset,
             scope=tuple(n.name for n in self._scope),
             path=self._path,
             name=node.name,
