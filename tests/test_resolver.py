@@ -13,7 +13,7 @@ class LspTestEnv:
     def __init__(self, sources: List[Tuple[str, Tuple[str, ...]]]):
         self._sources = sources
 
-        self._tempdir = tempfile.mkdtemp()
+        self._tempdir = tempfile.mkdtemp(prefix="codeblocks-lsp-test-env")
 
         for source, path in sources:
             full_path = Path(self._tempdir) / os.path.sep.join(path)
@@ -68,6 +68,35 @@ foo()
 
     definitions = {Definition(2, 4, tuple(), path, "foo", "function")}
     references = {Reference(5, 0, tuple(), path)}
+
+    expected_resolved_references = {
+        ResolvedReference(
+            reference=list(references)[0], definition=list(definitions)[0]
+        )
+    }
+
+    assert_got_expected_resolved_references_from_definitions_and_references(
+        sources, definitions, references, expected_resolved_references
+    )
+
+
+def test_resolve_two_files_single_method():
+    source1 = """
+def foo():
+    pass
+    """
+    path1 = ("bar.py",)
+
+    source2 = """
+from bar import foo
+
+foo()
+    """
+    path2 = ("baz.py",)
+    sources = [(source1, path1), (source2, path2)]
+
+    definitions = {Definition(2, 4, tuple(), path1, "foo", "function")}
+    references = {Reference(4, 0, tuple(), path2)}
 
     expected_resolved_references = {
         ResolvedReference(
