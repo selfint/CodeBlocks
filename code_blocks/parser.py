@@ -1,5 +1,5 @@
 from __future__ import annotations
-from typing import List, NamedTuple, Union, Any, Tuple
+from typing import List, NamedTuple, Union, Any, Tuple, Set
 
 import ast
 
@@ -18,7 +18,7 @@ class Definition(NamedTuple):
 class Visitor(ast.NodeVisitor):
     def __init__(
         self,
-        definitions: List[Definition],
+        definitions: Set[Definition],
         path: Tuple[str, ...],
     ):
         self.definitions = definitions
@@ -47,7 +47,7 @@ class Visitor(ast.NodeVisitor):
                 name=node.name,
                 kind=kind,
             )
-            self.definitions.append(location)
+            self.definitions.add(location)
             self._scope.append(node)
 
         super(Visitor, self).generic_visit(node)
@@ -55,7 +55,7 @@ class Visitor(ast.NodeVisitor):
 
 class Parser:
     def __init__(self) -> None:
-        self._definitions: List[Definition] = []
+        self._definitions: Set[Definition] = set()
 
     def consume(self, source: str, path: Tuple[str, ...]):
         """

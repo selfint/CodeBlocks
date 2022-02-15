@@ -1,4 +1,4 @@
-from typing import Tuple, List
+from typing import Tuple, List, Set
 
 from code_blocks.parser import Parser, Definition
 
@@ -12,7 +12,7 @@ def bar():
     path = ("test", "foo.py")
     sources = [(source, path)]
 
-    expected_definitions = [Definition(2, 0, tuple(), path, "bar", "function")]
+    expected_definitions = {Definition(2, 0, tuple(), path, "bar", "function")}
 
     assert_got_expected_definitions_from_sources(sources, expected_definitions)
 
@@ -26,7 +26,7 @@ class Test:
     path = ("test", "foo.py")
     sources = [(source, path)]
 
-    expected_definitions = [Definition(2, 0, tuple(), path, "Test", "class")]
+    expected_definitions = {Definition(2, 0, tuple(), path, "Test", "class")}
 
     assert_got_expected_definitions_from_sources(sources, expected_definitions)
 
@@ -41,10 +41,10 @@ class Test:
     path = ("test", "foo.py")
 
     sources = [(source, path)]
-    expected_definitions = [
+    expected_definitions = {
         Definition(2, 0, tuple(), path, "Test", "class"),
         Definition(3, 4, ("Test",), path, "foo", "function"),
-    ]
+    }
 
     assert_got_expected_definitions_from_sources(sources, expected_definitions)
 
@@ -79,17 +79,17 @@ class Test:
     path2 = ("test", "baz.py")
     sources = [(source1, path1), (source2, path2)]
 
-    expected_definitions = [
+    expected_definitions = {
         Definition(2, 0, tuple(), path1, "bar", "function"),
         Definition(2, 0, tuple(), path2, "Test", "class"),
         Definition(3, 4, ("Test",), path2, "foo", "function"),
-    ]
+    }
 
     assert_got_expected_definitions_from_sources(sources, expected_definitions)
 
 
 def assert_got_expected_definitions_from_sources(
-    sources: List[Tuple[str, Tuple[str, ...]]], expected_definitions: List[Definition]
+    sources: List[Tuple[str, Tuple[str, ...]]], expected_definitions: Set[Definition]
 ):
     p = Parser()
     for source, path in sources:
