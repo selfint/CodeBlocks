@@ -5,7 +5,7 @@ import tempfile
 from pathlib import Path
 from typing import Tuple, List, Set
 
-from code_blocks.resolver import Resolver
+from code_blocks.resolver import LspClient, Resolver
 from code_blocks.types import ResolvedReference, Reference, Definition
 
 
@@ -51,7 +51,9 @@ def assert_got_expected_resolved_references_from_definitions_and_references(
 ):
     test_env = LspTestEnv(sources)
 
-    resolver = Resolver(test_env.lsp_proc_id, test_env.root_uri)
+    lsp_client = LspClient(test_env.lsp_proc_id, test_env.root_uri)
+
+    resolver = Resolver(lsp_client, test_env.root_uri)
 
     assert resolver.resolve(definitions, references) == expected_resolved_references
 

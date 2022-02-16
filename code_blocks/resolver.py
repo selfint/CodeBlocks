@@ -26,8 +26,8 @@ def uri_to_path(uri: str) -> Path:
     )
 
 
-class Resolver:
-    def __init__(self, lsp_proc_id: int, root_uri: str):
+class LspClient:
+    def __init__(self, lsp_proc_id: int, root_uri: str) -> None:
         self._lsp_proc_id = lsp_proc_id
         self._root_uri = root_uri
 
@@ -48,23 +48,6 @@ class Resolver:
         # send initialized message to server
         self._client_stdin.write_bytes(self._client.send())
 
-    def _lsp_has_unread_events(self) -> bool:
-        """
-        Check if the LSP stdout has unread events.
-
-        :return: True if LSP stdout has unread bytes.
-        """
-
-        with self._client_stdout.open("rb") as stdout:
-            current_pos = stdout.tell()
-            stdout.seek(0, 2)
-            eof = stdout.tell()
-
-            # make sure to seek back to our original pos in stdout
-            stdout.seek(current_pos)
-
-        return eof > current_pos
-
     def _get_next_event(self, event_type: Type[Event] = Event) -> Any:
         with self._client_stdout.open("rb") as stdout:
             while True:
@@ -74,6 +57,53 @@ class Resolver:
                         return event
                     else:
                         print("@@@@", event)
+
+    def notify_open(self, text_document_item: TextDocumentItem):
+        # notify LSP we opened the file
+        self._client.did_open(text_document_item)
+        self._client_stdin.write_bytes(self._client.send())
+
+        # reply to RegisterCapabilityRequest
+        next_event: RegisterCapabilityRequest = self._get_next_event(
+            RegisterCapabilityRequest
+        )
+        next_event.reply()
+        self._client_stdin.write_bytes(self._client.send())
+
+        # reply to 3 ConfigurationRequest
+        for _ in range(3):
+            next_event: ConfigurationRequest = self._get_next_event(
+                ConfigurationRequest
+            )
+            next_event.reply()
+            self._client_stdin.write_bytes(self._client.send())
+
+    def notify_close(self, text_document_identifier: TextDocumentIdentifier):
+        # notify LSP we closed the file
+        self._client.did_close(text_document_identifier)
+        self._client_stdin.write_bytes(self._client.send())
+
+    def request_definition(
+        self, text_document_position: TextDocumentPosition
+    ) -> DefinitionEvent:
+
+        # request definition of reference
+        self._client.definition(text_document_position)
+        self._client_stdin.write_bytes(self._client.send())
+
+        # wait for response
+        definition_event: DefinitionEvent = self._get_next_event(DefinitionEvent)
+
+        return definition_event
+
+
+class Resolver:
+    def __init__(self, lsp_client: LspClient, root_uri: str):
+        self._lsp_client = lsp_client
+        self._root_uri = root_uri
+
+    def _get_next_event(self, event_type: Type[Event] = Event) -> Any:
+        self._lsp_client._get_next_event(event_type)
 
     def reference_to_text_document_position(
         self, reference: Reference
@@ -183,37 +213,17 @@ class Resolver:
         position = Position(line=reference.row - 1, character=reference.col)
 
         # notify LSP we opened the file
-        self._client.did_open(text_document_item)
-        self._client_stdin.write_bytes(self._client.send())
+        self._lsp_client.notify_open(text_document_item)
 
-        # reply to RegisterCapabilityRequest
-        next_event: RegisterCapabilityRequest = self._get_next_event(
-            RegisterCapabilityRequest
+        # get text document position of reference
+        text_document_position = TextDocumentPosition(
+            textDocument=text_document_identifier, position=position
         )
-        next_event.reply()
-        self._client_stdin.write_bytes(self._client.send())
-
-        # reply to 3 ConfigurationRequest
-        for _ in range(3):
-            next_event: ConfigurationRequest = self._get_next_event(
-                ConfigurationRequest
-            )
-            next_event.reply()
-            self._client_stdin.write_bytes(self._client.send())
-
-        # ignore the log message
-        _ = self._get_next_event()
 
         # request definition of reference
-        self._client.definition(
-            TextDocumentPosition(
-                textDocument=text_document_identifier, position=position
-            )
-        )
-        self._client_stdin.write_bytes(self._client.send())
+        definition_event = self._lsp_client.request_definition(text_document_position)
 
-        # wait for response
-        definition_event: DefinitionEvent = self._get_next_event(DefinitionEvent)
+        # get matching definition for definition event
         matching_definition = self.get_matching_definition(
             definitions, definition_event
         )
@@ -228,7 +238,6 @@ class Resolver:
             resolved_reference = None
 
         # notify LSP we closed the file
-        self._client.did_close(text_document_identifier)
-        self._client_stdin.write_bytes(self._client.send())
+        self._lsp_client.notify_close(text_document_identifier)
 
         return resolved_reference
