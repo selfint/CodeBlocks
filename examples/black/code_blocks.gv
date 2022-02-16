@@ -1,0 +1,1717 @@
+digraph G {
+	graph [rankdir=LR]
+	subgraph "cluster___init__.py" {
+		graph [rankdir=LR]
+		graph [label="__init__.py"]
+		"__init__.py##nullcontext" [label="__init__.py##function nullcontext"]
+		"__init__.py##path_empty" [label="__init__.py##function path_empty"]
+		"__init__.py##validate_regex" [label="__init__.py##function validate_regex"]
+		"__init__.py##main" [label="__init__.py##function main"]
+		"__init__.py##re_compile_maybe_verbose" [label="__init__.py##function re_compile_maybe_verbose"]
+		"__init__.py##format_cell" [label="__init__.py##function format_cell"]
+		"__init__.py##get_sources" [label="__init__.py##function get_sources"]
+		"__init__.py##format_file_in_place" [label="__init__.py##function format_file_in_place"]
+		"__init__.py##assert_stable" [label="__init__.py##function assert_stable"]
+		"__init__.py##_format_str_once" [label="__init__.py##function _format_str_once"]
+		"__init__.py#get_future_imports#get_imports_from_children" [label="__init__.py#get_future_imports#function get_imports_from_children"]
+		"__init__.py##read_pyproject_toml" [label="__init__.py##function read_pyproject_toml"]
+		"__init__.py##format_stdin_to_stdout" [label="__init__.py##function format_stdin_to_stdout"]
+		"__init__.py##reformat_many" [label="__init__.py##function reformat_many"]
+		"__init__.py##reformat_code" [label="__init__.py##function reformat_code"]
+		"__init__.py##patched_main" [label="__init__.py##function patched_main"]
+		"__init__.py##detect_target_versions" [label="__init__.py##function detect_target_versions"]
+		"__init__.py##get_features_used" [label="__init__.py##function get_features_used"]
+		"__init__.py#WriteBack#from_configuration" [label="__init__.py#WriteBack#function from_configuration"]
+		"__init__.py##WriteBack" [label="__init__.py##class WriteBack"]
+		"__init__.py##reformat_one" [label="__init__.py##function reformat_one"]
+		"__init__.py##validate_cell" [label="__init__.py##function validate_cell"]
+		"__init__.py##patch_click" [label="__init__.py##function patch_click"]
+		"__init__.py##format_ipynb_string" [label="__init__.py##function format_ipynb_string"]
+		"__init__.py##format_file_contents" [label="__init__.py##function format_file_contents"]
+		"__init__.py##validate_metadata" [label="__init__.py##function validate_metadata"]
+		"__init__.py##get_future_imports" [label="__init__.py##function get_future_imports"]
+		"__init__.py##check_stability_and_equivalence" [label="__init__.py##function check_stability_and_equivalence"]
+		"__init__.py##target_version_option_callback" [label="__init__.py##function target_version_option_callback"]
+		"__init__.py##decode_bytes" [label="__init__.py##function decode_bytes"]
+		"__init__.py##assert_equivalent" [label="__init__.py##function assert_equivalent"]
+		"__init__.py##format_str" [label="__init__.py##function format_str"]
+		"__init__.py#format_file_in_place" [label="__init__.py#format_file_in_place"]
+		"__init__.py#main" [label="__init__.py#main"]
+		"__init__.py#main" [label="__init__.py#main"]
+		"__init__.py#format_file_in_place" [label="__init__.py#format_file_in_place"]
+		"__init__.py#main" [label="__init__.py#main"]
+		"__init__.py#main" [label="__init__.py#main"]
+		"__init__.py#reformat_one" [label="__init__.py#reformat_one"]
+		"__init__.py#main" [label="__init__.py#main"]
+		"__init__.py#assert_equivalent" [label="__init__.py#assert_equivalent"]
+		"__init__.py#format_str" [label="__init__.py#format_str"]
+		"__init__.py#_format_str_once" [label="__init__.py#_format_str_once"]
+		"__init__.py#reformat_one" [label="__init__.py#reformat_one"]
+		"__init__.py#assert_stable" [label="__init__.py#assert_stable"]
+		"__init__.py#main" [label="__init__.py#main"]
+		"__init__.py#main" [label="__init__.py#main"]
+		"__init__.py#_format_str_once" [label="__init__.py#_format_str_once"]
+		"__init__.py#format_stdin_to_stdout" [label="__init__.py#format_stdin_to_stdout"]
+		"__init__.py#assert_equivalent" [label="__init__.py#assert_equivalent"]
+		"__init__.py#format_cell" [label="__init__.py#format_cell"]
+		"__init__.py#format_cell" [label="__init__.py#format_cell"]
+		"__init__.py#reformat_code" [label="__init__.py#reformat_code"]
+		"__init__.py#_format_str_once" [label="__init__.py#_format_str_once"]
+		"__init__.py#format_str" [label="__init__.py#format_str"]
+		"__init__.py#format_cell" [label="__init__.py#format_cell"]
+		"__init__.py#main" [label="__init__.py#main"]
+		"__init__.py#main" [label="__init__.py#main"]
+		"__init__.py#detect_target_versions" [label="__init__.py#detect_target_versions"]
+		"__init__.py#patched_main" [label="__init__.py#patched_main"]
+		"__init__.py#get_sources" [label="__init__.py#get_sources"]
+		"__init__.py#format_file_in_place" [label="__init__.py#format_file_in_place"]
+		"__init__.py#" [label="__init__.py#"]
+		"__init__.py#format_file_in_place" [label="__init__.py#format_file_in_place"]
+		"__init__.py#get_sources" [label="__init__.py#get_sources"]
+		"__init__.py#reformat_code" [label="__init__.py#reformat_code"]
+		"__init__.py#_format_str_once" [label="__init__.py#_format_str_once"]
+		"__init__.py#format_stdin_to_stdout" [label="__init__.py#format_stdin_to_stdout"]
+		"__init__.py#format_cell" [label="__init__.py#format_cell"]
+		"__init__.py#" [label="__init__.py#"]
+		"__init__.py#main" [label="__init__.py#main"]
+		"__init__.py#" [label="__init__.py#"]
+		"__init__.py#get_sources" [label="__init__.py#get_sources"]
+		"__init__.py#format_file_contents" [label="__init__.py#format_file_contents"]
+		"__init__.py#reformat_one" [label="__init__.py#reformat_one"]
+		"__init__.py#assert_stable" [label="__init__.py#assert_stable"]
+		"__init__.py#_format_str_once" [label="__init__.py#_format_str_once"]
+		"__init__.py#format_cell" [label="__init__.py#format_cell"]
+		"__init__.py#_format_str_once" [label="__init__.py#_format_str_once"]
+		"__init__.py#main" [label="__init__.py#main"]
+		"__init__.py#reformat_one" [label="__init__.py#reformat_one"]
+		"__init__.py#get_sources" [label="__init__.py#get_sources"]
+		"__init__.py#assert_stable" [label="__init__.py#assert_stable"]
+		"__init__.py#path_empty" [label="__init__.py#path_empty"]
+		"__init__.py#assert_stable" [label="__init__.py#assert_stable"]
+		"__init__.py#_format_str_once" [label="__init__.py#_format_str_once"]
+		"__init__.py#assert_equivalent" [label="__init__.py#assert_equivalent"]
+		"__init__.py#reformat_one" [label="__init__.py#reformat_one"]
+		"__init__.py#" [label="__init__.py#"]
+		"__init__.py#_format_str_once" [label="__init__.py#_format_str_once"]
+		"__init__.py#" [label="__init__.py#"]
+		"__init__.py#format_file_contents" [label="__init__.py#format_file_contents"]
+		"__init__.py#assert_equivalent" [label="__init__.py#assert_equivalent"]
+		"__init__.py#check_stability_and_equivalence" [label="__init__.py#check_stability_and_equivalence"]
+		"__init__.py#assert_equivalent" [label="__init__.py#assert_equivalent"]
+		"__init__.py#reformat_code" [label="__init__.py#reformat_code"]
+		"__init__.py#format_stdin_to_stdout" [label="__init__.py#format_stdin_to_stdout"]
+		"__init__.py#_format_str_once" [label="__init__.py#_format_str_once"]
+		"__init__.py#patched_main" [label="__init__.py#patched_main"]
+		"__init__.py#get_sources" [label="__init__.py#get_sources"]
+		"__init__.py#read_pyproject_toml" [label="__init__.py#read_pyproject_toml"]
+		"__init__.py#reformat_one" [label="__init__.py#reformat_one"]
+		"__init__.py#check_stability_and_equivalence" [label="__init__.py#check_stability_and_equivalence"]
+		"__init__.py#validate_regex" [label="__init__.py#validate_regex"]
+		"__init__.py#get_sources" [label="__init__.py#get_sources"]
+		"__init__.py#main" [label="__init__.py#main"]
+		"__init__.py#_format_str_once" [label="__init__.py#_format_str_once"]
+		"__init__.py#main" [label="__init__.py#main"]
+		"__init__.py#format_stdin_to_stdout" [label="__init__.py#format_stdin_to_stdout"]
+		"__init__.py#format_cell" [label="__init__.py#format_cell"]
+		"__init__.py#get_features_used" [label="__init__.py#get_features_used"]
+		"__init__.py#format_ipynb_string" [label="__init__.py#format_ipynb_string"]
+		"__init__.py#_format_str_once" [label="__init__.py#_format_str_once"]
+		"__init__.py#get_future_imports" [label="__init__.py#get_future_imports"]
+		"__init__.py#format_file_in_place" [label="__init__.py#format_file_in_place"]
+		"__init__.py#get_future_imports#get_imports_from_children" [label="__init__.py#get_future_imports#get_imports_from_children"]
+		"__init__.py#format_file_in_place" [label="__init__.py#format_file_in_place"]
+		"__init__.py#reformat_many" [label="__init__.py#reformat_many"]
+		"__init__.py#" [label="__init__.py#"]
+		"__init__.py#patched_main" [label="__init__.py#patched_main"]
+		"__init__.py#format_cell" [label="__init__.py#format_cell"]
+		"__init__.py#reformat_one" [label="__init__.py#reformat_one"]
+		"__init__.py#main" [label="__init__.py#main"]
+		"__init__.py#get_sources" [label="__init__.py#get_sources"]
+		"__init__.py#main" [label="__init__.py#main"]
+		"__init__.py#main" [label="__init__.py#main"]
+		"__init__.py#" [label="__init__.py#"]
+		"__init__.py#main" [label="__init__.py#main"]
+		"__init__.py#format_stdin_to_stdout" [label="__init__.py#format_stdin_to_stdout"]
+		"__init__.py#assert_equivalent" [label="__init__.py#assert_equivalent"]
+		"__init__.py#get_features_used" [label="__init__.py#get_features_used"]
+		"__init__.py#format_file_contents" [label="__init__.py#format_file_contents"]
+		"__init__.py#main" [label="__init__.py#main"]
+		"__init__.py#main" [label="__init__.py#main"]
+		"__init__.py#read_pyproject_toml" [label="__init__.py#read_pyproject_toml"]
+		"__init__.py#assert_equivalent" [label="__init__.py#assert_equivalent"]
+		"__init__.py#main" [label="__init__.py#main"]
+		"__init__.py#format_file_in_place" [label="__init__.py#format_file_in_place"]
+		"__init__.py#format_ipynb_string" [label="__init__.py#format_ipynb_string"]
+	}
+	subgraph "cluster_linegen.py" {
+		graph [rankdir=LR]
+		graph [label="linegen.py"]
+		"linegen.py#LineGenerator#visit_async_stmt" [label="linegen.py#LineGenerator#function visit_async_stmt"]
+		"linegen.py#LineGenerator#left_hand_split" [label="linegen.py#LineGenerator#function left_hand_split"]
+		"linegen.py#LineGenerator#maybe_make_parens_invisible_in_atom" [label="linegen.py#LineGenerator#function maybe_make_parens_invisible_in_atom"]
+		"linegen.py#LineGenerator#standalone_comment_split" [label="linegen.py#LineGenerator#function standalone_comment_split"]
+		"linegen.py#LineGenerator#delimiter_split" [label="linegen.py#LineGenerator#function delimiter_split"]
+		"linegen.py#LineGenerator#visit_STRING" [label="linegen.py#LineGenerator#function visit_STRING"]
+		"linegen.py#LineGenerator#visit_DEDENT" [label="linegen.py#LineGenerator#function visit_DEDENT"]
+		"linegen.py#LineGenerator#bracket_split_build_line" [label="linegen.py#LineGenerator#function bracket_split_build_line"]
+		"linegen.py#LineGenerator#generate_trailers_to_omit" [label="linegen.py#LineGenerator#function generate_trailers_to_omit"]
+		"linegen.py#LineGenerator#visit_default" [label="linegen.py#LineGenerator#function visit_default"]
+		"linegen.py#LineGenerator#line" [label="linegen.py#LineGenerator#function line"]
+		"linegen.py#LineGenerator#delimiter_split#append_to_line" [label="linegen.py#LineGenerator#delimiter_split#function append_to_line"]
+		"linegen.py#LineGenerator#right_hand_split" [label="linegen.py#LineGenerator#function right_hand_split"]
+		"linegen.py#LineGenerator#should_split_line" [label="linegen.py#LineGenerator#function should_split_line"]
+		"linegen.py#LineGenerator#visit_SEMI" [label="linegen.py#LineGenerator#function visit_SEMI"]
+		"linegen.py#LineGenerator#run_transformer" [label="linegen.py#LineGenerator#function run_transformer"]
+		"linegen.py#LineGenerator#dont_increase_indentation" [label="linegen.py#LineGenerator#function dont_increase_indentation"]
+		"linegen.py#LineGenerator#__post_init__" [label="linegen.py#LineGenerator#function __post_init__"]
+		"linegen.py#LineGenerator#visit_decorators" [label="linegen.py#LineGenerator#function visit_decorators"]
+		"linegen.py#LineGenerator#bracket_split_succeeded_or_raise" [label="linegen.py#LineGenerator#function bracket_split_succeeded_or_raise"]
+		"linegen.py#LineGenerator#visit_stmt" [label="linegen.py#LineGenerator#function visit_stmt"]
+		"linegen.py#LineGenerator#normalize_invisible_parens" [label="linegen.py#LineGenerator#function normalize_invisible_parens"]
+		"linegen.py#LineGenerator#normalize_prefix" [label="linegen.py#LineGenerator#function normalize_prefix"]
+		"linegen.py#LineGenerator#visit_match_case" [label="linegen.py#LineGenerator#function visit_match_case"]
+		"linegen.py#LineGenerator#visit_ENDMARKER" [label="linegen.py#LineGenerator#function visit_ENDMARKER"]
+		"linegen.py#LineGenerator#visit_power" [label="linegen.py#LineGenerator#function visit_power"]
+		"linegen.py##CannotSplit" [label="linegen.py##class CannotSplit"]
+		"linegen.py#LineGenerator#visit_STANDALONE_COMMENT" [label="linegen.py#LineGenerator#function visit_STANDALONE_COMMENT"]
+		"linegen.py#LineGenerator#standalone_comment_split#append_to_line" [label="linegen.py#LineGenerator#standalone_comment_split#function append_to_line"]
+		"linegen.py#LineGenerator#visit_factor" [label="linegen.py#LineGenerator#function visit_factor"]
+		"linegen.py#LineGenerator#visit_suite" [label="linegen.py#LineGenerator#function visit_suite"]
+		"linegen.py##LineGenerator" [label="linegen.py##class LineGenerator"]
+		"linegen.py#LineGenerator#visit_simple_stmt" [label="linegen.py#LineGenerator#function visit_simple_stmt"]
+		"linegen.py#LineGenerator#__init__" [label="linegen.py#LineGenerator#function __init__"]
+		"linegen.py#LineGenerator#transform_line" [label="linegen.py#LineGenerator#function transform_line"]
+		"linegen.py#LineGenerator#transform_line#_rhs" [label="linegen.py#LineGenerator#transform_line#function _rhs"]
+		"linegen.py#LineGenerator#dont_increase_indentation#split_wrapper" [label="linegen.py#LineGenerator#dont_increase_indentation#function split_wrapper"]
+		"linegen.py#LineGenerator#visit_INDENT" [label="linegen.py#LineGenerator#function visit_INDENT"]
+		"linegen.py#LineGenerator#standalone_comment_split#append_to_line" [label="linegen.py#LineGenerator#standalone_comment_split#append_to_line"]
+		"linegen.py#LineGenerator#visit_simple_stmt" [label="linegen.py#LineGenerator#visit_simple_stmt"]
+		"linegen.py#LineGenerator#visit_simple_stmt" [label="linegen.py#LineGenerator#visit_simple_stmt"]
+		"linegen.py#LineGenerator#delimiter_split" [label="linegen.py#LineGenerator#delimiter_split"]
+		"linegen.py#LineGenerator#normalize_invisible_parens" [label="linegen.py#LineGenerator#normalize_invisible_parens"]
+		"linegen.py#LineGenerator#normalize_invisible_parens" [label="linegen.py#LineGenerator#normalize_invisible_parens"]
+		"linegen.py#LineGenerator#visit_async_stmt" [label="linegen.py#LineGenerator#visit_async_stmt"]
+		"linegen.py#LineGenerator#right_hand_split" [label="linegen.py#LineGenerator#right_hand_split"]
+		"linegen.py#LineGenerator#visit_stmt" [label="linegen.py#LineGenerator#visit_stmt"]
+		"linegen.py#LineGenerator#visit_DEDENT" [label="linegen.py#LineGenerator#visit_DEDENT"]
+		"linegen.py#LineGenerator#visit_power" [label="linegen.py#LineGenerator#visit_power"]
+		"linegen.py#LineGenerator#visit_STRING" [label="linegen.py#LineGenerator#visit_STRING"]
+		"linegen.py#LineGenerator#maybe_make_parens_invisible_in_atom" [label="linegen.py#LineGenerator#maybe_make_parens_invisible_in_atom"]
+		"linegen.py#LineGenerator#run_transformer" [label="linegen.py#LineGenerator#run_transformer"]
+		"linegen.py#LineGenerator#visit_simple_stmt" [label="linegen.py#LineGenerator#visit_simple_stmt"]
+		"linegen.py#LineGenerator#visit_default" [label="linegen.py#LineGenerator#visit_default"]
+		"linegen.py#LineGenerator#left_hand_split" [label="linegen.py#LineGenerator#left_hand_split"]
+		"linegen.py#LineGenerator#run_transformer" [label="linegen.py#LineGenerator#run_transformer"]
+		"linegen.py#LineGenerator#visit_async_stmt" [label="linegen.py#LineGenerator#visit_async_stmt"]
+		"linegen.py#LineGenerator#visit_decorators" [label="linegen.py#LineGenerator#visit_decorators"]
+		"linegen.py#LineGenerator#normalize_invisible_parens" [label="linegen.py#LineGenerator#normalize_invisible_parens"]
+		"linegen.py#LineGenerator#delimiter_split" [label="linegen.py#LineGenerator#delimiter_split"]
+		"linegen.py#LineGenerator#bracket_split_build_line" [label="linegen.py#LineGenerator#bracket_split_build_line"]
+		"linegen.py#LineGenerator#normalize_invisible_parens" [label="linegen.py#LineGenerator#normalize_invisible_parens"]
+		"linegen.py#LineGenerator#delimiter_split" [label="linegen.py#LineGenerator#delimiter_split"]
+		"linegen.py#LineGenerator#visit_stmt" [label="linegen.py#LineGenerator#visit_stmt"]
+		"linegen.py#LineGenerator#visit_ENDMARKER" [label="linegen.py#LineGenerator#visit_ENDMARKER"]
+		"linegen.py#LineGenerator#delimiter_split#append_to_line" [label="linegen.py#LineGenerator#delimiter_split#append_to_line"]
+		"linegen.py#LineGenerator#visit_match_case" [label="linegen.py#LineGenerator#visit_match_case"]
+		"linegen.py#LineGenerator#normalize_invisible_parens" [label="linegen.py#LineGenerator#normalize_invisible_parens"]
+		"linegen.py#LineGenerator#visit_suite" [label="linegen.py#LineGenerator#visit_suite"]
+		"linegen.py#LineGenerator#standalone_comment_split" [label="linegen.py#LineGenerator#standalone_comment_split"]
+		"linegen.py#LineGenerator#right_hand_split" [label="linegen.py#LineGenerator#right_hand_split"]
+		"linegen.py#LineGenerator#delimiter_split" [label="linegen.py#LineGenerator#delimiter_split"]
+		"linegen.py#LineGenerator#should_split_line" [label="linegen.py#LineGenerator#should_split_line"]
+		"linegen.py#LineGenerator#visit_default" [label="linegen.py#LineGenerator#visit_default"]
+		"linegen.py#LineGenerator#visit_default" [label="linegen.py#LineGenerator#visit_default"]
+		"linegen.py#LineGenerator#transform_line#_rhs" [label="linegen.py#LineGenerator#transform_line#_rhs"]
+		"linegen.py#LineGenerator#standalone_comment_split" [label="linegen.py#LineGenerator#standalone_comment_split"]
+		"linegen.py#LineGenerator#dont_increase_indentation#split_wrapper" [label="linegen.py#LineGenerator#dont_increase_indentation#split_wrapper"]
+		"linegen.py#LineGenerator#transform_line" [label="linegen.py#LineGenerator#transform_line"]
+		"linegen.py#LineGenerator#run_transformer" [label="linegen.py#LineGenerator#run_transformer"]
+		"linegen.py#LineGenerator#right_hand_split" [label="linegen.py#LineGenerator#right_hand_split"]
+		"linegen.py#LineGenerator#visit_default" [label="linegen.py#LineGenerator#visit_default"]
+		"linegen.py#LineGenerator#maybe_make_parens_invisible_in_atom" [label="linegen.py#LineGenerator#maybe_make_parens_invisible_in_atom"]
+		"linegen.py#LineGenerator#transform_line#_rhs" [label="linegen.py#LineGenerator#transform_line#_rhs"]
+		"linegen.py#LineGenerator#bracket_split_build_line" [label="linegen.py#LineGenerator#bracket_split_build_line"]
+		"linegen.py#LineGenerator#delimiter_split" [label="linegen.py#LineGenerator#delimiter_split"]
+		"linegen.py#LineGenerator#visit_default" [label="linegen.py#LineGenerator#visit_default"]
+		"linegen.py#LineGenerator#run_transformer" [label="linegen.py#LineGenerator#run_transformer"]
+		"linegen.py#LineGenerator#transform_line" [label="linegen.py#LineGenerator#transform_line"]
+		"linegen.py#LineGenerator#generate_trailers_to_omit" [label="linegen.py#LineGenerator#generate_trailers_to_omit"]
+		"linegen.py#LineGenerator#maybe_make_parens_invisible_in_atom" [label="linegen.py#LineGenerator#maybe_make_parens_invisible_in_atom"]
+		"linegen.py#LineGenerator#delimiter_split" [label="linegen.py#LineGenerator#delimiter_split"]
+		"linegen.py#LineGenerator#visit_stmt" [label="linegen.py#LineGenerator#visit_stmt"]
+		"linegen.py#LineGenerator#left_hand_split" [label="linegen.py#LineGenerator#left_hand_split"]
+		"linegen.py#LineGenerator#right_hand_split" [label="linegen.py#LineGenerator#right_hand_split"]
+		"linegen.py#LineGenerator#right_hand_split" [label="linegen.py#LineGenerator#right_hand_split"]
+		"linegen.py#LineGenerator#run_transformer" [label="linegen.py#LineGenerator#run_transformer"]
+		"linegen.py#LineGenerator#visit_default" [label="linegen.py#LineGenerator#visit_default"]
+		"linegen.py#LineGenerator#left_hand_split" [label="linegen.py#LineGenerator#left_hand_split"]
+		"linegen.py#LineGenerator#left_hand_split" [label="linegen.py#LineGenerator#left_hand_split"]
+		"linegen.py#LineGenerator#maybe_make_parens_invisible_in_atom" [label="linegen.py#LineGenerator#maybe_make_parens_invisible_in_atom"]
+		"linegen.py#LineGenerator#bracket_split_build_line" [label="linegen.py#LineGenerator#bracket_split_build_line"]
+		"linegen.py#LineGenerator#right_hand_split" [label="linegen.py#LineGenerator#right_hand_split"]
+		"linegen.py#LineGenerator#visit_simple_stmt" [label="linegen.py#LineGenerator#visit_simple_stmt"]
+		"linegen.py#LineGenerator#visit_default" [label="linegen.py#LineGenerator#visit_default"]
+		"linegen.py#LineGenerator#delimiter_split" [label="linegen.py#LineGenerator#delimiter_split"]
+		"linegen.py#LineGenerator#delimiter_split#append_to_line" [label="linegen.py#LineGenerator#delimiter_split#append_to_line"]
+		"linegen.py#LineGenerator#generate_trailers_to_omit" [label="linegen.py#LineGenerator#generate_trailers_to_omit"]
+		"linegen.py#LineGenerator#line" [label="linegen.py#LineGenerator#line"]
+		"linegen.py#LineGenerator#maybe_make_parens_invisible_in_atom" [label="linegen.py#LineGenerator#maybe_make_parens_invisible_in_atom"]
+		"linegen.py#LineGenerator#visit_power" [label="linegen.py#LineGenerator#visit_power"]
+		"linegen.py#LineGenerator#transform_line" [label="linegen.py#LineGenerator#transform_line"]
+		"linegen.py#LineGenerator#visit_factor" [label="linegen.py#LineGenerator#visit_factor"]
+		"linegen.py#LineGenerator#maybe_make_parens_invisible_in_atom" [label="linegen.py#LineGenerator#maybe_make_parens_invisible_in_atom"]
+		"linegen.py#LineGenerator#visit_simple_stmt" [label="linegen.py#LineGenerator#visit_simple_stmt"]
+		"linegen.py#LineGenerator#visit_default" [label="linegen.py#LineGenerator#visit_default"]
+		"linegen.py#LineGenerator#visit_INDENT" [label="linegen.py#LineGenerator#visit_INDENT"]
+		"linegen.py#LineGenerator#standalone_comment_split" [label="linegen.py#LineGenerator#standalone_comment_split"]
+		"linegen.py#LineGenerator#visit_ENDMARKER" [label="linegen.py#LineGenerator#visit_ENDMARKER"]
+		"linegen.py#LineGenerator#visit_simple_stmt" [label="linegen.py#LineGenerator#visit_simple_stmt"]
+		"linegen.py#LineGenerator#visit_default" [label="linegen.py#LineGenerator#visit_default"]
+		"linegen.py#LineGenerator#transform_line" [label="linegen.py#LineGenerator#transform_line"]
+		"linegen.py#LineGenerator#standalone_comment_split#append_to_line" [label="linegen.py#LineGenerator#standalone_comment_split#append_to_line"]
+		"linegen.py#LineGenerator#maybe_make_parens_invisible_in_atom" [label="linegen.py#LineGenerator#maybe_make_parens_invisible_in_atom"]
+		"linegen.py#LineGenerator#generate_trailers_to_omit" [label="linegen.py#LineGenerator#generate_trailers_to_omit"]
+		"linegen.py#LineGenerator#right_hand_split" [label="linegen.py#LineGenerator#right_hand_split"]
+		"linegen.py#LineGenerator#standalone_comment_split" [label="linegen.py#LineGenerator#standalone_comment_split"]
+		"linegen.py#LineGenerator#visit_decorators" [label="linegen.py#LineGenerator#visit_decorators"]
+		"linegen.py#LineGenerator#visit_STRING" [label="linegen.py#LineGenerator#visit_STRING"]
+		"linegen.py#LineGenerator#right_hand_split" [label="linegen.py#LineGenerator#right_hand_split"]
+		"linegen.py#LineGenerator#standalone_comment_split#append_to_line" [label="linegen.py#LineGenerator#standalone_comment_split#append_to_line"]
+		"linegen.py#LineGenerator#normalize_invisible_parens" [label="linegen.py#LineGenerator#normalize_invisible_parens"]
+		"linegen.py#LineGenerator#visit_simple_stmt" [label="linegen.py#LineGenerator#visit_simple_stmt"]
+		"linegen.py#LineGenerator#visit_STRING" [label="linegen.py#LineGenerator#visit_STRING"]
+		"linegen.py#LineGenerator#visit_DEDENT" [label="linegen.py#LineGenerator#visit_DEDENT"]
+		"linegen.py#LineGenerator#visit_simple_stmt" [label="linegen.py#LineGenerator#visit_simple_stmt"]
+		"linegen.py#LineGenerator#visit_default" [label="linegen.py#LineGenerator#visit_default"]
+		"linegen.py#LineGenerator#delimiter_split" [label="linegen.py#LineGenerator#delimiter_split"]
+		"linegen.py#LineGenerator#visit_stmt" [label="linegen.py#LineGenerator#visit_stmt"]
+		"linegen.py#LineGenerator#visit_DEDENT" [label="linegen.py#LineGenerator#visit_DEDENT"]
+		"linegen.py#LineGenerator#visit_STRING" [label="linegen.py#LineGenerator#visit_STRING"]
+		"linegen.py#LineGenerator#left_hand_split" [label="linegen.py#LineGenerator#left_hand_split"]
+		"linegen.py#LineGenerator#maybe_make_parens_invisible_in_atom" [label="linegen.py#LineGenerator#maybe_make_parens_invisible_in_atom"]
+		"linegen.py#LineGenerator#visit_STRING" [label="linegen.py#LineGenerator#visit_STRING"]
+		"linegen.py#LineGenerator#transform_line" [label="linegen.py#LineGenerator#transform_line"]
+		"linegen.py#LineGenerator#visit_STRING" [label="linegen.py#LineGenerator#visit_STRING"]
+		"linegen.py#LineGenerator#normalize_invisible_parens" [label="linegen.py#LineGenerator#normalize_invisible_parens"]
+		"linegen.py#LineGenerator#visit_suite" [label="linegen.py#LineGenerator#visit_suite"]
+		"linegen.py#LineGenerator#delimiter_split" [label="linegen.py#LineGenerator#delimiter_split"]
+		"linegen.py#LineGenerator#visit_simple_stmt" [label="linegen.py#LineGenerator#visit_simple_stmt"]
+		"linegen.py#LineGenerator#transform_line#_rhs" [label="linegen.py#LineGenerator#transform_line#_rhs"]
+		"linegen.py#LineGenerator#maybe_make_parens_invisible_in_atom" [label="linegen.py#LineGenerator#maybe_make_parens_invisible_in_atom"]
+		"linegen.py#LineGenerator#delimiter_split#append_to_line" [label="linegen.py#LineGenerator#delimiter_split#append_to_line"]
+		"linegen.py#LineGenerator#right_hand_split" [label="linegen.py#LineGenerator#right_hand_split"]
+		"linegen.py#LineGenerator#bracket_split_build_line" [label="linegen.py#LineGenerator#bracket_split_build_line"]
+		"linegen.py#LineGenerator#right_hand_split" [label="linegen.py#LineGenerator#right_hand_split"]
+		"linegen.py#LineGenerator#visit_STANDALONE_COMMENT" [label="linegen.py#LineGenerator#visit_STANDALONE_COMMENT"]
+		"linegen.py#LineGenerator#bracket_split_succeeded_or_raise" [label="linegen.py#LineGenerator#bracket_split_succeeded_or_raise"]
+		"linegen.py#LineGenerator#delimiter_split" [label="linegen.py#LineGenerator#delimiter_split"]
+		"linegen.py#LineGenerator#normalize_invisible_parens" [label="linegen.py#LineGenerator#normalize_invisible_parens"]
+		"linegen.py#LineGenerator#run_transformer" [label="linegen.py#LineGenerator#run_transformer"]
+		"linegen.py#LineGenerator#visit_default" [label="linegen.py#LineGenerator#visit_default"]
+		"linegen.py#LineGenerator#right_hand_split" [label="linegen.py#LineGenerator#right_hand_split"]
+		"linegen.py#LineGenerator#__post_init__" [label="linegen.py#LineGenerator#__post_init__"]
+		"linegen.py#LineGenerator#right_hand_split" [label="linegen.py#LineGenerator#right_hand_split"]
+		"linegen.py#LineGenerator#visit_simple_stmt" [label="linegen.py#LineGenerator#visit_simple_stmt"]
+		"linegen.py#LineGenerator#visit_INDENT" [label="linegen.py#LineGenerator#visit_INDENT"]
+		"linegen.py#LineGenerator#transform_line" [label="linegen.py#LineGenerator#transform_line"]
+		"linegen.py#LineGenerator#visit_STANDALONE_COMMENT" [label="linegen.py#LineGenerator#visit_STANDALONE_COMMENT"]
+		"linegen.py#LineGenerator#delimiter_split" [label="linegen.py#LineGenerator#delimiter_split"]
+		"linegen.py#LineGenerator#transform_line" [label="linegen.py#LineGenerator#transform_line"]
+		"linegen.py#LineGenerator#transform_line" [label="linegen.py#LineGenerator#transform_line"]
+		"linegen.py#LineGenerator#visit_default" [label="linegen.py#LineGenerator#visit_default"]
+		"linegen.py#LineGenerator#right_hand_split" [label="linegen.py#LineGenerator#right_hand_split"]
+		"linegen.py#LineGenerator#transform_line" [label="linegen.py#LineGenerator#transform_line"]
+		"linegen.py#LineGenerator#visit_SEMI" [label="linegen.py#LineGenerator#visit_SEMI"]
+		"linegen.py#LineGenerator#visit_async_stmt" [label="linegen.py#LineGenerator#visit_async_stmt"]
+		"linegen.py#LineGenerator#bracket_split_succeeded_or_raise" [label="linegen.py#LineGenerator#bracket_split_succeeded_or_raise"]
+		"linegen.py#LineGenerator#run_transformer" [label="linegen.py#LineGenerator#run_transformer"]
+		"linegen.py#LineGenerator#right_hand_split" [label="linegen.py#LineGenerator#right_hand_split"]
+		"linegen.py#LineGenerator#transform_line" [label="linegen.py#LineGenerator#transform_line"]
+		"linegen.py#LineGenerator#right_hand_split" [label="linegen.py#LineGenerator#right_hand_split"]
+		"linegen.py#LineGenerator#visit_default" [label="linegen.py#LineGenerator#visit_default"]
+		"linegen.py#LineGenerator#__init__" [label="linegen.py#LineGenerator#__init__"]
+		"linegen.py#LineGenerator#run_transformer" [label="linegen.py#LineGenerator#run_transformer"]
+		"linegen.py#LineGenerator#run_transformer" [label="linegen.py#LineGenerator#run_transformer"]
+		"linegen.py#LineGenerator#run_transformer" [label="linegen.py#LineGenerator#run_transformer"]
+		"linegen.py#LineGenerator#transform_line#_rhs" [label="linegen.py#LineGenerator#transform_line#_rhs"]
+		"linegen.py#LineGenerator#visit_match_case" [label="linegen.py#LineGenerator#visit_match_case"]
+		"linegen.py#LineGenerator#delimiter_split" [label="linegen.py#LineGenerator#delimiter_split"]
+		"linegen.py#LineGenerator#delimiter_split" [label="linegen.py#LineGenerator#delimiter_split"]
+		"linegen.py#LineGenerator#normalize_invisible_parens" [label="linegen.py#LineGenerator#normalize_invisible_parens"]
+		"linegen.py#LineGenerator#bracket_split_build_line" [label="linegen.py#LineGenerator#bracket_split_build_line"]
+		"linegen.py#LineGenerator#visit_STANDALONE_COMMENT" [label="linegen.py#LineGenerator#visit_STANDALONE_COMMENT"]
+		"linegen.py#LineGenerator#standalone_comment_split" [label="linegen.py#LineGenerator#standalone_comment_split"]
+		"linegen.py#LineGenerator#visit_match_case" [label="linegen.py#LineGenerator#visit_match_case"]
+		"linegen.py#LineGenerator#right_hand_split" [label="linegen.py#LineGenerator#right_hand_split"]
+		"linegen.py#LineGenerator#bracket_split_build_line" [label="linegen.py#LineGenerator#bracket_split_build_line"]
+		"linegen.py#LineGenerator#run_transformer" [label="linegen.py#LineGenerator#run_transformer"]
+		"linegen.py#LineGenerator#standalone_comment_split" [label="linegen.py#LineGenerator#standalone_comment_split"]
+		"linegen.py#LineGenerator#visit_suite" [label="linegen.py#LineGenerator#visit_suite"]
+		"linegen.py#LineGenerator#normalize_invisible_parens" [label="linegen.py#LineGenerator#normalize_invisible_parens"]
+		"linegen.py#LineGenerator#visit_default" [label="linegen.py#LineGenerator#visit_default"]
+	}
+	subgraph "cluster_nodes.py" {
+		graph [rankdir=LR]
+		graph [label="nodes.py"]
+		"nodes.py##is_one_tuple" [label="nodes.py##function is_one_tuple"]
+		"nodes.py##whitespace" [label="nodes.py##function whitespace"]
+		"nodes.py##is_atom_with_invisible_parens" [label="nodes.py##function is_atom_with_invisible_parens"]
+		"nodes.py##is_stub_suite" [label="nodes.py##function is_stub_suite"]
+		"nodes.py##is_walrus_assignment" [label="nodes.py##function is_walrus_assignment"]
+		"nodes.py##is_arith_like" [label="nodes.py##function is_arith_like"]
+		"nodes.py##is_docstring" [label="nodes.py##function is_docstring"]
+		"nodes.py##is_multiline_string" [label="nodes.py##function is_multiline_string"]
+		"nodes.py##is_string_token" [label="nodes.py##function is_string_token"]
+		"nodes.py##wrap_in_parentheses" [label="nodes.py##function wrap_in_parentheses"]
+		"nodes.py##is_empty_tuple" [label="nodes.py##function is_empty_tuple"]
+		"nodes.py##replace_child" [label="nodes.py##function replace_child"]
+		"nodes.py#Visitor#visit_default" [label="nodes.py#Visitor#function visit_default"]
+		"nodes.py##is_empty_rpar" [label="nodes.py##function is_empty_rpar"]
+		"nodes.py##first_leaf_column" [label="nodes.py##function first_leaf_column"]
+		"nodes.py##Visitor" [label="nodes.py##class Visitor"]
+		"nodes.py##is_rpar_token" [label="nodes.py##function is_rpar_token"]
+		"nodes.py##is_stub_body" [label="nodes.py##function is_stub_body"]
+		"nodes.py##is_vararg" [label="nodes.py##function is_vararg"]
+		"nodes.py##child_towards" [label="nodes.py##function child_towards"]
+		"nodes.py#Visitor#visit" [label="nodes.py#Visitor#function visit"]
+		"nodes.py##prev_siblings_are" [label="nodes.py##function prev_siblings_are"]
+		"nodes.py##is_empty_par" [label="nodes.py##function is_empty_par"]
+		"nodes.py##container_of" [label="nodes.py##function container_of"]
+		"nodes.py##is_empty_lpar" [label="nodes.py##function is_empty_lpar"]
+		"nodes.py##parent_type" [label="nodes.py##function parent_type"]
+		"nodes.py##is_import" [label="nodes.py##function is_import"]
+		"nodes.py##ensure_visible" [label="nodes.py##function ensure_visible"]
+		"nodes.py##is_type_comment" [label="nodes.py##function is_type_comment"]
+		"nodes.py##is_simple_decorator_trailer" [label="nodes.py##function is_simple_decorator_trailer"]
+		"nodes.py##is_simple_decorator_expression" [label="nodes.py##function is_simple_decorator_expression"]
+		"nodes.py##is_name_token" [label="nodes.py##function is_name_token"]
+		"nodes.py##is_yield" [label="nodes.py##function is_yield"]
+		"nodes.py##is_lpar_token" [label="nodes.py##function is_lpar_token"]
+		"nodes.py##preceding_leaf" [label="nodes.py##function preceding_leaf"]
+		"nodes.py##is_one_tuple_between" [label="nodes.py##function is_one_tuple_between"]
+		"nodes.py##unwrap_singleton_parenthesis" [label="nodes.py##function unwrap_singleton_parenthesis"]
+		"nodes.py#whitespace" [label="nodes.py#whitespace"]
+		"nodes.py#is_simple_decorator_expression" [label="nodes.py#is_simple_decorator_expression"]
+		"nodes.py#is_yield" [label="nodes.py#is_yield"]
+		"nodes.py#Visitor#visit" [label="nodes.py#Visitor#visit"]
+		"nodes.py#whitespace" [label="nodes.py#whitespace"]
+		"nodes.py#is_multiline_string" [label="nodes.py#is_multiline_string"]
+		"nodes.py#is_docstring" [label="nodes.py#is_docstring"]
+		"nodes.py#is_yield" [label="nodes.py#is_yield"]
+		"nodes.py#whitespace" [label="nodes.py#whitespace"]
+		"nodes.py#is_one_tuple" [label="nodes.py#is_one_tuple"]
+		"nodes.py#is_empty_par" [label="nodes.py#is_empty_par"]
+		"nodes.py#is_walrus_assignment" [label="nodes.py#is_walrus_assignment"]
+		"nodes.py#is_empty_par" [label="nodes.py#is_empty_par"]
+		"nodes.py#is_docstring" [label="nodes.py#is_docstring"]
+		"nodes.py#whitespace" [label="nodes.py#whitespace"]
+		"nodes.py#Visitor#visit_default" [label="nodes.py#Visitor#visit_default"]
+		"nodes.py#whitespace" [label="nodes.py#whitespace"]
+		"nodes.py#whitespace" [label="nodes.py#whitespace"]
+		"nodes.py#prev_siblings_are" [label="nodes.py#prev_siblings_are"]
+		"nodes.py#is_stub_suite" [label="nodes.py#is_stub_suite"]
+	}
+	subgraph "cluster_trans.py" {
+		graph [rankdir=LR]
+		graph [label="trans.py"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#StringParser" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#class StringParser"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#StringParser#is_valid_index_factory#is_valid_index" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#StringParser#is_valid_index_factory#function is_valid_index"]
+		"trans.py#StringTransformer#StringMerger" [label="trans.py#StringTransformer#class StringMerger"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform#maybe_append_string_operators" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform#function maybe_append_string_operators"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_get_illegal_split_indices" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#function _get_illegal_split_indices"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#do_match" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#function do_match"]
+		"trans.py#StringTransformer#StringMerger#_merge_string_group#make_naked" [label="trans.py#StringTransformer#StringMerger#_merge_string_group#function make_naked"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_return_match" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#function _return_match"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#StringParser#parse" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#StringParser#function parse"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#_get_max_string_length" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#function _get_max_string_length"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_maybe_normalize_string_quotes" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#function _maybe_normalize_string_quotes"]
+		"trans.py#StringTransformer#CustomSplit" [label="trans.py#StringTransformer#class CustomSplit"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#do_transform" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#function do_transform"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#class StringParenWrapper"]
+		"trans.py#StringTransformer#CustomSplitMapMixin" [label="trans.py#StringTransformer#class CustomSplitMapMixin"]
+		"trans.py#StringTransformer#StringMerger#_merge_string_group" [label="trans.py#StringTransformer#StringMerger#function _merge_string_group"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#function do_transform"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_dict_match" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#function _dict_match"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_iter_nameescape_slices" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#function _iter_nameescape_slices"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_get_break_idx#breaks_unsplittable_expression" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_get_break_idx#function breaks_unsplittable_expression"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_get_string_operator_leaves" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#function _get_string_operator_leaves"]
+		"trans.py##StringTransformer" [label="trans.py##class StringTransformer"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#_validate" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#function _validate"]
+		"trans.py##CannotTransform" [label="trans.py##class CannotTransform"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_splitter_match" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#function do_splitter_match"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#StringParser#insert_str_child_factory" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#StringParser#function insert_str_child_factory"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#StringParser#_next_state" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#StringParser#function _next_state"]
+		"trans.py#StringTransformer#do_match" [label="trans.py#StringTransformer#function do_match"]
+		"trans.py##hug_power_op" [label="trans.py##function hug_power_op"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform#more_splits_should_be_made" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform#function more_splits_should_be_made"]
+		"trans.py#StringTransformer#__init__" [label="trans.py#StringTransformer#function __init__"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#class BaseStringSplitter"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#do_splitter_match" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#function do_splitter_match"]
+		"trans.py#StringTransformer#StringMerger#do_transform" [label="trans.py#StringTransformer#StringMerger#function do_transform"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#StringParser#is_valid_index_factory" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#StringParser#function is_valid_index_factory"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_splitter_match" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#function do_splitter_match"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_transform" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#function do_transform"]
+		"trans.py#StringTransformer#__call__" [label="trans.py#StringTransformer#function __call__"]
+		"trans.py#hug_power_op#is_simple_operand" [label="trans.py#hug_power_op#function is_simple_operand"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#StringParser#insert_str_child_factory#insert_str_child" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#StringParser#insert_str_child_factory#function insert_str_child"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#fstring_contains_expr" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#function fstring_contains_expr"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#do_match" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#function do_match"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_assign_match" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#function _assign_match"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform#max_last_string" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform#function max_last_string"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_get_break_idx" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#function _get_break_idx"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#StringParser#__init__" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#StringParser#function __init__"]
+		"trans.py#StringTransformer#StringMerger#do_match" [label="trans.py#StringTransformer#StringMerger#function do_match"]
+		"trans.py#StringTransformer#StringMerger#_remove_backslash_line_continuation_chars" [label="trans.py#StringTransformer#StringMerger#function _remove_backslash_line_continuation_chars"]
+		"trans.py#hug_power_op#is_simple_lookup" [label="trans.py#hug_power_op#function is_simple_lookup"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper" [label="trans.py#StringTransformer#StringMerger#class StringParenStripper"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#class StringSplitter"]
+		"trans.py##TErr" [label="trans.py##function TErr"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#iter_fexpr_spans" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#function iter_fexpr_spans"]
+		"trans.py#StringTransformer#do_transform" [label="trans.py#StringTransformer#function do_transform"]
+		"trans.py#StringTransformer#CustomSplitMapMixin#_get_key" [label="trans.py#StringTransformer#CustomSplitMapMixin#function _get_key"]
+		"trans.py#StringTransformer#CustomSplitMapMixin#add_custom_splits" [label="trans.py#StringTransformer#CustomSplitMapMixin#function add_custom_splits"]
+		"trans.py#StringTransformer#StringMerger#_validate_msg" [label="trans.py#StringTransformer#StringMerger#function _validate_msg"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_normalize_f_string" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#function _normalize_f_string"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_iter_fexpr_slices" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#function _iter_fexpr_slices"]
+		"trans.py#StringTransformer#CustomSplitMapMixin#pop_custom_splits" [label="trans.py#StringTransformer#CustomSplitMapMixin#function pop_custom_splits"]
+		"trans.py#StringTransformer#CustomSplitMapMixin#has_custom_splits" [label="trans.py#StringTransformer#CustomSplitMapMixin#function has_custom_splits"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_else_match" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#function _else_match"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_assert_match" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#function _assert_match"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_get_break_idx#passes_all_checks" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_get_break_idx#function passes_all_checks"]
+		"trans.py#TErr" [label="trans.py#TErr"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform"]
+		"trans.py#StringTransformer#StringMerger#_validate_msg" [label="trans.py#StringTransformer#StringMerger#_validate_msg"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#do_transform" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#do_transform"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_get_break_idx" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_get_break_idx"]
+		"trans.py#StringTransformer#StringMerger#_merge_string_group" [label="trans.py#StringTransformer#StringMerger#_merge_string_group"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_transform" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_transform"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform"]
+		"trans.py#StringTransformer#StringMerger#_validate_msg" [label="trans.py#StringTransformer#StringMerger#_validate_msg"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#do_transform" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#do_transform"]
+		"trans.py#StringTransformer#StringMerger#do_transform" [label="trans.py#StringTransformer#StringMerger#do_transform"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#_validate" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#_validate"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#_validate" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#_validate"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_splitter_match" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_splitter_match"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_splitter_match" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_splitter_match"]
+		"trans.py#hug_power_op#is_simple_operand" [label="trans.py#hug_power_op#is_simple_operand"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_dict_match" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_dict_match"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_get_illegal_split_indices" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_get_illegal_split_indices"]
+		"trans.py#TErr" [label="trans.py#TErr"]
+		"trans.py#StringTransformer#StringMerger#_merge_string_group" [label="trans.py#StringTransformer#StringMerger#_merge_string_group"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#_get_max_string_length" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#_get_max_string_length"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_splitter_match" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_splitter_match"]
+		"trans.py#StringTransformer#StringMerger#_merge_string_group#make_naked" [label="trans.py#StringTransformer#StringMerger#_merge_string_group#make_naked"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_splitter_match" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_splitter_match"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#do_transform" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#do_transform"]
+		"trans.py#StringTransformer#StringMerger#do_transform" [label="trans.py#StringTransformer#StringMerger#do_transform"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#do_transform" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#do_transform"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#do_transform" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#do_transform"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_assert_match" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_assert_match"]
+		"trans.py#StringTransformer#StringMerger#do_transform" [label="trans.py#StringTransformer#StringMerger#do_transform"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform"]
+		"trans.py#StringTransformer#__call__" [label="trans.py#StringTransformer#__call__"]
+		"trans.py#StringTransformer#__call__" [label="trans.py#StringTransformer#__call__"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_else_match" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_else_match"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#_validate" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#_validate"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform"]
+		"trans.py#StringTransformer#StringMerger#_validate_msg" [label="trans.py#StringTransformer#StringMerger#_validate_msg"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#do_transform" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#do_transform"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_get_break_idx" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_get_break_idx"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#_validate" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#_validate"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform"]
+		"trans.py#StringTransformer#StringMerger#_validate_msg" [label="trans.py#StringTransformer#StringMerger#_validate_msg"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_assert_match" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_assert_match"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#do_transform" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#do_transform"]
+		"trans.py#StringTransformer#StringMerger#_validate_msg" [label="trans.py#StringTransformer#StringMerger#_validate_msg"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_transform" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_transform"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_assign_match" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_assign_match"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#do_transform" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#do_transform"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_assign_match" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_assign_match"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_splitter_match" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_splitter_match"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform#maybe_append_string_operators" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform#maybe_append_string_operators"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_dict_match" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_dict_match"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_transform" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_transform"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_assign_match" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_assign_match"]
+		"trans.py#StringTransformer#__call__" [label="trans.py#StringTransformer#__call__"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform"]
+		"trans.py#StringTransformer#StringMerger#do_match" [label="trans.py#StringTransformer#StringMerger#do_match"]
+		"trans.py#StringTransformer#StringMerger#do_match" [label="trans.py#StringTransformer#StringMerger#do_match"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_transform" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_transform"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_normalize_f_string" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_normalize_f_string"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#do_transform" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#do_transform"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_transform" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_transform"]
+		"trans.py#StringTransformer#StringMerger#_merge_string_group" [label="trans.py#StringTransformer#StringMerger#_merge_string_group"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform#more_splits_should_be_made" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform#more_splits_should_be_made"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_splitter_match" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_splitter_match"]
+		"trans.py#StringTransformer#__call__" [label="trans.py#StringTransformer#__call__"]
+		"trans.py#StringTransformer#CustomSplitMapMixin#has_custom_splits" [label="trans.py#StringTransformer#CustomSplitMapMixin#has_custom_splits"]
+		"trans.py#StringTransformer#StringMerger#_merge_string_group" [label="trans.py#StringTransformer#StringMerger#_merge_string_group"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#StringParser#_next_state" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#StringParser#_next_state"]
+		"trans.py#StringTransformer#StringMerger#_remove_backslash_line_continuation_chars" [label="trans.py#StringTransformer#StringMerger#_remove_backslash_line_continuation_chars"]
+		"trans.py#StringTransformer#StringMerger#_remove_backslash_line_continuation_chars" [label="trans.py#StringTransformer#StringMerger#_remove_backslash_line_continuation_chars"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_return_match" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_return_match"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_return_match" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_return_match"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_transform" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_transform"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_assert_match" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_assert_match"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_transform" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_transform"]
+		"trans.py#StringTransformer#StringMerger#do_match" [label="trans.py#StringTransformer#StringMerger#do_match"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_else_match" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_else_match"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_transform" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_transform"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_transform" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_transform"]
+		"trans.py#StringTransformer#StringMerger#_validate_msg" [label="trans.py#StringTransformer#StringMerger#_validate_msg"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_transform" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_transform"]
+		"trans.py#StringTransformer#StringMerger#_merge_string_group" [label="trans.py#StringTransformer#StringMerger#_merge_string_group"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_assign_match" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_assign_match"]
+		"trans.py#StringTransformer#StringMerger#do_transform" [label="trans.py#StringTransformer#StringMerger#do_transform"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_dict_match" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_dict_match"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#_validate" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#_validate"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_transform" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_transform"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_get_break_idx" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_get_break_idx"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_iter_fexpr_slices" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_iter_fexpr_slices"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_else_match" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_else_match"]
+		"trans.py#StringTransformer#StringMerger#_validate_msg" [label="trans.py#StringTransformer#StringMerger#_validate_msg"]
+		"trans.py#StringTransformer#__call__" [label="trans.py#StringTransformer#__call__"]
+		"trans.py#StringTransformer#StringMerger#_remove_backslash_line_continuation_chars" [label="trans.py#StringTransformer#StringMerger#_remove_backslash_line_continuation_chars"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#fstring_contains_expr" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#fstring_contains_expr"]
+		"trans.py#hug_power_op" [label="trans.py#hug_power_op"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_splitter_match" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_splitter_match"]
+		"trans.py#StringTransformer#StringMerger#_merge_string_group" [label="trans.py#StringTransformer#StringMerger#_merge_string_group"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_splitter_match" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_splitter_match"]
+		"trans.py#StringTransformer#StringMerger#_validate_msg" [label="trans.py#StringTransformer#StringMerger#_validate_msg"]
+		"trans.py#StringTransformer#StringMerger#do_transform" [label="trans.py#StringTransformer#StringMerger#do_transform"]
+		"trans.py#StringTransformer#StringMerger#do_transform" [label="trans.py#StringTransformer#StringMerger#do_transform"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_maybe_normalize_string_quotes" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_maybe_normalize_string_quotes"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_splitter_match" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_splitter_match"]
+		"trans.py#hug_power_op" [label="trans.py#hug_power_op"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_dict_match" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_dict_match"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_transform" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_transform"]
+		"trans.py#StringTransformer#StringMerger#_validate_msg" [label="trans.py#StringTransformer#StringMerger#_validate_msg"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#do_match" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#do_match"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#_get_max_string_length" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#_get_max_string_length"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_get_break_idx#passes_all_checks" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_get_break_idx#passes_all_checks"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_assign_match" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_assign_match"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_dict_match" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_dict_match"]
+		"trans.py#StringTransformer#StringMerger#_merge_string_group" [label="trans.py#StringTransformer#StringMerger#_merge_string_group"]
+		"trans.py#StringTransformer#StringMerger#_validate_msg" [label="trans.py#StringTransformer#StringMerger#_validate_msg"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#do_match" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#do_match"]
+		"trans.py#StringTransformer#CustomSplitMapMixin#pop_custom_splits" [label="trans.py#StringTransformer#CustomSplitMapMixin#pop_custom_splits"]
+		"trans.py#StringTransformer#__call__" [label="trans.py#StringTransformer#__call__"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#_validate" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#_validate"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_transform" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_transform"]
+		"trans.py#StringTransformer#StringMerger#do_transform" [label="trans.py#StringTransformer#StringMerger#do_transform"]
+		"trans.py#StringTransformer#StringMerger#_merge_string_group" [label="trans.py#StringTransformer#StringMerger#_merge_string_group"]
+		"trans.py#StringTransformer#StringMerger#do_match" [label="trans.py#StringTransformer#StringMerger#do_match"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform"]
+		"trans.py#StringTransformer#__call__" [label="trans.py#StringTransformer#__call__"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#_validate" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#_validate"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_get_break_idx" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_get_break_idx"]
+		"trans.py#StringTransformer#StringMerger#_remove_backslash_line_continuation_chars" [label="trans.py#StringTransformer#StringMerger#_remove_backslash_line_continuation_chars"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#do_match" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#do_match"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform"]
+		"trans.py#StringTransformer#StringMerger#_merge_string_group" [label="trans.py#StringTransformer#StringMerger#_merge_string_group"]
+		"trans.py#StringTransformer#StringMerger#do_transform" [label="trans.py#StringTransformer#StringMerger#do_transform"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#do_match" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#do_match"]
+		"trans.py#StringTransformer#StringMerger#_merge_string_group" [label="trans.py#StringTransformer#StringMerger#_merge_string_group"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#do_transform" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#do_transform"]
+		"trans.py#StringTransformer#StringMerger#_validate_msg" [label="trans.py#StringTransformer#StringMerger#_validate_msg"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_splitter_match" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_splitter_match"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_transform" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_transform"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_normalize_f_string" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_normalize_f_string"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_iter_fexpr_slices" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_iter_fexpr_slices"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_dict_match" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_dict_match"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_assign_match" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_assign_match"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#do_match" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#do_match"]
+		"trans.py#hug_power_op" [label="trans.py#hug_power_op"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#do_match" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#do_match"]
+		"trans.py#StringTransformer#StringMerger#_remove_backslash_line_continuation_chars" [label="trans.py#StringTransformer#StringMerger#_remove_backslash_line_continuation_chars"]
+		"trans.py#StringTransformer#StringMerger#_merge_string_group" [label="trans.py#StringTransformer#StringMerger#_merge_string_group"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_splitter_match" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_splitter_match"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_transform" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_transform"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_return_match" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_return_match"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform"]
+		"trans.py#StringTransformer#__call__" [label="trans.py#StringTransformer#__call__"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#do_match" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#do_match"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_assert_match" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_assert_match"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_splitter_match" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_splitter_match"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_get_break_idx" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_get_break_idx"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform#maybe_append_string_operators" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform#maybe_append_string_operators"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_transform" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_transform"]
+		"trans.py#StringTransformer#StringMerger#_merge_string_group" [label="trans.py#StringTransformer#StringMerger#_merge_string_group"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_splitter_match" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_splitter_match"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_splitter_match" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_splitter_match"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_splitter_match" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_splitter_match"]
+		"trans.py#StringTransformer#StringMerger#_merge_string_group" [label="trans.py#StringTransformer#StringMerger#_merge_string_group"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_get_illegal_split_indices" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_get_illegal_split_indices"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform"]
+		"trans.py#StringTransformer#__call__" [label="trans.py#StringTransformer#__call__"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_splitter_match" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_splitter_match"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#do_match" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#do_match"]
+		"trans.py#StringTransformer#CustomSplitMapMixin#add_custom_splits" [label="trans.py#StringTransformer#CustomSplitMapMixin#add_custom_splits"]
+		"trans.py#hug_power_op#is_simple_operand" [label="trans.py#hug_power_op#is_simple_operand"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#_validate" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#_validate"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_transform" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_transform"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#do_match" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#do_match"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform"]
+		"trans.py#StringTransformer#StringMerger#_merge_string_group" [label="trans.py#StringTransformer#StringMerger#_merge_string_group"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#do_transform" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#do_transform"]
+		"trans.py#hug_power_op" [label="trans.py#hug_power_op"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#StringParser#parse" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#StringParser#parse"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_transform" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_transform"]
+		"trans.py#StringTransformer#StringMerger#_merge_string_group" [label="trans.py#StringTransformer#StringMerger#_merge_string_group"]
+		"trans.py#StringTransformer#StringMerger#_validate_msg" [label="trans.py#StringTransformer#StringMerger#_validate_msg"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_splitter_match" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_splitter_match"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#do_match" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#do_match"]
+		"trans.py#StringTransformer#StringMerger#_merge_string_group" [label="trans.py#StringTransformer#StringMerger#_merge_string_group"]
+		"trans.py#StringTransformer#StringMerger#do_transform" [label="trans.py#StringTransformer#StringMerger#do_transform"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_splitter_match" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_splitter_match"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_get_break_idx" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_get_break_idx"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_transform" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_transform"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_assert_match" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_assert_match"]
+		"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_get_break_idx" [label="trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_get_break_idx"]
+	}
+	subgraph "cluster_lines.py" {
+		graph [rankdir=LR]
+		graph [label="lines.py"]
+		"lines.py#Line#is_decorator" [label="lines.py#Line#function is_decorator"]
+		"lines.py##Line" [label="lines.py##class Line"]
+		"lines.py##_can_omit_closing_paren" [label="lines.py##function _can_omit_closing_paren"]
+		"lines.py#Line#remove_trailing_comma" [label="lines.py#Line#function remove_trailing_comma"]
+		"lines.py##enumerate_reversed" [label="lines.py##function enumerate_reversed"]
+		"lines.py#Line#is_import" [label="lines.py#Line#function is_import"]
+		"lines.py#Line#contains_uncollapsable_type_comments" [label="lines.py#Line#function contains_uncollapsable_type_comments"]
+		"lines.py#Line#contains_unsplittable_type_ignore" [label="lines.py#Line#function contains_unsplittable_type_ignore"]
+		"lines.py#Line#append" [label="lines.py#Line#function append"]
+		"lines.py#Line#is_class_paren_empty" [label="lines.py#Line#function is_class_paren_empty"]
+		"lines.py#Line#__bool__" [label="lines.py#Line#function __bool__"]
+		"lines.py#Line#has_magic_trailing_comma" [label="lines.py#Line#function has_magic_trailing_comma"]
+		"lines.py##_can_omit_opening_paren" [label="lines.py##function _can_omit_opening_paren"]
+		"lines.py#Line#is_class" [label="lines.py#Line#function is_class"]
+		"lines.py#Line#contains_standalone_comments" [label="lines.py#Line#function contains_standalone_comments"]
+		"lines.py#Line#is_triple_quoted_string" [label="lines.py#Line#function is_triple_quoted_string"]
+		"lines.py#EmptyLineTracker#_maybe_empty_lines" [label="lines.py#EmptyLineTracker#function _maybe_empty_lines"]
+		"lines.py#EmptyLineTracker#maybe_empty_lines" [label="lines.py#EmptyLineTracker#function maybe_empty_lines"]
+		"lines.py#Line#is_complex_subscript" [label="lines.py#Line#function is_complex_subscript"]
+		"lines.py##EmptyLineTracker" [label="lines.py##class EmptyLineTracker"]
+		"lines.py#Line#append_safe" [label="lines.py#Line#function append_safe"]
+		"lines.py#Line#enumerate_with_length" [label="lines.py#Line#function enumerate_with_length"]
+		"lines.py##is_line_short_enough" [label="lines.py##function is_line_short_enough"]
+		"lines.py#Line#clone" [label="lines.py#Line#function clone"]
+		"lines.py##can_omit_invisible_parens" [label="lines.py##function can_omit_invisible_parens"]
+		"lines.py#Line#__str__" [label="lines.py#Line#function __str__"]
+		"lines.py#Line#comments_after" [label="lines.py#Line#function comments_after"]
+		"lines.py##can_be_split" [label="lines.py##function can_be_split"]
+		"lines.py##append_leaves" [label="lines.py##function append_leaves"]
+		"lines.py#EmptyLineTracker#_maybe_empty_lines_for_class_or_def" [label="lines.py#EmptyLineTracker#function _maybe_empty_lines_for_class_or_def"]
+		"lines.py#Line#append_comment" [label="lines.py#Line#function append_comment"]
+		"lines.py#Line#contains_multiline_strings" [label="lines.py#Line#function contains_multiline_strings"]
+		"lines.py##line_to_string" [label="lines.py##function line_to_string"]
+		"lines.py#Line#is_stub_class" [label="lines.py#Line#function is_stub_class"]
+		"lines.py#Line#is_def" [label="lines.py#Line#function is_def"]
+		"lines.py#Line#is_comment" [label="lines.py#Line#function is_comment"]
+		"lines.py#append_leaves" [label="lines.py#append_leaves"]
+		"lines.py#Line#append_comment" [label="lines.py#Line#append_comment"]
+		"lines.py#Line#append" [label="lines.py#Line#append"]
+		"lines.py#Line#contains_unsplittable_type_ignore" [label="lines.py#Line#contains_unsplittable_type_ignore"]
+		"lines.py#Line#append_safe" [label="lines.py#Line#append_safe"]
+		"lines.py#append_leaves" [label="lines.py#append_leaves"]
+		"lines.py#can_omit_invisible_parens" [label="lines.py#can_omit_invisible_parens"]
+		"lines.py#can_omit_invisible_parens" [label="lines.py#can_omit_invisible_parens"]
+		"lines.py#Line#append" [label="lines.py#Line#append"]
+		"lines.py#Line#contains_uncollapsable_type_comments" [label="lines.py#Line#contains_uncollapsable_type_comments"]
+		"lines.py#append_leaves" [label="lines.py#append_leaves"]
+		"lines.py#_can_omit_opening_paren" [label="lines.py#_can_omit_opening_paren"]
+		"lines.py#_can_omit_closing_paren" [label="lines.py#_can_omit_closing_paren"]
+		"lines.py#Line#clone" [label="lines.py#Line#clone"]
+		"lines.py#Line#is_complex_subscript" [label="lines.py#Line#is_complex_subscript"]
+		"lines.py#Line#append" [label="lines.py#Line#append"]
+		"lines.py#Line#is_complex_subscript" [label="lines.py#Line#is_complex_subscript"]
+		"lines.py#is_line_short_enough" [label="lines.py#is_line_short_enough"]
+		"lines.py#can_omit_invisible_parens" [label="lines.py#can_omit_invisible_parens"]
+		"lines.py#append_leaves" [label="lines.py#append_leaves"]
+		"lines.py#Line#is_import" [label="lines.py#Line#is_import"]
+		"lines.py#Line#has_magic_trailing_comma" [label="lines.py#Line#has_magic_trailing_comma"]
+		"lines.py#can_omit_invisible_parens" [label="lines.py#can_omit_invisible_parens"]
+		"lines.py#Line#append" [label="lines.py#Line#append"]
+		"lines.py#is_line_short_enough" [label="lines.py#is_line_short_enough"]
+		"lines.py#Line#append" [label="lines.py#Line#append"]
+		"lines.py#EmptyLineTracker#_maybe_empty_lines" [label="lines.py#EmptyLineTracker#_maybe_empty_lines"]
+		"lines.py#Line#append_comment" [label="lines.py#Line#append_comment"]
+		"lines.py#Line#contains_uncollapsable_type_comments" [label="lines.py#Line#contains_uncollapsable_type_comments"]
+		"lines.py#Line#append" [label="lines.py#Line#append"]
+		"lines.py#Line#append" [label="lines.py#Line#append"]
+		"lines.py#EmptyLineTracker#maybe_empty_lines" [label="lines.py#EmptyLineTracker#maybe_empty_lines"]
+		"lines.py#Line#contains_multiline_strings" [label="lines.py#Line#contains_multiline_strings"]
+		"lines.py#Line#enumerate_with_length" [label="lines.py#Line#enumerate_with_length"]
+		"lines.py#can_omit_invisible_parens" [label="lines.py#can_omit_invisible_parens"]
+	}
+	subgraph "cluster_output.py" {
+		graph [rankdir=LR]
+		graph [label="output.py"]
+		"output.py##dump_to_file" [label="output.py##function dump_to_file"]
+		"output.py##diff" [label="output.py##function diff"]
+		"output.py##color_diff" [label="output.py##function color_diff"]
+		"output.py##_out" [label="output.py##function _out"]
+		"output.py##ipynb_diff" [label="output.py##function ipynb_diff"]
+		"output.py##err" [label="output.py##function err"]
+		"output.py##out" [label="output.py##function out"]
+		"output.py##_err" [label="output.py##function _err"]
+		"output.py#out" [label="output.py#out"]
+		"output.py#err" [label="output.py#err"]
+		"output.py#ipynb_diff" [label="output.py#ipynb_diff"]
+	}
+	subgraph "cluster_parsing.py" {
+		graph [rankdir=LR]
+		graph [label="parsing.py"]
+		"parsing.py##_normalize" [label="parsing.py##function _normalize"]
+		"parsing.py##matches_grammar" [label="parsing.py##function matches_grammar"]
+		"parsing.py##lib2to3_unparse" [label="parsing.py##function lib2to3_unparse"]
+		"parsing.py##parse_ast" [label="parsing.py##function parse_ast"]
+		"parsing.py##lib2to3_parse" [label="parsing.py##function lib2to3_parse"]
+		"parsing.py##parse_single_version" [label="parsing.py##function parse_single_version"]
+		"parsing.py##fixup_ast_constants" [label="parsing.py##function fixup_ast_constants"]
+		"parsing.py##InvalidInput" [label="parsing.py##class InvalidInput"]
+		"parsing.py##get_grammars" [label="parsing.py##function get_grammars"]
+		"parsing.py##stringify_ast" [label="parsing.py##function stringify_ast"]
+		"parsing.py#stringify_ast" [label="parsing.py#stringify_ast"]
+		"parsing.py#stringify_ast" [label="parsing.py#stringify_ast"]
+		"parsing.py#lib2to3_parse" [label="parsing.py#lib2to3_parse"]
+		"parsing.py#parse_ast" [label="parsing.py#parse_ast"]
+		"parsing.py#lib2to3_parse" [label="parsing.py#lib2to3_parse"]
+		"parsing.py#lib2to3_parse" [label="parsing.py#lib2to3_parse"]
+		"parsing.py#lib2to3_parse" [label="parsing.py#lib2to3_parse"]
+		"parsing.py#stringify_ast" [label="parsing.py#stringify_ast"]
+		"parsing.py#get_grammars" [label="parsing.py#get_grammars"]
+		"parsing.py#lib2to3_parse" [label="parsing.py#lib2to3_parse"]
+		"parsing.py#get_grammars" [label="parsing.py#get_grammars"]
+		"parsing.py#get_grammars" [label="parsing.py#get_grammars"]
+		"parsing.py#stringify_ast" [label="parsing.py#stringify_ast"]
+		"parsing.py#stringify_ast" [label="parsing.py#stringify_ast"]
+		"parsing.py#lib2to3_parse" [label="parsing.py#lib2to3_parse"]
+		"parsing.py#get_grammars" [label="parsing.py#get_grammars"]
+	}
+	subgraph "cluster_files.py" {
+		graph [rankdir=LR]
+		graph [label="files.py"]
+		"files.py##find_user_pyproject_toml" [label="files.py##function find_user_pyproject_toml"]
+		"files.py##gen_python_files" [label="files.py##function gen_python_files"]
+		"files.py##find_pyproject_toml" [label="files.py##function find_pyproject_toml"]
+		"files.py##parse_pyproject_toml" [label="files.py##function parse_pyproject_toml"]
+		"files.py##find_project_root" [label="files.py##function find_project_root"]
+		"files.py##get_gitignore" [label="files.py##function get_gitignore"]
+		"files.py##normalize_path_maybe_ignore" [label="files.py##function normalize_path_maybe_ignore"]
+		"files.py##path_is_excluded" [label="files.py##function path_is_excluded"]
+		"files.py##wrap_stream_for_windows" [label="files.py##function wrap_stream_for_windows"]
+		"files.py#gen_python_files" [label="files.py#gen_python_files"]
+		"files.py#gen_python_files" [label="files.py#gen_python_files"]
+		"files.py#gen_python_files" [label="files.py#gen_python_files"]
+		"files.py#gen_python_files" [label="files.py#gen_python_files"]
+		"files.py#gen_python_files" [label="files.py#gen_python_files"]
+		"files.py#find_pyproject_toml" [label="files.py#find_pyproject_toml"]
+		"files.py#gen_python_files" [label="files.py#gen_python_files"]
+		"files.py#gen_python_files" [label="files.py#gen_python_files"]
+		"files.py#find_pyproject_toml" [label="files.py#find_pyproject_toml"]
+		"files.py#gen_python_files" [label="files.py#gen_python_files"]
+		"files.py#get_gitignore" [label="files.py#get_gitignore"]
+		"files.py#gen_python_files" [label="files.py#gen_python_files"]
+		"files.py#find_pyproject_toml" [label="files.py#find_pyproject_toml"]
+		"files.py#normalize_path_maybe_ignore" [label="files.py#normalize_path_maybe_ignore"]
+		"files.py#normalize_path_maybe_ignore" [label="files.py#normalize_path_maybe_ignore"]
+		"files.py#gen_python_files" [label="files.py#gen_python_files"]
+		"files.py#gen_python_files" [label="files.py#gen_python_files"]
+	}
+	subgraph "cluster_concurrency.py" {
+		graph [rankdir=LR]
+		graph [label="concurrency.py"]
+		"concurrency.py##shutdown" [label="concurrency.py##function shutdown"]
+		"concurrency.py##cancel" [label="concurrency.py##function cancel"]
+		"concurrency.py##maybe_install_uvloop" [label="concurrency.py##function maybe_install_uvloop"]
+		"concurrency.py#cancel" [label="concurrency.py#cancel"]
+	}
+	subgraph "cluster_brackets.py" {
+		graph [rankdir=LR]
+		graph [label="brackets.py"]
+		"brackets.py##max_delimiter_priority_in_atom" [label="brackets.py##function max_delimiter_priority_in_atom"]
+		"brackets.py#BracketTracker#mark" [label="brackets.py#BracketTracker#function mark"]
+		"brackets.py#BracketTracker#maybe_increment_lambda_arguments" [label="brackets.py#BracketTracker#function maybe_increment_lambda_arguments"]
+		"brackets.py##is_split_after_delimiter" [label="brackets.py##function is_split_after_delimiter"]
+		"brackets.py#BracketTracker#maybe_decrement_after_lambda_arguments" [label="brackets.py#BracketTracker#function maybe_decrement_after_lambda_arguments"]
+		"brackets.py#BracketTracker#get_open_lsqb" [label="brackets.py#BracketTracker#function get_open_lsqb"]
+		"brackets.py##BracketTracker" [label="brackets.py##class BracketTracker"]
+		"brackets.py##BracketMatchError" [label="brackets.py##class BracketMatchError"]
+		"brackets.py##is_split_before_delimiter" [label="brackets.py##function is_split_before_delimiter"]
+		"brackets.py#BracketTracker#maybe_increment_for_loop_variable" [label="brackets.py#BracketTracker#function maybe_increment_for_loop_variable"]
+		"brackets.py#BracketTracker#max_delimiter_priority" [label="brackets.py#BracketTracker#function max_delimiter_priority"]
+		"brackets.py#BracketTracker#any_open_brackets" [label="brackets.py#BracketTracker#function any_open_brackets"]
+		"brackets.py#BracketTracker#maybe_decrement_after_for_loop_variable" [label="brackets.py#BracketTracker#function maybe_decrement_after_for_loop_variable"]
+		"brackets.py#BracketTracker#delimiter_count_with_priority" [label="brackets.py#BracketTracker#function delimiter_count_with_priority"]
+		"brackets.py#max_delimiter_priority_in_atom" [label="brackets.py#max_delimiter_priority_in_atom"]
+		"brackets.py#is_split_before_delimiter" [label="brackets.py#is_split_before_delimiter"]
+		"brackets.py#BracketTracker#delimiter_count_with_priority" [label="brackets.py#BracketTracker#delimiter_count_with_priority"]
+		"brackets.py#max_delimiter_priority_in_atom" [label="brackets.py#max_delimiter_priority_in_atom"]
+		"brackets.py#BracketTracker#mark" [label="brackets.py#BracketTracker#mark"]
+		"brackets.py#BracketTracker#mark" [label="brackets.py#BracketTracker#mark"]
+		"brackets.py#BracketTracker#mark" [label="brackets.py#BracketTracker#mark"]
+		"brackets.py#BracketTracker#mark" [label="brackets.py#BracketTracker#mark"]
+		"brackets.py#BracketTracker#mark" [label="brackets.py#BracketTracker#mark"]
+		"brackets.py#BracketTracker#mark" [label="brackets.py#BracketTracker#mark"]
+		"brackets.py#max_delimiter_priority_in_atom" [label="brackets.py#max_delimiter_priority_in_atom"]
+		"brackets.py#BracketTracker#mark" [label="brackets.py#BracketTracker#mark"]
+		"brackets.py#max_delimiter_priority_in_atom" [label="brackets.py#max_delimiter_priority_in_atom"]
+	}
+	subgraph "cluster_rusty.py" {
+		graph [rankdir=LR]
+		graph [label="rusty.py"]
+		"rusty.py#Ok#Err#err" [label="rusty.py#Ok#Err#function err"]
+		"rusty.py##Ok" [label="rusty.py##class Ok"]
+		"rusty.py#Ok#ok" [label="rusty.py#Ok#function ok"]
+		"rusty.py#Ok#__init__" [label="rusty.py#Ok#function __init__"]
+		"rusty.py#Ok#Err" [label="rusty.py#Ok#class Err"]
+		"rusty.py#Ok#Err#__init__" [label="rusty.py#Ok#Err#function __init__"]
+	}
+	subgraph "cluster_comments.py" {
+		graph [rankdir=LR]
+		graph [label="comments.py"]
+		"comments.py##generate_comments" [label="comments.py##function generate_comments"]
+		"comments.py##ProtoComment" [label="comments.py##class ProtoComment"]
+		"comments.py##contains_fmt_on_at_column" [label="comments.py##function contains_fmt_on_at_column"]
+		"comments.py##convert_one_fmt_off_pair" [label="comments.py##function convert_one_fmt_off_pair"]
+		"comments.py##list_comments" [label="comments.py##function list_comments"]
+		"comments.py##generate_ignored_nodes" [label="comments.py##function generate_ignored_nodes"]
+		"comments.py##normalize_fmt_off" [label="comments.py##function normalize_fmt_off"]
+		"comments.py##is_fmt_on" [label="comments.py##function is_fmt_on"]
+		"comments.py##contains_pragma_comment" [label="comments.py##function contains_pragma_comment"]
+		"comments.py##make_comment" [label="comments.py##function make_comment"]
+		"comments.py#list_comments" [label="comments.py#list_comments"]
+		"comments.py#convert_one_fmt_off_pair" [label="comments.py#convert_one_fmt_off_pair"]
+		"comments.py#generate_ignored_nodes" [label="comments.py#generate_ignored_nodes"]
+		"comments.py#generate_ignored_nodes" [label="comments.py#generate_ignored_nodes"]
+		"comments.py#list_comments" [label="comments.py#list_comments"]
+		"comments.py#generate_ignored_nodes" [label="comments.py#generate_ignored_nodes"]
+		"comments.py#convert_one_fmt_off_pair" [label="comments.py#convert_one_fmt_off_pair"]
+		"comments.py#generate_ignored_nodes" [label="comments.py#generate_ignored_nodes"]
+		"comments.py#convert_one_fmt_off_pair" [label="comments.py#convert_one_fmt_off_pair"]
+		"comments.py#contains_fmt_on_at_column" [label="comments.py#contains_fmt_on_at_column"]
+		"comments.py#is_fmt_on" [label="comments.py#is_fmt_on"]
+		"comments.py#contains_fmt_on_at_column" [label="comments.py#contains_fmt_on_at_column"]
+		"comments.py#generate_comments" [label="comments.py#generate_comments"]
+		"comments.py#normalize_fmt_off" [label="comments.py#normalize_fmt_off"]
+	}
+	subgraph "cluster_handle_ipynb_magics.py" {
+		graph [rankdir=LR]
+		graph [label="handle_ipynb_magics.py"]
+		"handle_ipynb_magics.py#CellMagicFinder#MagicFinder" [label="handle_ipynb_magics.py#CellMagicFinder#class MagicFinder"]
+		"handle_ipynb_magics.py#CellMagic#header" [label="handle_ipynb_magics.py#CellMagic#function header"]
+		"handle_ipynb_magics.py#CellMagicFinder#MagicFinder#visit_Expr" [label="handle_ipynb_magics.py#CellMagicFinder#MagicFinder#function visit_Expr"]
+		"handle_ipynb_magics.py##replace_magics" [label="handle_ipynb_magics.py##function replace_magics"]
+		"handle_ipynb_magics.py#CellMagicFinder#OffsetAndMagic" [label="handle_ipynb_magics.py#CellMagicFinder#class OffsetAndMagic"]
+		"handle_ipynb_magics.py#CellMagicFinder#MagicFinder#visit_Assign" [label="handle_ipynb_magics.py#CellMagicFinder#MagicFinder#function visit_Assign"]
+		"handle_ipynb_magics.py##replace_cell_magics" [label="handle_ipynb_magics.py##function replace_cell_magics"]
+		"handle_ipynb_magics.py##get_token" [label="handle_ipynb_magics.py##function get_token"]
+		"handle_ipynb_magics.py#CellMagicFinder#__init__" [label="handle_ipynb_magics.py#CellMagicFinder#function __init__"]
+		"handle_ipynb_magics.py##CellMagic" [label="handle_ipynb_magics.py##class CellMagic"]
+		"handle_ipynb_magics.py##Replacement" [label="handle_ipynb_magics.py##class Replacement"]
+		"handle_ipynb_magics.py##jupyter_dependencies_are_installed" [label="handle_ipynb_magics.py##function jupyter_dependencies_are_installed"]
+		"handle_ipynb_magics.py##remove_trailing_semicolon" [label="handle_ipynb_magics.py##function remove_trailing_semicolon"]
+		"handle_ipynb_magics.py##unmask_cell" [label="handle_ipynb_magics.py##function unmask_cell"]
+		"handle_ipynb_magics.py##_is_ipython_magic" [label="handle_ipynb_magics.py##function _is_ipython_magic"]
+		"handle_ipynb_magics.py##mask_cell" [label="handle_ipynb_magics.py##function mask_cell"]
+		"handle_ipynb_magics.py##_get_str_args" [label="handle_ipynb_magics.py##function _get_str_args"]
+		"handle_ipynb_magics.py#CellMagicFinder#MagicFinder#__init__" [label="handle_ipynb_magics.py#CellMagicFinder#MagicFinder#function __init__"]
+		"handle_ipynb_magics.py#CellMagicFinder#visit_Expr" [label="handle_ipynb_magics.py#CellMagicFinder#function visit_Expr"]
+		"handle_ipynb_magics.py##CellMagicFinder" [label="handle_ipynb_magics.py##class CellMagicFinder"]
+		"handle_ipynb_magics.py##put_trailing_semicolon_back" [label="handle_ipynb_magics.py##function put_trailing_semicolon_back"]
+		"handle_ipynb_magics.py#CellMagicFinder#MagicFinder#visit_Expr" [label="handle_ipynb_magics.py#CellMagicFinder#MagicFinder#visit_Expr"]
+		"handle_ipynb_magics.py#CellMagicFinder#MagicFinder#visit_Assign" [label="handle_ipynb_magics.py#CellMagicFinder#MagicFinder#visit_Assign"]
+		"handle_ipynb_magics.py#replace_magics" [label="handle_ipynb_magics.py#replace_magics"]
+		"handle_ipynb_magics.py#replace_cell_magics" [label="handle_ipynb_magics.py#replace_cell_magics"]
+		"handle_ipynb_magics.py#CellMagicFinder#MagicFinder#visit_Assign" [label="handle_ipynb_magics.py#CellMagicFinder#MagicFinder#visit_Assign"]
+		"handle_ipynb_magics.py#CellMagicFinder#visit_Expr" [label="handle_ipynb_magics.py#CellMagicFinder#visit_Expr"]
+		"handle_ipynb_magics.py#replace_cell_magics" [label="handle_ipynb_magics.py#replace_cell_magics"]
+		"handle_ipynb_magics.py#mask_cell" [label="handle_ipynb_magics.py#mask_cell"]
+		"handle_ipynb_magics.py#CellMagicFinder#MagicFinder#visit_Expr" [label="handle_ipynb_magics.py#CellMagicFinder#MagicFinder#visit_Expr"]
+		"handle_ipynb_magics.py#CellMagicFinder#visit_Expr" [label="handle_ipynb_magics.py#CellMagicFinder#visit_Expr"]
+		"handle_ipynb_magics.py#CellMagicFinder#visit_Expr" [label="handle_ipynb_magics.py#CellMagicFinder#visit_Expr"]
+		"handle_ipynb_magics.py#CellMagicFinder#MagicFinder#visit_Assign" [label="handle_ipynb_magics.py#CellMagicFinder#MagicFinder#visit_Assign"]
+		"handle_ipynb_magics.py#CellMagicFinder#MagicFinder#visit_Expr" [label="handle_ipynb_magics.py#CellMagicFinder#MagicFinder#visit_Expr"]
+		"handle_ipynb_magics.py#replace_cell_magics" [label="handle_ipynb_magics.py#replace_cell_magics"]
+		"handle_ipynb_magics.py#replace_magics" [label="handle_ipynb_magics.py#replace_magics"]
+		"handle_ipynb_magics.py#jupyter_dependencies_are_installed" [label="handle_ipynb_magics.py#jupyter_dependencies_are_installed"]
+		"handle_ipynb_magics.py#mask_cell" [label="handle_ipynb_magics.py#mask_cell"]
+		"handle_ipynb_magics.py#replace_magics" [label="handle_ipynb_magics.py#replace_magics"]
+	}
+	subgraph "cluster_strings.py" {
+		graph [rankdir=LR]
+		graph [label="strings.py"]
+		"strings.py##fix_docstring" [label="strings.py##function fix_docstring"]
+		"strings.py##has_triple_quotes" [label="strings.py##function has_triple_quotes"]
+		"strings.py##normalize_string_prefix" [label="strings.py##function normalize_string_prefix"]
+		"strings.py##sub_twice" [label="strings.py##function sub_twice"]
+		"strings.py##assert_is_leaf_string" [label="strings.py##function assert_is_leaf_string"]
+		"strings.py##normalize_string_quotes" [label="strings.py##function normalize_string_quotes"]
+		"strings.py##get_string_prefix" [label="strings.py##function get_string_prefix"]
+		"strings.py##_cached_compile" [label="strings.py##function _cached_compile"]
+		"strings.py##lines_with_leading_tabs_expanded" [label="strings.py##function lines_with_leading_tabs_expanded"]
+		"strings.py#fix_docstring" [label="strings.py#fix_docstring"]
+		"strings.py#normalize_string_quotes" [label="strings.py#normalize_string_quotes"]
+		"strings.py#normalize_string_quotes" [label="strings.py#normalize_string_quotes"]
+		"strings.py#normalize_string_quotes" [label="strings.py#normalize_string_quotes"]
+		"strings.py#normalize_string_quotes" [label="strings.py#normalize_string_quotes"]
+		"strings.py#normalize_string_quotes" [label="strings.py#normalize_string_quotes"]
+		"strings.py#normalize_string_quotes" [label="strings.py#normalize_string_quotes"]
+		"strings.py#get_string_prefix" [label="strings.py#get_string_prefix"]
+	}
+	subgraph "cluster_mode.py" {
+		graph [rankdir=LR]
+		graph [label="mode.py"]
+		"mode.py##Feature" [label="mode.py##class Feature"]
+		"mode.py#Mode#__contains__" [label="mode.py#Mode#function __contains__"]
+		"mode.py##TargetVersion" [label="mode.py##class TargetVersion"]
+		"mode.py#Mode#__post_init__" [label="mode.py#Mode#function __post_init__"]
+		"mode.py#Mode#get_cache_key" [label="mode.py#Mode#function get_cache_key"]
+		"mode.py##Preview" [label="mode.py##class Preview"]
+		"mode.py##supports_feature" [label="mode.py##function supports_feature"]
+		"mode.py##Mode" [label="mode.py##class Mode"]
+		"mode.py##Deprecated" [label="mode.py##class Deprecated"]
+	}
+	subgraph "cluster_cache.py" {
+		graph [rankdir=LR]
+		graph [label="cache.py"]
+		"cache.py##get_cache_file" [label="cache.py##function get_cache_file"]
+		"cache.py##read_cache" [label="cache.py##function read_cache"]
+		"cache.py##get_cache_dir" [label="cache.py##function get_cache_dir"]
+		"cache.py##get_cache_info" [label="cache.py##function get_cache_info"]
+		"cache.py##filter_cached" [label="cache.py##function filter_cached"]
+		"cache.py##write_cache" [label="cache.py##function write_cache"]
+		"cache.py#" [label="cache.py#"]
+		"cache.py#write_cache" [label="cache.py#write_cache"]
+		"cache.py#filter_cached" [label="cache.py#filter_cached"]
+		"cache.py#write_cache" [label="cache.py#write_cache"]
+		"cache.py#get_cache_file" [label="cache.py#get_cache_file"]
+		"cache.py#read_cache" [label="cache.py#read_cache"]
+	}
+	subgraph "cluster_numerics.py" {
+		graph [rankdir=LR]
+		graph [label="numerics.py"]
+		"numerics.py##format_hex" [label="numerics.py##function format_hex"]
+		"numerics.py##format_complex_number" [label="numerics.py##function format_complex_number"]
+		"numerics.py##normalize_numeric_literal" [label="numerics.py##function normalize_numeric_literal"]
+		"numerics.py##format_scientific_notation" [label="numerics.py##function format_scientific_notation"]
+		"numerics.py##format_float_or_int_string" [label="numerics.py##function format_float_or_int_string"]
+		"numerics.py#normalize_numeric_literal" [label="numerics.py#normalize_numeric_literal"]
+		"numerics.py#normalize_numeric_literal" [label="numerics.py#normalize_numeric_literal"]
+		"numerics.py#format_complex_number" [label="numerics.py#format_complex_number"]
+		"numerics.py#normalize_numeric_literal" [label="numerics.py#normalize_numeric_literal"]
+		"numerics.py#format_scientific_notation" [label="numerics.py#format_scientific_notation"]
+		"numerics.py#normalize_numeric_literal" [label="numerics.py#normalize_numeric_literal"]
+	}
+	subgraph "cluster_report.py" {
+		graph [rankdir=LR]
+		graph [label="report.py"]
+		"report.py##NothingChanged" [label="report.py##class NothingChanged"]
+		"report.py#Report#path_ignored" [label="report.py#Report#function path_ignored"]
+		"report.py##Report" [label="report.py##class Report"]
+		"report.py#Report#return_code" [label="report.py#Report#function return_code"]
+		"report.py##Changed" [label="report.py##class Changed"]
+		"report.py#Report#__str__" [label="report.py#Report#function __str__"]
+		"report.py#Report#failed" [label="report.py#Report#function failed"]
+		"report.py#Report#done" [label="report.py#Report#function done"]
+		"report.py#Report#failed" [label="report.py#Report#failed"]
+		"report.py#Report#path_ignored" [label="report.py#Report#path_ignored"]
+		"report.py#Report#done" [label="report.py#Report#done"]
+		"report.py#Report#done" [label="report.py#Report#done"]
+	}
+	subgraph "cluster_debug.py" {
+		graph [rankdir=LR]
+		graph [label="debug.py"]
+		"debug.py##DebugVisitor" [label="debug.py##class DebugVisitor"]
+		"debug.py#DebugVisitor#visit_default" [label="debug.py#DebugVisitor#function visit_default"]
+		"debug.py#DebugVisitor#show" [label="debug.py#DebugVisitor#function show"]
+		"debug.py#DebugVisitor#visit_default" [label="debug.py#DebugVisitor#visit_default"]
+		"debug.py#DebugVisitor#visit_default" [label="debug.py#DebugVisitor#visit_default"]
+		"debug.py#DebugVisitor#visit_default" [label="debug.py#DebugVisitor#visit_default"]
+		"debug.py#DebugVisitor#show" [label="debug.py#DebugVisitor#show"]
+		"debug.py#DebugVisitor#visit_default" [label="debug.py#DebugVisitor#visit_default"]
+		"debug.py#DebugVisitor#show" [label="debug.py#DebugVisitor#show"]
+		"debug.py#DebugVisitor#visit_default" [label="debug.py#DebugVisitor#visit_default"]
+		"debug.py#DebugVisitor#show" [label="debug.py#DebugVisitor#show"]
+		"debug.py#DebugVisitor#visit_default" [label="debug.py#DebugVisitor#visit_default"]
+	}
+	subgraph "cluster___main__.py" {
+		graph [rankdir=LR]
+		graph [label="__main__.py"]
+		"__main__.py#" [label="__main__.py#"]
+	}
+	"linegen.py#LineGenerator#visit_DEDENT" -> "linegen.py#LineGenerator#line"
+	"trans.py#StringTransformer#StringMerger#do_match" -> "rusty.py##Ok"
+	"parsing.py#lib2to3_parse" -> "parsing.py##matches_grammar"
+	"linegen.py#LineGenerator#visit_default" -> "linegen.py#LineGenerator#normalize_prefix"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform" -> "rusty.py##Ok"
+	"files.py#gen_python_files" -> "report.py#Report#path_ignored"
+	"linegen.py#LineGenerator#maybe_make_parens_invisible_in_atom" -> "nodes.py##is_one_tuple"
+	"__init__.py#format_file_contents" -> "__init__.py##check_stability_and_equivalence"
+	"linegen.py#LineGenerator#visit_match_case" -> "linegen.py#LineGenerator#normalize_invisible_parens"
+	"strings.py#normalize_string_quotes" -> "strings.py##sub_twice"
+	"linegen.py#LineGenerator#normalize_invisible_parens" -> "nodes.py##is_one_tuple"
+	"linegen.py#LineGenerator#transform_line" -> "trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter"
+	"numerics.py#normalize_numeric_literal" -> "numerics.py##format_scientific_notation"
+	"linegen.py#LineGenerator#visit_STRING" -> "nodes.py##is_multiline_string"
+	"linegen.py#LineGenerator#visit_simple_stmt" -> "nodes.py##wrap_in_parentheses"
+	"linegen.py#LineGenerator#left_hand_split" -> "linegen.py#LineGenerator#bracket_split_build_line"
+	"linegen.py#LineGenerator#visit_default" -> "strings.py##normalize_string_quotes"
+	"strings.py#normalize_string_quotes" -> "strings.py##_cached_compile"
+	"__init__.py#assert_equivalent" -> "parsing.py##parse_ast"
+	"__init__.py#reformat_code" -> "report.py#Report#done"
+	"nodes.py#Visitor#visit_default" -> "nodes.py#Visitor#visit"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform" -> "lines.py#Line#clone"
+	"nodes.py#whitespace" -> "nodes.py##is_vararg"
+	"linegen.py#LineGenerator#visit_default" -> "lines.py#Line#append"
+	"handle_ipynb_magics.py#replace_magics" -> "handle_ipynb_magics.py##Replacement"
+	"files.py#find_pyproject_toml" -> "files.py##find_project_root"
+	"linegen.py#LineGenerator#delimiter_split" -> "brackets.py#BracketTracker#max_delimiter_priority"
+	"linegen.py#LineGenerator#visit_suite" -> "nodes.py##is_stub_suite"
+	"linegen.py#LineGenerator#transform_line" -> "lines.py#Line#contains_uncollapsable_type_comments"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_transform" -> "lines.py##append_leaves"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#do_transform" -> "trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#StringParser#parse"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform" -> "rusty.py##Ok"
+	"linegen.py#LineGenerator#line" -> "lines.py##Line"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_get_break_idx" -> "trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_get_break_idx#passes_all_checks"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform" -> "lines.py##append_leaves"
+	"handle_ipynb_magics.py#replace_cell_magics" -> "handle_ipynb_magics.py##CellMagicFinder"
+	"__init__.py#format_file_in_place" -> "__init__.py##format_file_contents"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_return_match" -> "nodes.py##is_empty_par"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform" -> "lines.py#Line#append"
+	"linegen.py#LineGenerator#visit_default" -> "nodes.py#Visitor#visit_default"
+	"trans.py#StringTransformer#StringMerger#_validate_msg" -> "trans.py##TErr"
+	"__init__.py#format_cell" -> "handle_ipynb_magics.py##put_trailing_semicolon_back"
+	"linegen.py#LineGenerator#visit_match_case" -> "linegen.py#LineGenerator#line"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_transform" -> "nodes.py##replace_child"
+	"linegen.py#LineGenerator#visit_DEDENT" -> "linegen.py#LineGenerator#visit_default"
+	"linegen.py#LineGenerator#visit_simple_stmt" -> "nodes.py##is_stub_body"
+	"lines.py#Line#contains_unsplittable_type_ignore" -> "nodes.py##is_type_comment"
+	"nodes.py#whitespace" -> "nodes.py##preceding_leaf"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_assert_match" -> "trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#StringParser#parse"
+	"__init__.py#check_stability_and_equivalence" -> "__init__.py##assert_equivalent"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_splitter_match" -> "trans.py##TErr"
+	"__init__.py#_format_str_once" -> "lines.py##Line"
+	"linegen.py#LineGenerator#visit_stmt" -> "linegen.py#LineGenerator#normalize_invisible_parens"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#do_match" -> "rusty.py##Ok"
+	"trans.py#StringTransformer#StringMerger#_merge_string_group" -> "lines.py#Line#clone"
+	"handle_ipynb_magics.py#CellMagicFinder#visit_Expr" -> "handle_ipynb_magics.py##CellMagic"
+	"__init__.py#main" -> "output.py##out"
+	"brackets.py#BracketTracker#delimiter_count_with_priority" -> "brackets.py#BracketTracker#max_delimiter_priority"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform" -> "lines.py#Line#clone"
+	"files.py#normalize_path_maybe_ignore" -> "report.py#Report#path_ignored"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_transform" -> "rusty.py##Ok"
+	"linegen.py#LineGenerator#maybe_make_parens_invisible_in_atom" -> "nodes.py##is_rpar_token"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_else_match" -> "trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#StringParser#is_valid_index_factory"
+	"strings.py#normalize_string_quotes" -> "strings.py##sub_twice"
+	"linegen.py#LineGenerator#normalize_invisible_parens" -> "comments.py##list_comments"
+	"linegen.py#LineGenerator#generate_trailers_to_omit" -> "lines.py#Line#enumerate_with_length"
+	"__init__.py#main" -> "__init__.py#WriteBack#from_configuration"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_assert_match" -> "nodes.py##parent_type"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform" -> "rusty.py##Ok"
+	"trans.py#StringTransformer#StringMerger#_merge_string_group" -> "lines.py#Line#append"
+	"__init__.py#" -> "cache.py##read_cache"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#_get_max_string_length" -> "trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#StringParser#is_valid_index_factory"
+	"linegen.py#LineGenerator#bracket_split_build_line" -> "lines.py#Line#append"
+	"comments.py#contains_fmt_on_at_column" -> "nodes.py##first_leaf_column"
+	"__init__.py#_format_str_once" -> "lines.py#EmptyLineTracker#maybe_empty_lines"
+	"__init__.py#main" -> "output.py##out"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_get_break_idx" -> "trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#StringParser#is_valid_index_factory"
+	"__init__.py#get_future_imports" -> "__init__.py#get_future_imports#get_imports_from_children"
+	"trans.py#StringTransformer#StringMerger#_merge_string_group" -> "lines.py##append_leaves"
+	"brackets.py#BracketTracker#mark" -> "brackets.py##BracketMatchError"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#_validate" -> "trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#_get_max_string_length"
+	"files.py#gen_python_files" -> "report.py#Report#path_ignored"
+	"lines.py#Line#append" -> "brackets.py#BracketTracker#mark"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_transform" -> "lines.py#Line#append"
+	"nodes.py#whitespace" -> "nodes.py##preceding_leaf"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_else_match" -> "nodes.py##is_empty_par"
+	"comments.py#convert_one_fmt_off_pair" -> "comments.py##generate_ignored_nodes"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_transform" -> "lines.py#Line#clone"
+	"__init__.py#main" -> "files.py##normalize_path_maybe_ignore"
+	"output.py#ipynb_diff" -> "output.py##diff"
+	"linegen.py#LineGenerator#run_transformer" -> "lines.py#Line#contains_unsplittable_type_ignore"
+	"trans.py#StringTransformer#CustomSplitMapMixin#pop_custom_splits" -> "trans.py#StringTransformer#CustomSplitMapMixin#_get_key"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#_get_max_string_length" -> "lines.py#Line#comments_after"
+	"linegen.py#LineGenerator#right_hand_split" -> "linegen.py##CannotSplit"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform" -> "trans.py##TErr"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#_validate" -> "strings.py##has_triple_quotes"
+	"trans.py#StringTransformer#StringMerger#_validate_msg" -> "trans.py##TErr"
+	"handle_ipynb_magics.py#replace_magics" -> "handle_ipynb_magics.py#CellMagicFinder#MagicFinder"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_transform" -> "nodes.py##replace_child"
+	"linegen.py#LineGenerator#visit_suite" -> "linegen.py#LineGenerator#visit_default"
+	"linegen.py#LineGenerator#standalone_comment_split#append_to_line" -> "lines.py#Line#append_safe"
+	"linegen.py#LineGenerator#visit_simple_stmt" -> "nodes.py##is_arith_like"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#_validate" -> "trans.py##TErr"
+	"linegen.py#LineGenerator#maybe_make_parens_invisible_in_atom" -> "brackets.py##max_delimiter_priority_in_atom"
+	"__init__.py#format_str" -> "__init__.py##_format_str_once"
+	"nodes.py#prev_siblings_are" -> "nodes.py##prev_siblings_are"
+	"trans.py#StringTransformer#StringMerger#_merge_string_group" -> "trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#StringParser#is_valid_index_factory"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform" -> "trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#StringParser#insert_str_child_factory"
+	"linegen.py#LineGenerator#visit_async_stmt" -> "linegen.py#LineGenerator#line"
+	"linegen.py#LineGenerator#visit_default" -> "numerics.py##normalize_numeric_literal"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_dict_match" -> "trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#StringParser"
+	"linegen.py#LineGenerator#delimiter_split#append_to_line" -> "lines.py#Line#append_safe"
+	"__init__.py#format_str" -> "__init__.py##_format_str_once"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform" -> "rusty.py##Ok"
+	"lines.py#Line#is_complex_subscript" -> "brackets.py#BracketTracker#get_open_lsqb"
+	"linegen.py#LineGenerator#delimiter_split" -> "lines.py##Line"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_splitter_match" -> "trans.py##TErr"
+	"parsing.py#lib2to3_parse" -> "parsing.py##InvalidInput"
+	"trans.py#StringTransformer#StringMerger#_merge_string_group" -> "trans.py#StringTransformer#StringMerger#_merge_string_group#make_naked"
+	"report.py#Report#done" -> "output.py##out"
+	"lines.py#Line#append" -> "lines.py#Line#remove_trailing_comma"
+	"lines.py#Line#append" -> "nodes.py##whitespace"
+	"linegen.py#LineGenerator#transform_line" -> "lines.py##is_line_short_enough"
+	"__main__.py#" -> "__init__.py##patched_main"
+	"linegen.py#LineGenerator#delimiter_split" -> "brackets.py#BracketTracker#delimiter_count_with_priority"
+	"trans.py#StringTransformer#StringMerger#_validate_msg" -> "trans.py##TErr"
+	"trans.py#StringTransformer#StringMerger#do_transform" -> "rusty.py#Ok#Err#err"
+	"trans.py#hug_power_op" -> "trans.py#hug_power_op#is_simple_operand"
+	"linegen.py#LineGenerator#standalone_comment_split#append_to_line" -> "lines.py##Line"
+	"linegen.py#LineGenerator#right_hand_split" -> "lines.py##can_be_split"
+	"__init__.py#format_file_in_place" -> "__init__.py##nullcontext"
+	"trans.py#StringTransformer#StringMerger#_merge_string_group#make_naked" -> "strings.py##assert_is_leaf_string"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform" -> "lines.py#Line#append"
+	"__init__.py#reformat_one" -> "__init__.py##format_file_in_place"
+	"lines.py#can_omit_invisible_parens" -> "brackets.py#BracketTracker#max_delimiter_priority"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_splitter_match" -> "trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_dict_match"
+	"linegen.py#LineGenerator#transform_line#_rhs" -> "linegen.py#LineGenerator#right_hand_split"
+	"lines.py#Line#has_magic_trailing_comma" -> "nodes.py##is_one_tuple_between"
+	"linegen.py#LineGenerator#run_transformer" -> "linegen.py#LineGenerator#transform_line"
+	"nodes.py#is_empty_par" -> "nodes.py##is_empty_lpar"
+	"trans.py#StringTransformer#StringMerger#do_match" -> "rusty.py##Ok"
+	"report.py#Report#path_ignored" -> "output.py##out"
+	"handle_ipynb_magics.py#mask_cell" -> "handle_ipynb_magics.py##replace_magics"
+	"__init__.py#get_features_used" -> "nodes.py##is_simple_decorator_expression"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#do_match" -> "rusty.py#Ok#ok"
+	"comments.py#convert_one_fmt_off_pair" -> "comments.py##list_comments"
+	"lines.py#Line#append_comment" -> "nodes.py##is_type_comment"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_transform" -> "lines.py#Line#append"
+	"numerics.py#format_complex_number" -> "numerics.py##format_float_or_int_string"
+	"linegen.py#LineGenerator#should_split_line" -> "brackets.py#BracketTracker#max_delimiter_priority"
+	"__init__.py#main" -> "__init__.py##path_empty"
+	"linegen.py#LineGenerator#right_hand_split" -> "linegen.py##CannotSplit"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#do_match" -> "trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#do_splitter_match"
+	"linegen.py#LineGenerator#visit_match_case" -> "nodes.py#Visitor#visit"
+	"brackets.py#BracketTracker#mark" -> "brackets.py#BracketTracker#maybe_increment_lambda_arguments"
+	"linegen.py#LineGenerator#maybe_make_parens_invisible_in_atom" -> "nodes.py##is_atom_with_invisible_parens"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#do_transform" -> "lines.py##append_leaves"
+	"__init__.py#validate_regex" -> "__init__.py##re_compile_maybe_verbose"
+	"lines.py#can_omit_invisible_parens" -> "nodes.py##is_multiline_string"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#_validate" -> "rusty.py##Ok"
+	"trans.py#StringTransformer#StringMerger#_validate_msg" -> "trans.py##TErr"
+	"trans.py#StringTransformer#StringMerger#_validate_msg" -> "strings.py##get_string_prefix"
+	"__init__.py#" -> "report.py#Report#failed"
+	"trans.py#StringTransformer#__call__" -> "trans.py#StringTransformer#do_match"
+	"__init__.py#assert_equivalent" -> "parsing.py##stringify_ast"
+	"trans.py#StringTransformer#StringMerger#do_transform" -> "trans.py##CannotTransform"
+	"comments.py#generate_comments" -> "comments.py##list_comments"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_transform" -> "lines.py#Line#clone"
+	"linegen.py#LineGenerator#visit_decorators" -> "linegen.py#LineGenerator#line"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_get_break_idx" -> "strings.py##assert_is_leaf_string"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#_validate" -> "trans.py##TErr"
+	"linegen.py#LineGenerator#maybe_make_parens_invisible_in_atom" -> "nodes.py##is_lpar_token"
+	"numerics.py#normalize_numeric_literal" -> "numerics.py##format_float_or_int_string"
+	"linegen.py#LineGenerator#visit_INDENT" -> "linegen.py#LineGenerator#line"
+	"comments.py#generate_ignored_nodes" -> "nodes.py##container_of"
+	"linegen.py#LineGenerator#transform_line#_rhs" -> "linegen.py#LineGenerator#generate_trailers_to_omit"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform" -> "lines.py#Line#append"
+	"brackets.py#is_split_before_delimiter" -> "nodes.py##is_vararg"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_transform" -> "lines.py##Line"
+	"comments.py#contains_fmt_on_at_column" -> "comments.py##is_fmt_on"
+	"trans.py#StringTransformer#__call__" -> "trans.py##CannotTransform"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform" -> "trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_get_string_operator_leaves"
+	"debug.py#DebugVisitor#show" -> "parsing.py##lib2to3_parse"
+	"__init__.py#patched_main" -> "concurrency.py##maybe_install_uvloop"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_transform" -> "lines.py#Line#comments_after"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_dict_match" -> "nodes.py##parent_type"
+	"linegen.py#LineGenerator#transform_line" -> "trans.py#StringTransformer#StringMerger"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_splitter_match" -> "trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#StringParser"
+	"comments.py#normalize_fmt_off" -> "comments.py##convert_one_fmt_off_pair"
+	"cache.py#read_cache" -> "cache.py##get_cache_file"
+	"parsing.py#stringify_ast" -> "parsing.py##stringify_ast"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_get_break_idx" -> "trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_get_break_idx#passes_all_checks"
+	"__init__.py#main" -> "output.py##out"
+	"comments.py#generate_ignored_nodes" -> "comments.py##is_fmt_on"
+	"linegen.py#LineGenerator#right_hand_split" -> "linegen.py#LineGenerator#bracket_split_succeeded_or_raise"
+	"handle_ipynb_magics.py#CellMagicFinder#MagicFinder#visit_Assign" -> "handle_ipynb_magics.py#CellMagicFinder#OffsetAndMagic"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#do_transform" -> "trans.py##TErr"
+	"handle_ipynb_magics.py#replace_cell_magics" -> "handle_ipynb_magics.py##get_token"
+	"trans.py#StringTransformer#StringMerger#do_match" -> "trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#StringParser#is_valid_index_factory"
+	"linegen.py#LineGenerator#delimiter_split" -> "nodes.py##is_vararg"
+	"files.py#gen_python_files" -> "files.py##path_is_excluded"
+	"debug.py#DebugVisitor#show" -> "nodes.py#Visitor#visit"
+	"__init__.py#format_file_in_place" -> "output.py##diff"
+	"__init__.py#_format_str_once" -> "comments.py##normalize_fmt_off"
+	"strings.py#fix_docstring" -> "strings.py##lines_with_leading_tabs_expanded"
+	"nodes.py#whitespace" -> "nodes.py##preceding_leaf"
+	"__init__.py#main" -> "output.py##err"
+	"debug.py#DebugVisitor#visit_default" -> "output.py##out"
+	"linegen.py#LineGenerator#visit_default" -> "linegen.py#LineGenerator#line"
+	"linegen.py#LineGenerator#right_hand_split" -> "lines.py#Line#contains_multiline_strings"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_iter_fexpr_slices" -> "trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#iter_fexpr_spans"
+	"linegen.py#LineGenerator#right_hand_split" -> "linegen.py#LineGenerator#right_hand_split"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_else_match" -> "nodes.py##parent_type"
+	"__init__.py#reformat_one" -> "cache.py##write_cache"
+	"trans.py#hug_power_op#is_simple_operand" -> "trans.py#hug_power_op#is_simple_lookup"
+	"parsing.py#stringify_ast" -> "parsing.py##stringify_ast"
+	"linegen.py#LineGenerator#__init__" -> "linegen.py#LineGenerator#__post_init__"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_dict_match" -> "nodes.py##is_empty_par"
+	"__init__.py#" -> "cache.py##filter_cached"
+	"__init__.py#format_stdin_to_stdout" -> "__init__.py##decode_bytes"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform" -> "trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_normalize_f_string"
+	"linegen.py#LineGenerator#run_transformer" -> "linegen.py#LineGenerator#run_transformer"
+	"__init__.py#_format_str_once" -> "__init__.py##detect_target_versions"
+	"handle_ipynb_magics.py#CellMagicFinder#MagicFinder#visit_Assign" -> "handle_ipynb_magics.py##_is_ipython_magic"
+	"nodes.py#Visitor#visit" -> "nodes.py#Visitor#visit_default"
+	"trans.py#StringTransformer#StringMerger#_merge_string_group" -> "rusty.py##Ok"
+	"linegen.py#LineGenerator#run_transformer" -> "lines.py##is_line_short_enough"
+	"__init__.py#get_sources" -> "output.py##err"
+	"linegen.py#LineGenerator#transform_line" -> "lines.py##line_to_string"
+	"trans.py#StringTransformer#StringMerger#_validate_msg" -> "comments.py##contains_pragma_comment"
+	"trans.py#StringTransformer#__call__" -> "trans.py##CannotTransform"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_transform" -> "trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#StringParser#insert_str_child_factory"
+	"__init__.py#assert_equivalent" -> "output.py##dump_to_file"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#StringParser#_next_state" -> "nodes.py##is_empty_par"
+	"linegen.py#LineGenerator#delimiter_split" -> "nodes.py##is_vararg"
+	"handle_ipynb_magics.py#CellMagicFinder#MagicFinder#visit_Assign" -> "handle_ipynb_magics.py##_get_str_args"
+	"lines.py#can_omit_invisible_parens" -> "brackets.py#BracketTracker#delimiter_count_with_priority"
+	"linegen.py#LineGenerator#visit_default" -> "lines.py#Line#append"
+	"linegen.py#LineGenerator#delimiter_split" -> "lines.py##Line"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform" -> "trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_normalize_f_string"
+	"concurrency.py#cancel" -> "output.py##err"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_assert_match" -> "nodes.py##is_empty_par"
+	"__init__.py#format_stdin_to_stdout" -> "__init__.py##format_file_contents"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform#more_splits_should_be_made" -> "trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform#max_last_string"
+	"linegen.py#LineGenerator#transform_line" -> "linegen.py#LineGenerator#run_transformer"
+	"linegen.py#LineGenerator#visit_default" -> "linegen.py#LineGenerator#line"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_transform" -> "trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#StringParser#is_valid_index_factory"
+	"__init__.py#_format_str_once" -> "linegen.py#LineGenerator#transform_line"
+	"linegen.py#LineGenerator#visit_default" -> "lines.py#Line#append"
+	"brackets.py#BracketTracker#mark" -> "brackets.py#BracketTracker#maybe_decrement_after_for_loop_variable"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_splitter_match" -> "trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#StringParser#is_valid_index_factory"
+	"lines.py#append_leaves" -> "lines.py#Line#append"
+	"cache.py#get_cache_file" -> "mode.py#Mode#get_cache_key"
+	"linegen.py#LineGenerator#right_hand_split" -> "lines.py##is_line_short_enough"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform" -> "trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform#max_last_string"
+	"linegen.py#LineGenerator#delimiter_split#append_to_line" -> "lines.py#Line#append"
+	"linegen.py#LineGenerator#visit_STRING" -> "linegen.py#LineGenerator#visit_default"
+	"lines.py#_can_omit_opening_paren" -> "lines.py#Line#enumerate_with_length"
+	"linegen.py#LineGenerator#bracket_split_succeeded_or_raise" -> "linegen.py##CannotSplit"
+	"cache.py#write_cache" -> "cache.py##get_cache_file"
+	"files.py#gen_python_files" -> "files.py##get_gitignore"
+	"nodes.py#is_one_tuple" -> "nodes.py##unwrap_singleton_parenthesis"
+	"linegen.py#LineGenerator#visit_ENDMARKER" -> "linegen.py#LineGenerator#line"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_dict_match" -> "trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#StringParser#is_valid_index_factory"
+	"trans.py#StringTransformer#StringMerger#do_transform" -> "rusty.py#Ok#Err"
+	"__init__.py#main" -> "output.py##out"
+	"trans.py#StringTransformer#StringMerger#do_transform" -> "rusty.py#Ok#Err#err"
+	"linegen.py#LineGenerator#visit_STRING" -> "strings.py##fix_docstring"
+	"trans.py#StringTransformer#__call__" -> "rusty.py#Ok#ok"
+	"trans.py#StringTransformer#StringMerger#_merge_string_group" -> "trans.py#StringTransformer#StringMerger#_merge_string_group#make_naked"
+	"__init__.py#patched_main" -> "__init__.py##patch_click"
+	"parsing.py#parse_ast" -> "parsing.py##parse_single_version"
+	"brackets.py#BracketTracker#mark" -> "brackets.py#BracketTracker#maybe_decrement_after_lambda_arguments"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#fstring_contains_expr" -> "trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#iter_fexpr_spans"
+	"__init__.py#reformat_code" -> "__init__.py##format_stdin_to_stdout"
+	"trans.py#StringTransformer#StringMerger#_merge_string_group" -> "lines.py#Line#append"
+	"trans.py#StringTransformer#StringMerger#_merge_string_group" -> "strings.py##normalize_string_quotes"
+	"linegen.py#LineGenerator#normalize_invisible_parens" -> "linegen.py#LineGenerator#normalize_invisible_parens"
+	"linegen.py#LineGenerator#visit_DEDENT" -> "linegen.py#LineGenerator#line"
+	"nodes.py#whitespace" -> "nodes.py##preceding_leaf"
+	"linegen.py#LineGenerator#__post_init__" -> "lines.py##Line"
+	"handle_ipynb_magics.py#CellMagicFinder#MagicFinder#visit_Expr" -> "handle_ipynb_magics.py#CellMagicFinder#OffsetAndMagic"
+	"linegen.py#LineGenerator#visit_simple_stmt" -> "nodes.py##is_stub_suite"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_return_match" -> "trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#StringParser#is_valid_index_factory"
+	"__init__.py#format_cell" -> "__init__.py##check_stability_and_equivalence"
+	"output.py#err" -> "output.py##_err"
+	"trans.py#StringTransformer#CustomSplitMapMixin#has_custom_splits" -> "trans.py#StringTransformer#CustomSplitMapMixin#_get_key"
+	"files.py#gen_python_files" -> "files.py##path_is_excluded"
+	"__init__.py#format_stdin_to_stdout" -> "output.py##color_diff"
+	"linegen.py#LineGenerator#visit_stmt" -> "nodes.py#Visitor#visit"
+	"linegen.py#LineGenerator#visit_decorators" -> "nodes.py#Visitor#visit"
+	"trans.py#StringTransformer#StringMerger#do_transform" -> "rusty.py#Ok#ok"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_splitter_match" -> "nodes.py##is_empty_lpar"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#_validate" -> "trans.py##TErr"
+	"nodes.py#is_stub_suite" -> "nodes.py##is_stub_body"
+	"trans.py#StringTransformer#StringMerger#_merge_string_group" -> "lines.py#Line#comments_after"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#do_match" -> "trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#_validate"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#do_transform" -> "nodes.py##replace_child"
+	"lines.py#Line#append" -> "lines.py#Line#is_complex_subscript"
+	"linegen.py#LineGenerator#visit_async_stmt" -> "nodes.py#Visitor#visit"
+	"trans.py#StringTransformer#StringMerger#_validate_msg" -> "trans.py##TErr"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_normalize_f_string" -> "trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#fstring_contains_expr"
+	"linegen.py#LineGenerator#transform_line" -> "lines.py#Line#contains_standalone_comments"
+	"linegen.py#LineGenerator#right_hand_split" -> "linegen.py#LineGenerator#bracket_split_build_line"
+	"__init__.py#_format_str_once" -> "mode.py##supports_feature"
+	"linegen.py#LineGenerator#normalize_invisible_parens" -> "nodes.py##wrap_in_parentheses"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform" -> "trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform#more_splits_should_be_made"
+	"parsing.py#lib2to3_parse" -> "parsing.py##InvalidInput"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#do_match" -> "nodes.py##is_empty_lpar"
+	"__init__.py#main" -> "output.py##err"
+	"linegen.py#LineGenerator#visit_default" -> "comments.py##generate_comments"
+	"__init__.py#" -> "__init__.py##patched_main"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#do_match" -> "trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#StringParser#parse"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform" -> "trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_get_break_idx"
+	"nodes.py#is_walrus_assignment" -> "nodes.py##unwrap_singleton_parenthesis"
+	"comments.py#generate_ignored_nodes" -> "comments.py##contains_fmt_on_at_column"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_transform" -> "lines.py#Line#append"
+	"lines.py#Line#clone" -> "lines.py##Line"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform#maybe_append_string_operators" -> "lines.py#Line#append"
+	"trans.py#StringTransformer#StringMerger#_remove_backslash_line_continuation_chars" -> "rusty.py##Ok"
+	"linegen.py#LineGenerator#visit_power" -> "nodes.py##wrap_in_parentheses"
+	"brackets.py#max_delimiter_priority_in_atom" -> "brackets.py#BracketTracker#max_delimiter_priority"
+	"__init__.py#format_ipynb_string" -> "__init__.py##format_cell"
+	"__init__.py#main" -> "output.py##out"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_transform" -> "rusty.py##Ok"
+	"__init__.py#assert_stable" -> "__init__.py##_format_str_once"
+	"lines.py#Line#is_import" -> "nodes.py##is_import"
+	"numerics.py#format_scientific_notation" -> "numerics.py##format_float_or_int_string"
+	"lines.py#can_omit_invisible_parens" -> "lines.py##_can_omit_closing_paren"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_assign_match" -> "nodes.py##parent_type"
+	"handle_ipynb_magics.py#replace_magics" -> "handle_ipynb_magics.py##get_token"
+	"lines.py#append_leaves" -> "nodes.py##replace_child"
+	"files.py#gen_python_files" -> "handle_ipynb_magics.py##jupyter_dependencies_are_installed"
+	"comments.py#convert_one_fmt_off_pair" -> "nodes.py##preceding_leaf"
+	"linegen.py#LineGenerator#visit_SEMI" -> "linegen.py#LineGenerator#line"
+	"comments.py#list_comments" -> "comments.py##ProtoComment"
+	"__init__.py#assert_equivalent" -> "output.py##dump_to_file"
+	"lines.py#_can_omit_closing_paren" -> "lines.py#Line#enumerate_with_length"
+	"brackets.py#BracketTracker#mark" -> "brackets.py##is_split_after_delimiter"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#do_transform" -> "lines.py#Line#append"
+	"trans.py#TErr" -> "rusty.py#Ok#Err"
+	"strings.py#normalize_string_quotes" -> "strings.py##sub_twice"
+	"parsing.py#lib2to3_parse" -> "parsing.py##matches_grammar"
+	"__init__.py#main" -> "files.py##find_project_root"
+	"trans.py#StringTransformer#StringMerger#_validate_msg" -> "trans.py##TErr"
+	"__init__.py#format_file_in_place" -> "output.py##ipynb_diff"
+	"__init__.py#_format_str_once" -> "__init__.py##get_future_imports"
+	"__init__.py#reformat_one" -> "report.py#Report#done"
+	"handle_ipynb_magics.py#CellMagicFinder#MagicFinder#visit_Expr" -> "handle_ipynb_magics.py##_get_str_args"
+	"linegen.py#LineGenerator#visit_STANDALONE_COMMENT" -> "linegen.py#LineGenerator#line"
+	"__init__.py#format_ipynb_string" -> "__init__.py##validate_metadata"
+	"comments.py#is_fmt_on" -> "comments.py##list_comments"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#_validate" -> "comments.py##contains_pragma_comment"
+	"__init__.py#format_file_in_place" -> "files.py##wrap_stream_for_windows"
+	"__init__.py#format_cell" -> "handle_ipynb_magics.py##unmask_cell"
+	"debug.py#DebugVisitor#visit_default" -> "nodes.py#Visitor#visit"
+	"__init__.py#assert_stable" -> "output.py##diff"
+	"cache.py#write_cache" -> "cache.py##get_cache_info"
+	"linegen.py#LineGenerator#transform_line" -> "lines.py#Line#contains_unsplittable_type_ignore"
+	"linegen.py#LineGenerator#visit_stmt" -> "linegen.py#LineGenerator#line"
+	"__init__.py#_format_str_once" -> "parsing.py##lib2to3_parse"
+	"nodes.py#is_simple_decorator_expression" -> "nodes.py##is_simple_decorator_trailer"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#StringParser#parse" -> "trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#StringParser#_next_state"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_assign_match" -> "nodes.py##parent_type"
+	"nodes.py#is_yield" -> "nodes.py##is_yield"
+	"debug.py#DebugVisitor#visit_default" -> "output.py##out"
+	"handle_ipynb_magics.py#CellMagicFinder#visit_Expr" -> "handle_ipynb_magics.py##_is_ipython_magic"
+	"parsing.py#stringify_ast" -> "parsing.py##_normalize"
+	"nodes.py#whitespace" -> "nodes.py##preceding_leaf"
+	"linegen.py#LineGenerator#normalize_invisible_parens" -> "nodes.py##is_multiline_string"
+	"linegen.py#LineGenerator#visit_simple_stmt" -> "linegen.py#LineGenerator#visit_default"
+	"__init__.py#format_file_contents" -> "__init__.py##format_str"
+	"parsing.py#get_grammars" -> "mode.py##supports_feature"
+	"lines.py#append_leaves" -> "lines.py#Line#append"
+	"linegen.py#LineGenerator#normalize_invisible_parens" -> "linegen.py#LineGenerator#maybe_make_parens_invisible_in_atom"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform" -> "lines.py#Line#clone"
+	"files.py#gen_python_files" -> "files.py##normalize_path_maybe_ignore"
+	"nodes.py#is_docstring" -> "nodes.py##prev_siblings_are"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_dict_match" -> "nodes.py##parent_type"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#do_transform" -> "rusty.py##Ok"
+	"linegen.py#LineGenerator#standalone_comment_split" -> "lines.py##Line"
+	"linegen.py#LineGenerator#left_hand_split" -> "linegen.py#LineGenerator#bracket_split_build_line"
+	"lines.py#can_omit_invisible_parens" -> "lines.py##_can_omit_opening_paren"
+	"linegen.py#LineGenerator#visit_STANDALONE_COMMENT" -> "brackets.py#BracketTracker#any_open_brackets"
+	"__init__.py#reformat_one" -> "__init__.py##format_stdin_to_stdout"
+	"brackets.py#max_delimiter_priority_in_atom" -> "brackets.py##BracketTracker"
+	"linegen.py#LineGenerator#run_transformer" -> "lines.py##line_to_string"
+	"__init__.py#format_file_in_place" -> "__init__.py##decode_bytes"
+	"comments.py#generate_ignored_nodes" -> "comments.py##contains_fmt_on_at_column"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform" -> "rusty.py##Ok"
+	"__init__.py#read_pyproject_toml" -> "files.py##find_pyproject_toml"
+	"strings.py#normalize_string_quotes" -> "strings.py##_cached_compile"
+	"handle_ipynb_magics.py#jupyter_dependencies_are_installed" -> "output.py##out"
+	"__init__.py#format_cell" -> "__init__.py##validate_cell"
+	"__init__.py#main" -> "report.py##Report"
+	"__init__.py#format_cell" -> "handle_ipynb_magics.py##mask_cell"
+	"parsing.py#get_grammars" -> "mode.py##supports_feature"
+	"__init__.py#patched_main" -> "__init__.py##main"
+	"linegen.py#LineGenerator#transform_line" -> "trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper"
+	"__init__.py#get_future_imports#get_imports_from_children" -> "__init__.py#get_future_imports#get_imports_from_children"
+	"debug.py#DebugVisitor#visit_default" -> "output.py##out"
+	"__init__.py#reformat_many" -> "concurrency.py##shutdown"
+	"handle_ipynb_magics.py#mask_cell" -> "handle_ipynb_magics.py##replace_cell_magics"
+	"linegen.py#LineGenerator#bracket_split_build_line" -> "lines.py#Line#append"
+	"brackets.py#max_delimiter_priority_in_atom" -> "brackets.py#BracketTracker#mark"
+	"linegen.py#LineGenerator#visit_ENDMARKER" -> "linegen.py#LineGenerator#visit_default"
+	"linegen.py#LineGenerator#visit_default" -> "lines.py#Line#append"
+	"__init__.py#_format_str_once" -> "linegen.py##LineGenerator"
+	"trans.py#StringTransformer#CustomSplitMapMixin#add_custom_splits" -> "trans.py#StringTransformer#CustomSplitMapMixin#_get_key"
+	"__init__.py#format_stdin_to_stdout" -> "output.py##diff"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_splitter_match" -> "trans.py##TErr"
+	"files.py#gen_python_files" -> "files.py##path_is_excluded"
+	"__init__.py#assert_equivalent" -> "output.py##diff"
+	"nodes.py#is_docstring" -> "nodes.py##prev_siblings_are"
+	"nodes.py#is_empty_par" -> "nodes.py##is_empty_rpar"
+	"comments.py#list_comments" -> "comments.py##make_comment"
+	"linegen.py#LineGenerator#visit_simple_stmt" -> "linegen.py#LineGenerator#line"
+	"__init__.py#get_features_used" -> "nodes.py##is_string_token"
+	"__init__.py#get_sources" -> "files.py##gen_python_files"
+	"linegen.py#LineGenerator#visit_stmt" -> "nodes.py##is_name_token"
+	"lines.py#Line#append_comment" -> "brackets.py#BracketTracker#any_open_brackets"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform" -> "lines.py#Line#append"
+	"__init__.py#main" -> "__init__.py##reformat_many"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_assert_match" -> "trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#StringParser"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_get_break_idx" -> "trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_get_illegal_split_indices"
+	"__init__.py#format_stdin_to_stdout" -> "files.py##wrap_stream_for_windows"
+	"trans.py#StringTransformer#StringMerger#do_transform" -> "trans.py#StringTransformer#StringMerger#_merge_string_group"
+	"__init__.py#main" -> "output.py##out"
+	"trans.py#StringTransformer#StringMerger#_validate_msg" -> "rusty.py##Ok"
+	"linegen.py#LineGenerator#bracket_split_build_line" -> "lines.py#Line#comments_after"
+	"files.py#gen_python_files" -> "report.py#Report#path_ignored"
+	"linegen.py#LineGenerator#bracket_split_succeeded_or_raise" -> "linegen.py##CannotSplit"
+	"parsing.py#lib2to3_parse" -> "parsing.py##get_grammars"
+	"trans.py#StringTransformer#__call__" -> "trans.py#StringTransformer#do_transform"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_splitter_match" -> "trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_return_match"
+	"nodes.py#is_yield" -> "nodes.py##is_name_token"
+	"files.py#normalize_path_maybe_ignore" -> "report.py#Report#path_ignored"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_transform" -> "lines.py##append_leaves"
+	"report.py#Report#done" -> "output.py##out"
+	"linegen.py#LineGenerator#right_hand_split" -> "linegen.py#LineGenerator#bracket_split_build_line"
+	"lines.py#Line#contains_uncollapsable_type_comments" -> "nodes.py##is_type_comment"
+	"__init__.py#assert_stable" -> "output.py##diff"
+	"linegen.py#LineGenerator#right_hand_split" -> "nodes.py##ensure_visible"
+	"__init__.py#get_sources" -> "handle_ipynb_magics.py##jupyter_dependencies_are_installed"
+	"linegen.py#LineGenerator#visit_simple_stmt" -> "linegen.py#LineGenerator#visit_default"
+	"__init__.py#get_sources" -> "report.py#Report#path_ignored"
+	"cache.py#filter_cached" -> "cache.py##get_cache_info"
+	"linegen.py#LineGenerator#standalone_comment_split#append_to_line" -> "lines.py#Line#append"
+	"__init__.py#format_file_in_place" -> "output.py##color_diff"
+	"__init__.py#main" -> "output.py##out"
+	"linegen.py#LineGenerator#right_hand_split" -> "lines.py#Line#contains_multiline_strings"
+	"trans.py#StringTransformer#__call__" -> "trans.py##CannotTransform"
+	"linegen.py#LineGenerator#delimiter_split" -> "lines.py#Line#append"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_transform" -> "lines.py#Line#append"
+	"__init__.py#_format_str_once" -> "lines.py##EmptyLineTracker"
+	"linegen.py#LineGenerator#normalize_invisible_parens" -> "nodes.py##wrap_in_parentheses"
+	"trans.py#StringTransformer#__call__" -> "rusty.py#Ok#Err#err"
+	"debug.py#DebugVisitor#visit_default" -> "output.py##out"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_dict_match" -> "trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#StringParser#parse"
+	"__init__.py#format_file_contents" -> "__init__.py##format_ipynb_string"
+	"debug.py#DebugVisitor#visit_default" -> "output.py##out"
+	"linegen.py#LineGenerator#visit_default" -> "linegen.py#LineGenerator#line"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#do_transform" -> "lines.py##append_leaves"
+	"handle_ipynb_magics.py#replace_cell_magics" -> "handle_ipynb_magics.py##Replacement"
+	"handle_ipynb_magics.py#CellMagicFinder#MagicFinder#visit_Expr" -> "handle_ipynb_magics.py##_is_ipython_magic"
+	"lines.py#EmptyLineTracker#_maybe_empty_lines" -> "lines.py#EmptyLineTracker#_maybe_empty_lines_for_class_or_def"
+	"nodes.py#is_multiline_string" -> "strings.py##has_triple_quotes"
+	"linegen.py#LineGenerator#visit_STRING" -> "strings.py##normalize_string_prefix"
+	"trans.py#StringTransformer#StringMerger#_merge_string_group" -> "nodes.py##replace_child"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_splitter_match" -> "trans.py##TErr"
+	"linegen.py#LineGenerator#visit_simple_stmt" -> "linegen.py#LineGenerator#line"
+	"trans.py#TErr" -> "trans.py##CannotTransform"
+	"linegen.py#LineGenerator#visit_STRING" -> "strings.py##get_string_prefix"
+	"__init__.py#format_cell" -> "handle_ipynb_magics.py##remove_trailing_semicolon"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_splitter_match" -> "trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_else_match"
+	"linegen.py#LineGenerator#normalize_invisible_parens" -> "nodes.py##is_lpar_token"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_normalize_f_string" -> "strings.py##assert_is_leaf_string"
+	"trans.py#StringTransformer#__call__" -> "rusty.py#Ok#ok"
+	"linegen.py#LineGenerator#visit_default" -> "brackets.py#BracketTracker#any_open_brackets"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_splitter_match" -> "trans.py#StringTransformer#CustomSplitMapMixin#has_custom_splits"
+	"linegen.py#LineGenerator#right_hand_split" -> "lines.py#Line#contains_standalone_comments"
+	"trans.py#StringTransformer#StringMerger#_remove_backslash_line_continuation_chars" -> "lines.py##append_leaves"
+	"linegen.py#LineGenerator#run_transformer" -> "lines.py#Line#contains_uncollapsable_type_comments"
+	"linegen.py#LineGenerator#maybe_make_parens_invisible_in_atom" -> "nodes.py##is_yield"
+	"linegen.py#LineGenerator#normalize_invisible_parens" -> "nodes.py##is_rpar_token"
+	"__init__.py#check_stability_and_equivalence" -> "__init__.py##assert_stable"
+	"linegen.py#LineGenerator#delimiter_split" -> "linegen.py##CannotSplit"
+	"trans.py#StringTransformer#StringMerger#do_transform" -> "trans.py#StringTransformer#StringMerger#_remove_backslash_line_continuation_chars"
+	"numerics.py#normalize_numeric_literal" -> "numerics.py##format_complex_number"
+	"__init__.py#path_empty" -> "output.py##out"
+	"strings.py#normalize_string_quotes" -> "strings.py##_cached_compile"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform#maybe_append_string_operators" -> "nodes.py##replace_child"
+	"brackets.py#BracketTracker#mark" -> "brackets.py##is_split_before_delimiter"
+	"linegen.py#LineGenerator#normalize_invisible_parens" -> "nodes.py##wrap_in_parentheses"
+	"__init__.py#detect_target_versions" -> "__init__.py##get_features_used"
+	"linegen.py#LineGenerator#delimiter_split" -> "linegen.py#LineGenerator#delimiter_split#append_to_line"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform" -> "strings.py##get_string_prefix"
+	"trans.py#StringTransformer#StringMerger#_remove_backslash_line_continuation_chars" -> "trans.py##TErr"
+	"linegen.py#LineGenerator#standalone_comment_split" -> "lines.py#Line#contains_standalone_comments"
+	"parsing.py#stringify_ast" -> "parsing.py##fixup_ast_constants"
+	"linegen.py#LineGenerator#delimiter_split" -> "lines.py#Line#comments_after"
+	"linegen.py#LineGenerator#visit_suite" -> "nodes.py#Visitor#visit"
+	"__init__.py#format_cell" -> "__init__.py##format_str"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform" -> "trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#StringParser#is_valid_index_factory"
+	"trans.py#StringTransformer#StringMerger#_remove_backslash_line_continuation_chars" -> "strings.py##has_triple_quotes"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_get_break_idx#passes_all_checks" -> "trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_get_break_idx#breaks_unsplittable_expression"
+	"__init__.py#assert_equivalent" -> "parsing.py##parse_ast"
+	"trans.py#StringTransformer#StringMerger#_merge_string_group" -> "trans.py#StringTransformer#StringMerger#_validate_msg"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_transform" -> "nodes.py##replace_child"
+	"numerics.py#normalize_numeric_literal" -> "numerics.py##format_hex"
+	"parsing.py#lib2to3_parse" -> "parsing.py##InvalidInput"
+	"linegen.py#LineGenerator#visit_INDENT" -> "linegen.py#LineGenerator#visit_default"
+	"trans.py#StringTransformer#StringMerger#_merge_string_group" -> "trans.py#StringTransformer#CustomSplitMapMixin#add_custom_splits"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#do_transform" -> "lines.py#Line#clone"
+	"debug.py#DebugVisitor#show" -> "debug.py##DebugVisitor"
+	"linegen.py#LineGenerator#visit_simple_stmt" -> "linegen.py#LineGenerator#visit_default"
+	"__init__.py#reformat_code" -> "report.py#Report#failed"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform" -> "lines.py##append_leaves"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_maybe_normalize_string_quotes" -> "strings.py##normalize_string_quotes"
+	"linegen.py#LineGenerator#left_hand_split" -> "linegen.py#LineGenerator#bracket_split_build_line"
+	"trans.py#hug_power_op#is_simple_operand" -> "trans.py#hug_power_op#is_simple_lookup"
+	"parsing.py#get_grammars" -> "mode.py##supports_feature"
+	"lines.py#Line#append_safe" -> "lines.py#Line#append"
+	"linegen.py#LineGenerator#maybe_make_parens_invisible_in_atom" -> "nodes.py##is_empty_tuple"
+	"__init__.py#main" -> "__init__.py##get_sources"
+	"lines.py#Line#append" -> "lines.py#Line#has_magic_trailing_comma"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_assign_match" -> "nodes.py##is_empty_par"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_transform" -> "rusty.py##Ok"
+	"__init__.py#read_pyproject_toml" -> "files.py##parse_pyproject_toml"
+	"trans.py#StringTransformer#StringMerger#do_match" -> "trans.py##TErr"
+	"linegen.py#LineGenerator#generate_trailers_to_omit" -> "nodes.py##is_one_tuple_between"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#do_transform" -> "lines.py##append_leaves"
+	"brackets.py#BracketTracker#mark" -> "brackets.py#BracketTracker#maybe_increment_for_loop_variable"
+	"trans.py#StringTransformer#StringMerger#do_transform" -> "rusty.py##Ok"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform" -> "trans.py#StringTransformer#CustomSplitMapMixin#pop_custom_splits"
+	"trans.py#StringTransformer#StringMerger#_remove_backslash_line_continuation_chars" -> "lines.py#Line#clone"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#do_match" -> "trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#StringParser#is_valid_index_factory"
+	"__init__.py#get_sources" -> "__init__.py##re_compile_maybe_verbose"
+	"__init__.py#" -> "report.py#Report#done"
+	"linegen.py#LineGenerator#right_hand_split" -> "linegen.py##CannotSplit"
+	"trans.py#hug_power_op" -> "trans.py##CannotTransform"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#do_match" -> "nodes.py##is_empty_rpar"
+	"files.py#gen_python_files" -> "report.py#Report#path_ignored"
+	"linegen.py#LineGenerator#right_hand_split" -> "nodes.py##ensure_visible"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform" -> "trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#fstring_contains_expr"
+	"files.py#find_pyproject_toml" -> "files.py##find_user_pyproject_toml"
+	"linegen.py#LineGenerator#visit_STRING" -> "nodes.py##is_docstring"
+	"__init__.py#get_sources" -> "files.py##normalize_path_maybe_ignore"
+	"__init__.py#main" -> "__init__.py##reformat_one"
+	"trans.py#StringTransformer#__call__" -> "rusty.py#Ok#Err#err"
+	"trans.py#StringTransformer#StringMerger#_validate_msg" -> "strings.py##has_triple_quotes"
+	"linegen.py#LineGenerator#bracket_split_build_line" -> "linegen.py#LineGenerator#normalize_prefix"
+	"linegen.py#LineGenerator#bracket_split_build_line" -> "linegen.py#LineGenerator#should_split_line"
+	"lines.py#is_line_short_enough" -> "lines.py#Line#contains_standalone_comments"
+	"brackets.py#max_delimiter_priority_in_atom" -> "brackets.py#BracketTracker#mark"
+	"files.py#gen_python_files" -> "files.py##gen_python_files"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#do_transform" -> "trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#StringParser"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_get_illegal_split_indices" -> "trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_iter_fexpr_slices"
+	"lines.py#Line#append" -> "lines.py#Line#has_magic_trailing_comma"
+	"trans.py#hug_power_op" -> "trans.py#hug_power_op#is_simple_operand"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform" -> "trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_maybe_normalize_string_quotes"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_splitter_match" -> "trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_assert_match"
+	"parsing.py#stringify_ast" -> "parsing.py##stringify_ast"
+	"linegen.py#LineGenerator#delimiter_split" -> "linegen.py##CannotSplit"
+	"lines.py#Line#append" -> "lines.py#Line#append_comment"
+	"linegen.py#LineGenerator#run_transformer" -> "lines.py#Line#contains_multiline_strings"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform" -> "trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform#maybe_append_string_operators"
+	"linegen.py#LineGenerator#delimiter_split" -> "linegen.py#LineGenerator#delimiter_split#append_to_line"
+	"linegen.py#LineGenerator#standalone_comment_split" -> "lines.py#Line#comments_after"
+	"linegen.py#LineGenerator#visit_async_stmt" -> "nodes.py#Visitor#visit"
+	"__init__.py#main" -> "output.py##out"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_splitter_match" -> "trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#StringParser#parse"
+	"lines.py#EmptyLineTracker#maybe_empty_lines" -> "lines.py#EmptyLineTracker#_maybe_empty_lines"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_assign_match" -> "trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#StringParser#is_valid_index_factory"
+	"trans.py#StringTransformer#StringMerger#do_transform" -> "rusty.py#Ok#ok"
+	"__init__.py#assert_equivalent" -> "parsing.py##stringify_ast"
+	"__init__.py#_format_str_once" -> "nodes.py#Visitor#visit"
+	"report.py#Report#failed" -> "output.py##err"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_get_illegal_split_indices" -> "trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_iter_nameescape_slices"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_iter_fexpr_slices" -> "strings.py##get_string_prefix"
+	"cache.py#" -> "cache.py##get_cache_dir"
+	"linegen.py#LineGenerator#generate_trailers_to_omit" -> "nodes.py##is_one_tuple_between"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_get_break_idx" -> "trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_get_break_idx#passes_all_checks"
+	"__init__.py#reformat_one" -> "cache.py##read_cache"
+	"linegen.py#LineGenerator#dont_increase_indentation#split_wrapper" -> "linegen.py#LineGenerator#normalize_prefix"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_assign_match" -> "trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#StringParser#parse"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_splitter_match" -> "trans.py##TErr"
+	"linegen.py#LineGenerator#run_transformer" -> "lines.py##is_line_short_enough"
+	"linegen.py#LineGenerator#run_transformer" -> "lines.py#Line#clone"
+	"handle_ipynb_magics.py#CellMagicFinder#visit_Expr" -> "handle_ipynb_magics.py##_get_str_args"
+	"__init__.py#get_sources" -> "files.py##get_gitignore"
+	"files.py#get_gitignore" -> "output.py##err"
+	"strings.py#get_string_prefix" -> "strings.py##assert_is_leaf_string"
+	"linegen.py#LineGenerator#maybe_make_parens_invisible_in_atom" -> "nodes.py##is_walrus_assignment"
+	"lines.py#append_leaves" -> "lines.py#Line#comments_after"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_assign_match" -> "trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#StringParser"
+	"linegen.py#LineGenerator#delimiter_split" -> "linegen.py##CannotSplit"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_splitter_match" -> "trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_assign_match"
+	"linegen.py#LineGenerator#visit_default" -> "strings.py##normalize_string_prefix"
+	"__init__.py#reformat_one" -> "report.py#Report#failed"
+	"linegen.py#LineGenerator#standalone_comment_split" -> "linegen.py#LineGenerator#standalone_comment_split#append_to_line"
+	"trans.py#StringTransformer#StringMerger#_merge_string_group" -> "trans.py#StringTransformer#CustomSplit"
+	"linegen.py#LineGenerator#visit_simple_stmt" -> "linegen.py#LineGenerator#line"
+	"parsing.py#get_grammars" -> "mode.py##supports_feature"
+	"trans.py#StringTransformer#StringMerger#_merge_string_group" -> "strings.py##get_string_prefix"
+	"linegen.py#LineGenerator#transform_line#_rhs" -> "linegen.py#LineGenerator#right_hand_split"
+	"__init__.py#assert_stable" -> "output.py##dump_to_file"
+	"linegen.py#LineGenerator#run_transformer" -> "trans.py##CannotTransform"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_get_break_idx" -> "trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_get_break_idx#passes_all_checks"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#do_transform" -> "lines.py#Line#comments_after"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_return_match" -> "nodes.py##parent_type"
+	"__init__.py#reformat_one" -> "cache.py##get_cache_info"
+	"lines.py#is_line_short_enough" -> "lines.py##line_to_string"
+	"__init__.py#" -> "cache.py##write_cache"
+	"__init__.py#main" -> "__init__.py##reformat_code"
+	"__init__.py#" -> "report.py#Report#done"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#_assert_match" -> "trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#StringParser#is_valid_index_factory"
+	"linegen.py#LineGenerator#visit_factor" -> "linegen.py#LineGenerator#visit_default"
+	"files.py#find_pyproject_toml" -> "output.py##err"
+	"trans.py#StringTransformer#StringMerger#_merge_string_group" -> "strings.py##get_string_prefix"
+	"lines.py#Line#enumerate_with_length" -> "lines.py#Line#comments_after"
+	"trans.py#hug_power_op" -> "lines.py##Line"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#do_match" -> "trans.py##TErr"
+	"trans.py#StringTransformer#StringMerger#_validate_msg" -> "trans.py##TErr"
+	"linegen.py#LineGenerator#left_hand_split" -> "linegen.py##CannotSplit"
+	"__init__.py#main" -> "mode.py##Mode"
+	"linegen.py#LineGenerator#delimiter_split#append_to_line" -> "lines.py##Line"
+	"trans.py#StringTransformer#StringMerger#_validate_msg" -> "trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#StringParser#is_valid_index_factory"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform" -> "trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_maybe_normalize_string_quotes"
+	"linegen.py#LineGenerator#maybe_make_parens_invisible_in_atom" -> "linegen.py#LineGenerator#maybe_make_parens_invisible_in_atom"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_transform" -> "lines.py#Line#append"
+	"linegen.py#LineGenerator#transform_line#_rhs" -> "lines.py##is_line_short_enough"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#_validate" -> "trans.py##TErr"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform" -> "trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform#maybe_append_string_operators"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#do_splitter_match" -> "rusty.py##Ok"
+	"linegen.py#LineGenerator#visit_power" -> "linegen.py#LineGenerator#visit_default"
+	"output.py#out" -> "output.py##_out"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_transform" -> "trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#_normalize_f_string"
+	"lines.py#Line#is_complex_subscript" -> "nodes.py##child_towards"
+	"linegen.py#LineGenerator#right_hand_split" -> "lines.py##can_omit_invisible_parens"
+	"linegen.py#LineGenerator#standalone_comment_split" -> "linegen.py##CannotSplit"
+	"linegen.py#LineGenerator#bracket_split_build_line" -> "lines.py##Line"
+	"linegen.py#LineGenerator#visit_STANDALONE_COMMENT" -> "linegen.py#LineGenerator#visit_default"
+	"lines.py#Line#contains_multiline_strings" -> "nodes.py##is_multiline_string"
+	"linegen.py#LineGenerator#right_hand_split" -> "linegen.py#LineGenerator#bracket_split_build_line"
+	"linegen.py#LineGenerator#run_transformer" -> "lines.py##append_leaves"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#do_match" -> "trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#StringParenWrapper#StringParser"
+	"lines.py#Line#contains_uncollapsable_type_comments" -> "nodes.py##is_type_comment"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_splitter_match" -> "rusty.py##Ok"
+	"trans.py#StringTransformer#StringMerger#StringParenStripper#BaseStringSplitter#StringSplitter#do_splitter_match" -> "nodes.py##is_empty_rpar"
+	"linegen.py#LineGenerator#transform_line" -> "trans.py#StringTransformer#StringMerger#StringParenStripper"
+	"linegen.py#LineGenerator#standalone_comment_split" -> "linegen.py#LineGenerator#standalone_comment_split#append_to_line"
+	"linegen.py#LineGenerator#left_hand_split" -> "linegen.py#LineGenerator#bracket_split_succeeded_or_raise"
+}
