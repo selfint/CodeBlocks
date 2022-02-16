@@ -3,10 +3,12 @@ import shutil
 import subprocess
 import tempfile
 from pathlib import Path
+import time
 from typing import Tuple, List, Set
 
 from code_blocks.resolver import Resolver
 from code_blocks.lsp_client import LspClient
+from code_blocks.lsp_server import LspServer
 from code_blocks.types import ResolvedReference, Reference, Definition
 
 
@@ -21,13 +23,7 @@ class LspTestEnv:
             full_path.parent.mkdir(parents=True, exist_ok=True)
             full_path.write_text(source)
 
-        self._lsp_proc: subprocess.Popen = subprocess.Popen(
-            "pyright-langserver --stdio",
-            shell=True,
-            cwd=self._tempdir,
-            stdin=subprocess.PIPE,
-            stdout=subprocess.PIPE,
-        )
+        self.lsp_server = LspServer(self._tempdir)
 
         print(1)
 
@@ -40,8 +36,8 @@ class LspTestEnv:
         return f"file://{self._tempdir}"
 
     def __del__(self):
+        self.lsp_server.stop()
         shutil.rmtree(self._tempdir, ignore_errors=True)
-        self._lsp_proc.terminate()
 
 
 def assert_got_expected_resolved_references_from_definitions_and_references(
@@ -52,7 +48,7 @@ def assert_got_expected_resolved_references_from_definitions_and_references(
 ):
     test_env = LspTestEnv(sources)
 
-    lsp_client = LspClient(test_env.lsp_proc_id, test_env.root_uri)
+    lsp_client = LspClient(test_env.lsp_server)
 
     resolver = Resolver(lsp_client, test_env.root_uri)
 

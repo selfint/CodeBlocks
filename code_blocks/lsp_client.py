@@ -18,6 +18,8 @@ from sansio_lsp_client.structs import (
     TextDocumentPosition,
 )
 
+from code_blocks.lsp_server import LspServer
+
 
 class PathReader:
     def __init__(self, path: Path, queue: "Queue[bytes]") -> None:
@@ -46,18 +48,17 @@ class PathReader:
 
 
 class LspClient:
-    def __init__(self, lsp_proc_id: int, root_uri: str) -> None:
-        self._lsp_proc_id = lsp_proc_id
-        self._root_uri = root_uri
+    def __init__(self, lsp_server: LspServer) -> None:
+        self._lsp_server = lsp_server
 
-        self._lsp_stdin = Path(f"/proc/{self._lsp_proc_id}/fd/0")
-        self._lsp_stdout = Path(f"/proc/{self._lsp_proc_id}/fd/1")
+        self._lsp_stdin = Path(f"/proc/{self._lsp_server._lsp_proc_id}/fd/0")
+        self._lsp_stdout = Path(f"/proc/{self._lsp_server._lsp_proc_id}/fd/1")
 
         self._lsp_stdout_q: "Queue[bytes]" = Queue()
         self._lsp_stdout_reader = PathReader(self._lsp_stdout, self._lsp_stdout_q)
 
         # start client (implicitly sends an "initialize" request to the lsp)
-        self._client = Client(lsp_proc_id, root_uri)
+        self._client = Client(self._lsp_server._lsp_proc_id, self._lsp_server._root_uri)
         self._client_events: "Queue[Event]" = Queue()
 
         # start client event reader
