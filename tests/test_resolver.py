@@ -114,3 +114,86 @@ foo()
     assert_got_expected_resolved_references_from_definitions_and_references(
         sources, definitions, references, expected_resolved_references
     )
+
+
+def test_resolve_multiple_files_multiple_references():
+    source1 = """
+from file_two import func_two
+
+def func_one():
+    pass
+
+func_one()
+func_two()
+    """
+    path1 = ("file_one.py",)
+
+    source2 = """
+from file_three import func_three
+
+def func_two():
+    pass
+
+func_three()
+    """
+    path2 = ("file_two.py",)
+
+    source3 = """
+def func_three():
+    pass
+    """
+    path3 = ("file_three.py",)
+
+    sources = [(source1, path1), (source2, path2), (source3, path3)]
+
+    from code_blocks.parser import Parser
+
+    p = Parser()
+    for source, path in sources:
+        p.consume(source, path)
+
+    definitions = [
+        Definition(
+            row=4,
+            col=4,
+            scope=(),
+            path=("file_one.py",),
+            name="func_one",
+            kind="function",
+        ),
+        Definition(
+            row=4,
+            col=4,
+            scope=(),
+            path=("file_two.py",),
+            name="func_two",
+            kind="function",
+        ),
+        Definition(
+            row=2,
+            col=4,
+            scope=(),
+            path=("file_three.py",),
+            name="func_three",
+            kind="function",
+        ),
+    ]
+
+    references = [
+        Reference(row=7, col=0, scope=(), path=("file_one.py",)),
+        Reference(row=8, col=0, scope=(), path=("file_one.py",)),
+        Reference(row=7, col=0, scope=(), path=("file_two.py",)),
+    ]
+
+    d = definitions
+    r = references
+
+    expected_resolved_references = {
+        ResolvedReference(reference=r[0], definition=d[0]),
+        ResolvedReference(reference=r[1], definition=d[1]),
+        ResolvedReference(reference=r[2], definition=d[2]),
+    }
+
+    assert_got_expected_resolved_references_from_definitions_and_references(
+        sources, set(definitions), set(references), expected_resolved_references
+    )

@@ -31,7 +31,7 @@ class Resolver:
         self._root_uri = root_uri
 
     def _get_next_event(self, event_type: Type[Event] = Event) -> Any:
-        self._lsp_client._get_next_event(event_type)
+        self._lsp_client._await_event(event_type)
 
     def reference_to_text_document_position(
         self, reference: Reference

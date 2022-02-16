@@ -1,12 +1,17 @@
-from queue import Queue
+import time
 from pathlib import Path
+from queue import Empty, Queue
 from threading import Thread
-from typing import Any, Type
+from typing import Any, Optional, Type
 
 from sansio_lsp_client.client import Client
 from sansio_lsp_client.events import ConfigurationRequest
 from sansio_lsp_client.events import Definition as DefinitionEvent
-from sansio_lsp_client.events import Event, RegisterCapabilityRequest
+from sansio_lsp_client.events import (
+    Event,
+    Initialized,
+    RegisterCapabilityRequest,
+)
 from sansio_lsp_client.structs import (
     TextDocumentIdentifier,
     TextDocumentItem,
@@ -53,50 +58,83 @@ class LspClient:
 
         # start client (implicitly sends an "initialize" request to the lsp)
         self._client = Client(lsp_proc_id, root_uri)
+        self._client_events: "Queue[Event]" = Queue()
+
+        # start client event reader
+        self._start_client_event_reader()
 
         # send initialize message to lsp
         self._lsp_stdin.write_bytes(self._client.send())
 
         # wait for client to initialize
-        while not self._client.is_initialized:
-            data = self._lsp_stdout_q.get()
-            for event in self._client.recv(data):
-                print(event)
+        _ = self._await_event(Initialized)
 
         # send initialized message to server
         self._lsp_stdin.write_bytes(self._client.send())
 
     def stop(self):
         self._lsp_stdout_reader.stop()
+        self._stop_client_event_reader()
 
-    def _get_next_event(self, event_type: Type[Event] = Event) -> Any:
-        while True:
-            data = self._lsp_stdout_q.get()
-            for event in self._client.recv(data):
+    def _start_client_event_reader(self):
+        self._read_events = True
+        self._client_event_reader = Thread(target=self._read_client_events)
+        self._client_event_reader.start()
+
+    def _stop_client_event_reader(self):
+        self._read_events = False
+        self._client_event_reader.join()
+
+    def _read_client_events(self):
+        while self._read_events:
+            try:
+                data = self._lsp_stdout_q.get(timeout=0.5)
+            except Empty:
+                if self._read_events:
+                    continue
+                else:
+                    break
+            else:
+                for event in self._client.recv(data):
+                    self._client_events.put(event)
+
+    def _await_event(
+        self, event_type: Type[Event] = Event, timeout: Optional[float] = None
+    ) -> Any:
+        if timeout is not None:
+            start = time.time()
+
+        while timeout is None or time.time() - start < timeout:
+            if timeout is not None:
+                print("@ WAT @", (time.time() - start) / timeout)
+            while not self._client_events.empty():
+                event = self._client_events.get()
                 if isinstance(event, event_type):
+                    print("@ GOT @", repr(event))
                     return event
                 else:
-                    print("@@@@", event)
+                    print("@ IGN @", repr(event))
 
     def notify_open(self, text_document_item: TextDocumentItem):
         # notify LSP we opened the file
         self._client.did_open(text_document_item)
         self._lsp_stdin.write_bytes(self._client.send())
 
-        # reply to RegisterCapabilityRequest
-        next_event: RegisterCapabilityRequest = self._get_next_event(
-            RegisterCapabilityRequest
+        # reply to RegisterCapabilityRequest if needed
+        next_event: RegisterCapabilityRequest = self._await_event(
+            RegisterCapabilityRequest, timeout=1
         )
-        next_event.reply()
-        self._lsp_stdin.write_bytes(self._client.send())
-
-        # reply to 3 ConfigurationRequest
-        for _ in range(3):
-            next_event: ConfigurationRequest = self._get_next_event(
-                ConfigurationRequest
-            )
+        if next_event is not None:
             next_event.reply()
             self._lsp_stdin.write_bytes(self._client.send())
+
+            # reply to 3 ConfigurationRequest
+            for _ in range(3):
+                next_event: ConfigurationRequest = self._await_event(
+                    ConfigurationRequest
+                )
+                next_event.reply()
+                self._lsp_stdin.write_bytes(self._client.send())
 
     def notify_close(self, text_document_identifier: TextDocumentIdentifier):
         # notify LSP we closed the file
@@ -112,6 +150,6 @@ class LspClient:
         self._lsp_stdin.write_bytes(self._client.send())
 
         # wait for response
-        definition_event: DefinitionEvent = self._get_next_event(DefinitionEvent)
+        definition_event: DefinitionEvent = self._await_event(DefinitionEvent)
 
         return definition_event
