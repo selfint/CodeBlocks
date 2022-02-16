@@ -106,8 +106,6 @@ class LspClient:
             start = time.time()
 
         while timeout is None or time.time() - start < timeout:
-            if timeout is not None:
-                print("@ WAT @", (time.time() - start) / timeout)
             while not self._client_events.empty():
                 event = self._client_events.get()
                 if isinstance(event, event_type):
