@@ -5,7 +5,8 @@ import tempfile
 from pathlib import Path
 from typing import Tuple, List, Set
 
-from code_blocks.resolver import LspClient, Resolver
+from code_blocks.resolver import Resolver
+from code_blocks.lsp_client import LspClient
 from code_blocks.types import ResolvedReference, Reference, Definition
 
 
@@ -55,7 +56,11 @@ def assert_got_expected_resolved_references_from_definitions_and_references(
 
     resolver = Resolver(lsp_client, test_env.root_uri)
 
-    assert resolver.resolve(definitions, references) == expected_resolved_references
+    try:
+        assert resolver.resolve(definitions, references) == expected_resolved_references
+
+    finally:
+        lsp_client.stop()
 
 
 def test_resolve_single_file_single_method():

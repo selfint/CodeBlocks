@@ -1,4 +1,6 @@
+from queue import Queue
 from pathlib import Path
+from threading import Thread
 from typing import Any, Type
 
 from sansio_lsp_client.client import Client
@@ -12,49 +14,81 @@ from sansio_lsp_client.structs import (
 )
 
 
+class PathReader:
+    def __init__(self, path: Path, queue: "Queue[bytes]") -> None:
+        self._read = True
+        self._reader_thread = Thread(target=self._path_to_queue, args=(path, queue))
+        self._reader_thread.start()
+
+    def _path_to_queue(self, path: Path, queue: "Queue[bytes]"):
+        """Push any bytes written to given path to the given queue.
+
+        Will stop reading when _read is set to False.
+
+        Args:
+            path (Path): Path to read bytes from
+            queue (Queue[bytes]): Queue to push bytes to
+        """
+
+        with path.open("rb") as f:
+            while self._read:
+                b = f.read1(1)
+                queue.put(b)
+
+    def stop(self):
+        self._read = False
+        self._reader_thread.join()
+
+
 class LspClient:
     def __init__(self, lsp_proc_id: int, root_uri: str) -> None:
         self._lsp_proc_id = lsp_proc_id
         self._root_uri = root_uri
 
-        self._client = Client(lsp_proc_id, root_uri)
-        self._client_stdin = Path(f"/proc/{self._lsp_proc_id}/fd/0")
-        self._client_stdout = Path(f"/proc/{self._lsp_proc_id}/fd/1")
+        self._lsp_stdin = Path(f"/proc/{self._lsp_proc_id}/fd/0")
+        self._lsp_stdout = Path(f"/proc/{self._lsp_proc_id}/fd/1")
 
-        # send initialize message of client
-        self._client_stdin.write_bytes(self._client.send())
+        self._lsp_stdout_q: "Queue[bytes]" = Queue()
+        self._lsp_stdout_reader = PathReader(self._lsp_stdout, self._lsp_stdout_q)
+
+        # start client (implicitly sends an "initialize" request to the lsp)
+        self._client = Client(lsp_proc_id, root_uri)
+
+        # send initialize message to lsp
+        self._lsp_stdin.write_bytes(self._client.send())
 
         # wait for client to initialize
-        with self._client_stdout.open("rb") as stdout:
-            while not self._client.is_initialized:
-                data = stdout.read(1)
-                for event in self._client.recv(data):
-                    print(event)
+        while not self._client.is_initialized:
+            data = self._lsp_stdout_q.get()
+            for event in self._client.recv(data):
+                print(event)
 
         # send initialized message to server
-        self._client_stdin.write_bytes(self._client.send())
+        self._lsp_stdin.write_bytes(self._client.send())
+
+    def stop(self):
+        self._lsp_stdout_reader.stop()
 
     def _get_next_event(self, event_type: Type[Event] = Event) -> Any:
-        with self._client_stdout.open("rb") as stdout:
-            while True:
-                data = stdout.read(1)
-                for event in self._client.recv(data):
-                    if isinstance(event, event_type):
-                        return event
-                    else:
-                        print("@@@@", event)
+        while True:
+            data = self._lsp_stdout_q.get()
+            for event in self._client.recv(data):
+                if isinstance(event, event_type):
+                    return event
+                else:
+                    print("@@@@", event)
 
     def notify_open(self, text_document_item: TextDocumentItem):
         # notify LSP we opened the file
         self._client.did_open(text_document_item)
-        self._client_stdin.write_bytes(self._client.send())
+        self._lsp_stdin.write_bytes(self._client.send())
 
         # reply to RegisterCapabilityRequest
         next_event: RegisterCapabilityRequest = self._get_next_event(
             RegisterCapabilityRequest
         )
         next_event.reply()
-        self._client_stdin.write_bytes(self._client.send())
+        self._lsp_stdin.write_bytes(self._client.send())
 
         # reply to 3 ConfigurationRequest
         for _ in range(3):
@@ -62,12 +96,12 @@ class LspClient:
                 ConfigurationRequest
             )
             next_event.reply()
-            self._client_stdin.write_bytes(self._client.send())
+            self._lsp_stdin.write_bytes(self._client.send())
 
     def notify_close(self, text_document_identifier: TextDocumentIdentifier):
         # notify LSP we closed the file
         self._client.did_close(text_document_identifier)
-        self._client_stdin.write_bytes(self._client.send())
+        self._lsp_stdin.write_bytes(self._client.send())
 
     def request_definition(
         self, text_document_position: TextDocumentPosition
@@ -75,7 +109,7 @@ class LspClient:
 
         # request definition of reference
         self._client.definition(text_document_position)
-        self._client_stdin.write_bytes(self._client.send())
+        self._lsp_stdin.write_bytes(self._client.send())
 
         # wait for response
         definition_event: DefinitionEvent = self._get_next_event(DefinitionEvent)
