@@ -37,7 +37,7 @@ def main(project: Path, output: Optional[Path] = None):
     print(f"Got {resolved_references=}")
 
     visualizer = GraphvizVisualizer()
-    visualizer.visualize(definitions, references, resolved_references, output)
+    visualizer.visualize(definitions, resolved_references, output)
 
     print("Shutting down LSP client")
     lsp_client.stop()

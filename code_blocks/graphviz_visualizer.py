@@ -2,7 +2,7 @@ from collections import defaultdict
 from pathlib import Path
 import graphviz
 from code_blocks.types import Definition, Reference, ResolvedReference
-from typing import DefaultDict, Dict, List, Optional, Set, Tuple
+from typing import DefaultDict, Optional, Set, Tuple
 
 
 class GraphvizVisualizer:
@@ -27,20 +27,29 @@ class GraphvizVisualizer:
     def visualize(
         self,
         definitions: Set[Definition],
-        references: Set[Reference],
         resolved_references: Set[ResolvedReference],
         output: Optional[Path] = None,
     ):
-        g = graphviz.Digraph("G", filename=output, format="png", engine="dot")
+        g = graphviz.Digraph("G", filename=output, format="svg", engine="dot")
         g.attr("graph", rankdir="LR")
 
+        # group all definitions and references by their paths
         files: DefaultDict[
             Tuple[str, ...], Tuple[Set[Definition], Set[Reference]]
         ] = defaultdict(lambda: (set(), set()))
-        for d in definitions:
-            files[d.path][0].add(d)
-        for r in references:
-            files[r.path][1].add(r)
+
+        for definition in definitions:
+            files[definition.path][0].add(definition)
+
+        for resolved_reference in resolved_references:
+            if resolved_reference is None:
+                continue
+
+            reference = resolved_reference.reference
+            definition = resolved_reference.definition
+
+            files[definition.path][0].add(definition)
+            files[reference.path][1].add(reference)
 
         for path, (definitions, references) in files.items():
             path_str = "_".join(path)
