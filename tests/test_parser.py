@@ -109,7 +109,7 @@ class Test:
     assert_got_expected_definitions_from_sources(sources, expected_definitions)
 
 
-def test_references():
+def test_function_references():
     source = """
 def foo():
     pass
@@ -121,5 +121,26 @@ foo()
     sources = [(source, path)]
 
     expected_references = {Reference(5, 0, tuple(), path)}
+
+    assert_got_expected_references_from_sources(sources, expected_references)
+
+
+def test_method_references():
+    source = """
+class Test:
+    def foo():
+        pass
+    
+t = Test()
+t.foo()
+    """
+
+    path = ("bar.py",)
+    sources = [(source, path)]
+
+    expected_references = {
+        Reference(6, 4, (), path),
+        Reference(7, 2, (), path),
+    }
 
     assert_got_expected_references_from_sources(sources, expected_references)

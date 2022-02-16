@@ -54,13 +54,22 @@ class Visitor(ast.NodeVisitor):
         self._scope.append(node)
 
     def _visit_reference(self, node: ReferenceNode):
-        reference = Reference(
-            row=node.lineno,
-            col=node.col_offset,
-            scope=tuple(n.name for n in self._scope),
-            path=self._path,
-        )
-        self.references.add(reference)
+        if isinstance(node.func, ast.Name):
+            reference = Reference(
+                row=node.lineno,
+                col=node.col_offset,
+                scope=tuple(n.name for n in self._scope),
+                path=self._path,
+            )
+            self.references.add(reference)
+        elif isinstance(node.func, ast.Attribute):
+            reference = Reference(
+                row=node.lineno,
+                col=node.func.value.end_col_offset + 1,
+                scope=tuple(n.name for n in self._scope),
+                path=self._path,
+            )
+            self.references.add(reference)
 
 
 class Parser:
