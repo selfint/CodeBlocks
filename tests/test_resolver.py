@@ -25,8 +25,6 @@ class LspTestEnv:
 
         self.lsp_server = LspServer(self._tempdir)
 
-        print(1)
-
     @property
     def lsp_proc_id(self) -> int:
         return self._lsp_proc.pid
