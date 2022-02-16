@@ -1,3 +1,4 @@
+from collections import defaultdict
 import os
 from pathlib import Path
 from typing import Any, Optional, Set, Type
@@ -104,10 +105,35 @@ class Resolver:
         :return: Set of resolved references.
         """
 
-        resolved_references = set()
+        # group all references by their file
+        file_reference_groups = defaultdict(set)
         for reference in references:
-            resolved_reference = self.resolve_reference(definitions, reference)
-            resolved_references.add(resolved_reference)
+            file_reference_groups[reference.path].add(reference)
+
+        resolved_references = set()
+        for file_path, file_references in file_reference_groups.items():
+
+            # convert reference relative path to full path uri
+            path_uri = f"{self._root_uri}/{os.path.sep.join(file_path)}"
+
+            # load source file
+            text = uri_to_path(path_uri).read_text()
+
+            # create LSP objects pointing to reference file and position
+            text_document_item = TextDocumentItem(
+                uri=path_uri, languageId="python", version=1, text=text
+            )
+            text_document_identifier = TextDocumentIdentifier(uri=path_uri)
+
+            # notify LSP we opened the file
+            self._lsp_client.notify_open(text_document_item)
+
+            for reference in file_references:
+                resolved_reference = self.resolve_reference(definitions, reference)
+                resolved_references.add(resolved_reference)
+
+            # notify LSP we closed the file
+            self._lsp_client.notify_close(text_document_identifier)
 
         return resolved_references
 
@@ -128,20 +154,11 @@ class Resolver:
         # convert reference relative path to full path uri
         path_uri = f"{self._root_uri}/{os.path.sep.join(reference.path)}"
 
-        # load source file
-        text = uri_to_path(path_uri).read_text()
-
         # create LSP objects pointing to reference file and position
-        text_document_item = TextDocumentItem(
-            uri=path_uri, languageId="python", version=1, text=text
-        )
         text_document_identifier = TextDocumentIdentifier(uri=path_uri)
 
         # LSP starts rows from 0, we start from 1, so we need to subtract 1
         position = Position(line=reference.row - 1, character=reference.col)
-
-        # notify LSP we opened the file
-        self._lsp_client.notify_open(text_document_item)
 
         # get text document position of reference
         text_document_position = TextDocumentPosition(
@@ -158,14 +175,9 @@ class Resolver:
 
         # create a resolved reference if a matching definition was found
         if matching_definition is not None:
-            resolved_reference = ResolvedReference(
+            return ResolvedReference(
                 reference=reference,
                 definition=matching_definition,
             )
         else:
-            resolved_reference = None
-
-        # notify LSP we closed the file
-        self._lsp_client.notify_close(text_document_identifier)
-
-        return resolved_reference
+            return None
