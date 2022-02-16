@@ -227,3 +227,44 @@ t = Test()
     assert_got_expected_resolved_references_from_definitions_and_references(
         sources, set(definitions), set(references), expected_resolved_references
     )
+
+
+def test_resolve_class_method():
+    source = """
+class Test:
+    def __init__(self):
+        pass
+
+    def foo(self):
+        pass
+
+t = Test()
+t.foo()
+    """
+    path = ("foo.py",)
+
+    sources = [(source, path)]
+
+    definitions = [
+        Definition(row=2, col=6, scope=(), path=path, name="Test", kind="class"),
+        Definition(
+            row=3, col=8, scope=("Test",), path=path, name="__init__", kind="function"
+        ),
+        Definition(
+            row=6, col=8, scope=("Test",), path=path, name="foo", kind="function"
+        ),
+    ]
+
+    references = [
+        Reference(row=9, col=4, scope=(), path=path),
+        Reference(row=10, col=2, scope=(), path=path),
+    ]
+
+    expected_resolved_references = {
+        ResolvedReference(reference=references[0], definition=definitions[0]),
+        ResolvedReference(reference=references[1], definition=definitions[2]),
+    }
+
+    assert_got_expected_resolved_references_from_definitions_and_references(
+        sources, set(definitions), set(references), expected_resolved_references
+    )
