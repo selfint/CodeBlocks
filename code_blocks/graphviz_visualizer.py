@@ -31,7 +31,8 @@ class GraphvizVisualizer:
         resolved_references: Set[ResolvedReference],
         output: Optional[Path] = None,
     ):
-        g = graphviz.Digraph("G", filename=output, engine="fdp")
+        g = graphviz.Digraph("G", filename=output, format="png", engine="dot")
+        g.attr("graph", rankdir="LR")
 
         files: DefaultDict[
             Tuple[str, ...], Tuple[Set[Definition], Set[Reference]]
