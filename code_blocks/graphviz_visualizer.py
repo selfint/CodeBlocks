@@ -52,7 +52,7 @@ class GraphvizVisualizer:
             files[reference.path][1].add(reference)
 
         for path, (definitions, references) in files.items():
-            path_str = "_".join(path)
+            path_str = "/".join(path)
             subgraph = graphviz.Digraph(f"cluster_{path_str}")
             subgraph.attr("graph", rankdir="LR")
             subgraph.attr("graph", label=path_str)
@@ -89,12 +89,16 @@ class GraphvizVisualizer:
 
             g.subgraph(subgraph)
 
+        # dedup edges
+        edges = set()
         for resolved_reference in resolved_references:
             if resolved_reference is None:
                 continue
-            g.edge(
-                tail_name=self.reference_to_id(resolved_reference.reference),
-                head_name=self.definition_to_id(resolved_reference.definition),
-            )
+            tail_name = self.reference_to_id(resolved_reference.reference)
+            head_name = self.definition_to_id(resolved_reference.definition)
+            edges.add((tail_name, head_name))
+
+        for tail_name, head_name in edges:
+            g.edge(tail_name=tail_name, head_name=head_name)
 
         g.view()
