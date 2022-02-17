@@ -21,7 +21,10 @@ jobs:
       - uses: actions/checkout@v2
       
       - name: Install pyright
-        run: apt install pyright
+        run: sudo pip3 install pyright
+      
+      - name: Install poetry
+        run: sudo apt install poetry
 
       - name: Install
         run: poetry install
