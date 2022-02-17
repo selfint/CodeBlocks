@@ -144,3 +144,57 @@ t.foo()
     }
 
     assert_got_expected_references_from_sources(sources, expected_references)
+
+
+def test_multiple_classes_in_one_file():
+    source = """
+class FirstClass:
+    pass
+    
+
+class SecondClass:
+    pass
+    """
+
+    path = ("bar.py",)
+    sources = [(source, path)]
+
+    expected_definitions = {
+        Definition(2, 6, (), path, "FirstClass", "class"),
+        Definition(6, 6, (), path, "SecondClass", "class"),
+    }
+
+    assert_got_expected_definitions_from_sources(sources, expected_definitions)
+
+
+def test_multiple_classes_with_methods_in_one_file():
+    source = """
+class FirstClass:
+    def __init__(self):
+        pass
+
+    def first_method(self):
+        pass
+    
+
+class SecondClass:
+    def __init__(self):
+        pass
+
+    def second_method(self):
+        pass
+    """
+
+    path = ("bar.py",)
+    sources = [(source, path)]
+
+    expected_definitions = {
+        Definition(2, 6, (), path, "FirstClass", "class"),
+        Definition(3, 8, ("FirstClass",), path, "__init__", "function"),
+        Definition(6, 8, ("FirstClass",), path, "first_method", "function"),
+        Definition(10, 6, (), path, "SecondClass", "class"),
+        Definition(11, 8, ("SecondClass",), path, "__init__", "function"),
+        Definition(14, 8, ("SecondClass",), path, "second_method", "function"),
+    }
+
+    assert_got_expected_definitions_from_sources(sources, expected_definitions)

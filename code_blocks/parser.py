@@ -23,9 +23,12 @@ class Visitor(ast.NodeVisitor):
         self._scope: List[DefinitionNode] = []
 
     def generic_visit(self, node: ast.AST) -> Any:
-        if hasattr(node, "col_offset") and len(self._scope) > 0:
-            if node.col_offset <= self._scope[-1].col_offset:
-                self._scope.pop()
+        while (
+            hasattr(node, "col_offset")
+            and len(self._scope) > 0
+            and node.col_offset <= self._scope[-1].col_offset
+        ):
+            self._scope.pop()
 
         if isinstance(node, DefinitionNode):
             self._visit_definition(node)
