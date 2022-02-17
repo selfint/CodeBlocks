@@ -70,10 +70,11 @@ if __name__ == "__main__":
 
     project: Path = args.project
     output: Path = args.output
+    view: bool = args.view
 
     assert project.is_dir(), "Project path is not a directory"
     assert output is None or not output.exists(), "Output file exists"
 
     project = project.resolve().absolute()
 
-    main(project, output)
+    main(project, output, view)
