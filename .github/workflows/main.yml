@@ -24,22 +24,18 @@ jobs:
         run: sudo pip3 install pyright
       
       - name: Install poetry
-        run: |
-          curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
-          source $HOME/.profile
-          source $HOME/.bash_profile
-          source $HOME/.poetry/env
+        run: curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
 
       - name: Install
-        run: poetry install
+        run: $HOME/.poetry/bin/poetry install
       
       - name: Test
-        run: poetry run pytest
+        run: $HOME/.poetry/bin/poetry run pytest
         
       - name: Build examples
         run: |
           rm examples/*_file/*.gv*
-          for ex in $(/usr/bin/ls examples | grep _file); do poetry run python code_blocks/main.py --project examples/$ex --output examples/$ex/code_blocks.gv ; done
+          for ex in $(/usr/bin/ls examples | grep _file); do $HOME/.poetry/bin/poetry run python code_blocks/main.py --project examples/$ex --output examples/$ex/code_blocks.gv ; done
           
       - name: Update examples
         uses: test-room-7/action-update-file@v1
