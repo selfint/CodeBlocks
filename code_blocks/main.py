@@ -10,7 +10,7 @@ from code_blocks.parser import Parser
 from code_blocks.resolver import Resolver
 
 
-def main(project: Path, output: Optional[Path] = None):
+def main(project: Path, output: Optional[Path] = None, view: bool = False):
     lsp_server = LspServer(str(project))
     print("LSP server started")
 
@@ -39,7 +39,7 @@ def main(project: Path, output: Optional[Path] = None):
     print(f"Resolved: {len(resolved_references)}")
 
     visualizer = GraphvizVisualizer()
-    visualizer.visualize(definitions, resolved_references, output)
+    visualizer.visualize(definitions, resolved_references, output, view)
 
     print("Shutting down LSP client")
     lsp_client.stop()
@@ -56,6 +56,14 @@ if __name__ == "__main__":
     arg_parser.add_argument("-p", "--project", type=Path, help="Path to project")
     arg_parser.add_argument(
         "-o", "--output", type=Path, help="Path to desired output file", required=False
+    )
+    arg_parser.add_argument(
+        "-v",
+        "--view",
+        action="store_true",
+        help="Open .svg file when done",
+        required=False,
+        default=False,
     )
 
     args = arg_parser.parse_args()
