@@ -33,7 +33,7 @@ jobs:
         run: $HOME/.poetry/bin/poetry install
       
       - name: Test
-        run: $HOME/.poetry/bin/poetry run pytest
+        run: $HOME/.poetry/bin/poetry run pytest -s
         
       - name: Build examples
         run: |
