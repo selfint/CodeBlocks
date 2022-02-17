@@ -1,0 +1,218 @@
+digraph G {
+	graph [rankdir=LR]
+	subgraph "cluster_graphviz_visualizer.py" {
+		graph [rankdir=LR]
+		graph [label="graphviz_visualizer.py"]
+		"graphviz_visualizer.py#GraphvizVisualizer#__init__" [label="graphviz_visualizer.py#GraphvizVisualizer#function __init__"]
+		"graphviz_visualizer.py#GraphvizVisualizer#reference_to_id" [label="graphviz_visualizer.py#GraphvizVisualizer#function reference_to_id"]
+		"graphviz_visualizer.py#GraphvizVisualizer#definition_to_id" [label="graphviz_visualizer.py#GraphvizVisualizer#function definition_to_id"]
+		"graphviz_visualizer.py##GraphvizVisualizer" [label="graphviz_visualizer.py##class GraphvizVisualizer"]
+		"graphviz_visualizer.py#GraphvizVisualizer#visualize" [label="graphviz_visualizer.py#GraphvizVisualizer#function visualize"]
+		"graphviz_visualizer.py#GraphvizVisualizer" [label="graphviz_visualizer.py#GraphvizVisualizer"]
+		"graphviz_visualizer.py#GraphvizVisualizer" [label="graphviz_visualizer.py#GraphvizVisualizer"]
+		"graphviz_visualizer.py#GraphvizVisualizer#visualize" [label="graphviz_visualizer.py#GraphvizVisualizer#visualize"]
+		"graphviz_visualizer.py#GraphvizVisualizer#visualize" [label="graphviz_visualizer.py#GraphvizVisualizer#visualize"]
+		"graphviz_visualizer.py#GraphvizVisualizer#visualize" [label="graphviz_visualizer.py#GraphvizVisualizer#visualize"]
+		"graphviz_visualizer.py#GraphvizVisualizer#visualize" [label="graphviz_visualizer.py#GraphvizVisualizer#visualize"]
+		"graphviz_visualizer.py#GraphvizVisualizer#visualize" [label="graphviz_visualizer.py#GraphvizVisualizer#visualize"]
+		"graphviz_visualizer.py#GraphvizVisualizer#visualize" [label="graphviz_visualizer.py#GraphvizVisualizer#visualize"]
+		"graphviz_visualizer.py#GraphvizVisualizer#visualize" [label="graphviz_visualizer.py#GraphvizVisualizer#visualize"]
+		"graphviz_visualizer.py#" [label="graphviz_visualizer.py#"]
+	}
+	subgraph "cluster_parser.py" {
+		graph [rankdir=LR]
+		graph [label="parser.py"]
+		"parser.py##Visitor" [label="parser.py##class Visitor"]
+		"parser.py#Parser#consume" [label="parser.py#Parser#function consume"]
+		"parser.py#Parser#path_line_scopes" [label="parser.py#Parser#function path_line_scopes"]
+		"parser.py#Visitor#generic_visit" [label="parser.py#Visitor#function generic_visit"]
+		"parser.py#Visitor#_visit_definition" [label="parser.py#Visitor#function _visit_definition"]
+		"parser.py#Parser#__init__" [label="parser.py#Parser#function __init__"]
+		"parser.py#Visitor#__init__" [label="parser.py#Visitor#function __init__"]
+		"parser.py#Parser#definitions" [label="parser.py#Parser#function definitions"]
+		"parser.py##Parser" [label="parser.py##class Parser"]
+		"parser.py#Visitor#generic_visit" [label="parser.py#Visitor#generic_visit"]
+		"parser.py#Visitor#_visit_definition" [label="parser.py#Visitor#_visit_definition"]
+		"parser.py#" [label="parser.py#"]
+		"parser.py#Visitor#generic_visit" [label="parser.py#Visitor#generic_visit"]
+		"parser.py#Parser#consume" [label="parser.py#Parser#consume"]
+		"parser.py#Parser#__init__" [label="parser.py#Parser#__init__"]
+		"parser.py#Visitor#__init__" [label="parser.py#Visitor#__init__"]
+	}
+	subgraph "cluster_lsp_client.py" {
+		graph [rankdir=LR]
+		graph [label="lsp_client.py"]
+		"lsp_client.py#LspClient#stop" [label="lsp_client.py#LspClient#function stop"]
+		"lsp_client.py#LspClient#_start_client_event_reader" [label="lsp_client.py#LspClient#function _start_client_event_reader"]
+		"lsp_client.py#LspClient#__init__" [label="lsp_client.py#LspClient#function __init__"]
+		"lsp_client.py#LspClient#notify_open" [label="lsp_client.py#LspClient#function notify_open"]
+		"lsp_client.py#PathReader#stop" [label="lsp_client.py#PathReader#function stop"]
+		"lsp_client.py#LspClient#_await_event" [label="lsp_client.py#LspClient#function _await_event"]
+		"lsp_client.py#PathReader#_path_to_queue" [label="lsp_client.py#PathReader#function _path_to_queue"]
+		"lsp_client.py#LspClient#_read_client_events" [label="lsp_client.py#LspClient#function _read_client_events"]
+		"lsp_client.py#PathReader#__init__" [label="lsp_client.py#PathReader#function __init__"]
+		"lsp_client.py#LspClient#notify_close" [label="lsp_client.py#LspClient#function notify_close"]
+		"lsp_client.py#LspClient#_stop_client_event_reader" [label="lsp_client.py#LspClient#function _stop_client_event_reader"]
+		"lsp_client.py#LspClient#request_definition" [label="lsp_client.py#LspClient#function request_definition"]
+		"lsp_client.py#LspClient#send" [label="lsp_client.py#LspClient#function send"]
+		"lsp_client.py#LspClient#request_references" [label="lsp_client.py#LspClient#function request_references"]
+		"lsp_client.py##LspClient" [label="lsp_client.py##class LspClient"]
+		"lsp_client.py##PathReader" [label="lsp_client.py##class PathReader"]
+		"lsp_client.py#LspClient#_await_event" [label="lsp_client.py#LspClient#_await_event"]
+		"lsp_client.py#LspClient" [label="lsp_client.py#LspClient"]
+		"lsp_client.py#LspClient#__init__" [label="lsp_client.py#LspClient#__init__"]
+		"lsp_client.py#LspClient#_start_client_event_reader" [label="lsp_client.py#LspClient#_start_client_event_reader"]
+		"lsp_client.py#LspClient#request_definition" [label="lsp_client.py#LspClient#request_definition"]
+		"lsp_client.py#LspClient#stop" [label="lsp_client.py#LspClient#stop"]
+		"lsp_client.py#PathReader#__init__" [label="lsp_client.py#PathReader#__init__"]
+		"lsp_client.py#LspClient#request_definition" [label="lsp_client.py#LspClient#request_definition"]
+		"lsp_client.py#LspClient#__init__" [label="lsp_client.py#LspClient#__init__"]
+		"lsp_client.py#LspClient#stop" [label="lsp_client.py#LspClient#stop"]
+		"lsp_client.py#" [label="lsp_client.py#"]
+		"lsp_client.py#LspClient#request_references" [label="lsp_client.py#LspClient#request_references"]
+		"lsp_client.py#LspClient#notify_open" [label="lsp_client.py#LspClient#notify_open"]
+		"lsp_client.py#LspClient#request_references" [label="lsp_client.py#LspClient#request_references"]
+		"lsp_client.py#LspClient#notify_open" [label="lsp_client.py#LspClient#notify_open"]
+		"lsp_client.py#LspClient#__init__" [label="lsp_client.py#LspClient#__init__"]
+		"lsp_client.py#LspClient#__init__" [label="lsp_client.py#LspClient#__init__"]
+		"lsp_client.py#LspClient#notify_close" [label="lsp_client.py#LspClient#notify_close"]
+		"lsp_client.py#LspClient#__init__" [label="lsp_client.py#LspClient#__init__"]
+	}
+	subgraph "cluster_resolver.py" {
+		graph [rankdir=LR]
+		graph [label="resolver.py"]
+		"resolver.py#Resolver#get_definition_references" [label="resolver.py#Resolver#function get_definition_references"]
+		"resolver.py#Resolver#get_definition_resolved_references" [label="resolver.py#Resolver#function get_definition_resolved_references"]
+		"resolver.py#Resolver#__init__" [label="resolver.py#Resolver#function __init__"]
+		"resolver.py#Resolver#consume" [label="resolver.py#Resolver#function consume"]
+		"resolver.py#Resolver#resolve_definitions" [label="resolver.py#Resolver#function resolve_definitions"]
+		"resolver.py##Resolver" [label="resolver.py##class Resolver"]
+		"resolver.py##uri_to_path" [label="resolver.py##function uri_to_path"]
+		"resolver.py#Resolver#get_definition_resolved_references" [label="resolver.py#Resolver#get_definition_resolved_references"]
+		"resolver.py#" [label="resolver.py#"]
+		"resolver.py#Resolver#get_definition_resolved_references" [label="resolver.py#Resolver#get_definition_resolved_references"]
+		"resolver.py#Resolver#resolve_definitions" [label="resolver.py#Resolver#resolve_definitions"]
+		"resolver.py#Resolver#__init__" [label="resolver.py#Resolver#__init__"]
+		"resolver.py#" [label="resolver.py#"]
+		"resolver.py#Resolver#resolve_definitions" [label="resolver.py#Resolver#resolve_definitions"]
+		"resolver.py#Resolver#get_definition_resolved_references" [label="resolver.py#Resolver#get_definition_resolved_references"]
+		"resolver.py#Resolver#resolve_definitions" [label="resolver.py#Resolver#resolve_definitions"]
+		"resolver.py#Resolver#resolve_definitions" [label="resolver.py#Resolver#resolve_definitions"]
+		"resolver.py#Resolver" [label="resolver.py#Resolver"]
+		"resolver.py#Resolver#get_definition_resolved_references" [label="resolver.py#Resolver#get_definition_resolved_references"]
+		"resolver.py#Resolver" [label="resolver.py#Resolver"]
+		"resolver.py#Resolver#get_definition_resolved_references" [label="resolver.py#Resolver#get_definition_resolved_references"]
+		"resolver.py#Resolver#get_definition_resolved_references" [label="resolver.py#Resolver#get_definition_resolved_references"]
+	}
+	subgraph "cluster_lsp_server.py" {
+		graph [rankdir=LR]
+		graph [label="lsp_server.py"]
+		"lsp_server.py##LspServer" [label="lsp_server.py##class LspServer"]
+		"lsp_server.py#LspServer#__init__" [label="lsp_server.py#LspServer#function __init__"]
+		"lsp_server.py#LspServer#stop" [label="lsp_server.py#LspServer#function stop"]
+	}
+	subgraph "cluster_types.py" {
+		graph [rankdir=LR]
+		graph [label="types.py"]
+		"types.py##Definition" [label="types.py##class Definition"]
+		"types.py##ResolvedReference" [label="types.py##class ResolvedReference"]
+		"types.py##Reference" [label="types.py##class Reference"]
+		"types.py#ResolvedReference" [label="types.py#ResolvedReference"]
+		"types.py#ResolvedReference" [label="types.py#ResolvedReference"]
+	}
+	subgraph "cluster_main.py" {
+		graph [rankdir=LR]
+		graph [label="main.py"]
+		"main.py##main" [label="main.py##function main"]
+		"main.py#" [label="main.py#"]
+		"main.py#main" [label="main.py#main"]
+		"main.py#main" [label="main.py#main"]
+		"main.py#" [label="main.py#"]
+		"main.py#main" [label="main.py#main"]
+		"main.py#main" [label="main.py#main"]
+		"main.py#" [label="main.py#"]
+		"main.py#main" [label="main.py#main"]
+		"main.py#" [label="main.py#"]
+		"main.py#" [label="main.py#"]
+		"main.py#main" [label="main.py#main"]
+		"main.py#main" [label="main.py#main"]
+		"main.py#main" [label="main.py#main"]
+		"main.py#main" [label="main.py#main"]
+		"main.py#" [label="main.py#"]
+		"main.py#main" [label="main.py#main"]
+	}
+	"graphviz_visualizer.py#GraphvizVisualizer#visualize" -> "types.py##Definition"
+	"lsp_client.py#LspClient#__init__" -> "lsp_client.py#LspClient#_start_client_event_reader"
+	"graphviz_visualizer.py#GraphvizVisualizer#visualize" -> "graphviz_visualizer.py#GraphvizVisualizer#definition_to_id"
+	"resolver.py#Resolver#get_definition_resolved_references" -> "types.py##Reference"
+	"lsp_client.py#LspClient#stop" -> "lsp_client.py#LspClient#_stop_client_event_reader"
+	"parser.py#Parser#consume" -> "parser.py##Visitor"
+	"main.py#main" -> "graphviz_visualizer.py##GraphvizVisualizer"
+	"main.py#" -> "graphviz_visualizer.py##GraphvizVisualizer"
+	"lsp_client.py#LspClient#notify_close" -> "lsp_client.py#LspClient#send"
+	"main.py#" -> "main.py##main"
+	"lsp_client.py#LspClient" -> "lsp_server.py##LspServer"
+	"resolver.py#" -> "types.py##ResolvedReference"
+	"graphviz_visualizer.py#GraphvizVisualizer" -> "types.py##Definition"
+	"lsp_client.py#LspClient#_start_client_event_reader" -> "lsp_client.py#LspClient#_read_client_events"
+	"resolver.py#Resolver#get_definition_resolved_references" -> "resolver.py#Resolver#get_definition_references"
+	"resolver.py#" -> "types.py##Reference"
+	"main.py#main" -> "resolver.py##Resolver"
+	"graphviz_visualizer.py#GraphvizVisualizer#visualize" -> "types.py##Definition"
+	"resolver.py#Resolver" -> "lsp_client.py##LspClient"
+	"parser.py#Visitor#__init__" -> "types.py##Definition"
+	"main.py#main" -> "lsp_client.py##LspClient"
+	"lsp_client.py#LspClient#__init__" -> "lsp_client.py#LspClient#_await_event"
+	"resolver.py#Resolver#resolve_definitions" -> "types.py##ResolvedReference"
+	"resolver.py#Resolver#__init__" -> "resolver.py##uri_to_path"
+	"parser.py#" -> "types.py##Definition"
+	"parser.py#Visitor#generic_visit" -> "parser.py##Visitor"
+	"resolver.py#Resolver" -> "types.py##Definition"
+	"graphviz_visualizer.py#GraphvizVisualizer#visualize" -> "graphviz_visualizer.py#GraphvizVisualizer#definition_to_id"
+	"lsp_client.py#LspClient#request_definition" -> "lsp_client.py#LspClient#send"
+	"graphviz_visualizer.py#GraphvizVisualizer#visualize" -> "types.py##Reference"
+	"main.py#" -> "lsp_server.py##LspServer"
+	"main.py#" -> "resolver.py##Resolver"
+	"main.py#main" -> "resolver.py#Resolver#consume"
+	"parser.py#Parser#__init__" -> "types.py##Definition"
+	"types.py#ResolvedReference" -> "types.py##Definition"
+	"resolver.py#Resolver#get_definition_resolved_references" -> "types.py##ResolvedReference"
+	"lsp_client.py#LspClient#__init__" -> "lsp_client.py#LspClient#send"
+	"lsp_client.py#LspClient#request_references" -> "lsp_client.py#LspClient#_await_event"
+	"graphviz_visualizer.py#" -> "types.py##ResolvedReference"
+	"graphviz_visualizer.py#" -> "types.py##Reference"
+	"main.py#main" -> "graphviz_visualizer.py#GraphvizVisualizer#visualize"
+	"resolver.py#" -> "types.py##Definition"
+	"parser.py#Visitor#_visit_definition" -> "types.py##Definition"
+	"graphviz_visualizer.py#GraphvizVisualizer#visualize" -> "graphviz_visualizer.py#GraphvizVisualizer#reference_to_id"
+	"main.py#main" -> "lsp_server.py##LspServer"
+	"resolver.py#Resolver#get_definition_resolved_references" -> "resolver.py##uri_to_path"
+	"parser.py#Visitor#generic_visit" -> "parser.py#Visitor#_visit_definition"
+	"resolver.py#" -> "lsp_client.py##LspClient"
+	"lsp_client.py#LspClient#request_definition" -> "lsp_client.py#LspClient#_await_event"
+	"main.py#main" -> "lsp_client.py#LspClient#stop"
+	"resolver.py#Resolver#resolve_definitions" -> "types.py##Definition"
+	"main.py#" -> "parser.py##Parser"
+	"lsp_client.py#LspClient#request_references" -> "lsp_client.py#LspClient#send"
+	"lsp_client.py#LspClient#stop" -> "lsp_client.py#PathReader#stop"
+	"lsp_client.py#LspClient#__init__" -> "lsp_client.py#LspClient#send"
+	"graphviz_visualizer.py#GraphvizVisualizer" -> "types.py##Reference"
+	"graphviz_visualizer.py#" -> "types.py##Definition"
+	"lsp_client.py#PathReader#__init__" -> "lsp_client.py#PathReader#_path_to_queue"
+	"lsp_client.py#" -> "lsp_server.py##LspServer"
+	"lsp_client.py#LspClient#notify_open" -> "lsp_client.py#LspClient#_await_event"
+	"resolver.py#Resolver#get_definition_resolved_references" -> "types.py##Definition"
+	"types.py#ResolvedReference" -> "types.py##Reference"
+	"lsp_client.py#LspClient#__init__" -> "lsp_client.py##PathReader"
+	"main.py#" -> "lsp_client.py##LspClient"
+	"resolver.py#Resolver#get_definition_resolved_references" -> "types.py##ResolvedReference"
+	"resolver.py#Resolver#resolve_definitions" -> "resolver.py#Resolver#get_definition_resolved_references"
+	"main.py#main" -> "lsp_server.py#LspServer#stop"
+	"lsp_client.py#LspClient#_await_event" -> "lsp_client.py#LspClient#send"
+	"main.py#main" -> "resolver.py#Resolver#resolve_definitions"
+	"graphviz_visualizer.py#GraphvizVisualizer#visualize" -> "types.py##ResolvedReference"
+	"lsp_client.py#LspClient#notify_open" -> "lsp_client.py#LspClient#send"
+	"graphviz_visualizer.py#GraphvizVisualizer#visualize" -> "graphviz_visualizer.py#GraphvizVisualizer#reference_to_id"
+	"main.py#main" -> "parser.py##Parser"
+	"resolver.py#Resolver#resolve_definitions" -> "types.py##ResolvedReference"
+}

@@ -1,23 +1,22 @@
 from __future__ import annotations
 
 import ast
-from typing import List, Union, Any, Tuple, Set
+from typing import Dict, List, Union, Any, Tuple, Set
 
-from code_blocks.types import Definition, Reference
+from code_blocks.types import Definition, PathLineScopes
 
 DefinitionNode = Union[ast.FunctionDef, ast.ClassDef]
-ReferenceNode = Union[ast.Call]
 
 
 class Visitor(ast.NodeVisitor):
     def __init__(
         self,
         definitions: Set[Definition],
-        references: Set[Reference],
+        line_scopes: Dict[int, Tuple[str, ...]],
         path: Tuple[str, ...],
     ):
         self.definitions = definitions
-        self.references = references
+        self.line_scopes = line_scopes
         self._path = path
 
         self._scope: List[DefinitionNode] = []
@@ -30,10 +29,17 @@ class Visitor(ast.NodeVisitor):
         ):
             self._scope.pop()
 
+        if hasattr(node, "lineno"):
+
+            # if the scope of this line has already been set, don't change it
+            # if it hasn't been set, set it to the current scope
+            # NOTE: this assumes that there aren't lines with more than one definition
+            self.line_scopes[node.lineno] = self.line_scopes.get(
+                node.lineno, tuple(n.name for n in self._scope)
+            )
+
         if isinstance(node, DefinitionNode):
             self._visit_definition(node)
-        elif isinstance(node, ReferenceNode):
-            self._visit_reference(node)
 
         super(Visitor, self).generic_visit(node)
 
@@ -53,32 +59,15 @@ class Visitor(ast.NodeVisitor):
             name=node.name,
             kind=kind,
         )
+
         self.definitions.add(location)
         self._scope.append(node)
-
-    def _visit_reference(self, node: ReferenceNode):
-        if isinstance(node.func, ast.Name):
-            reference = Reference(
-                row=node.lineno,
-                col=node.col_offset,
-                scope=tuple(n.name for n in self._scope),
-                path=self._path,
-            )
-            self.references.add(reference)
-        elif isinstance(node.func, ast.Attribute):
-            reference = Reference(
-                row=node.lineno,
-                col=node.func.value.end_col_offset + 1,
-                scope=tuple(n.name for n in self._scope),
-                path=self._path,
-            )
-            self.references.add(reference)
 
 
 class Parser:
     def __init__(self) -> None:
         self._definitions: Set[Definition] = set()
-        self._references: Set[Reference] = set()
+        self._path_line_scopes: PathLineScopes = dict()
 
     def consume(self, source: str, path: Tuple[str, ...]):
         """
@@ -89,7 +78,11 @@ class Parser:
         """
 
         tree = ast.parse(source, filename=path[-1])
-        visitor = Visitor(self._definitions, self._references, path)
+
+        # init path line scopes of the given path
+        self._path_line_scopes[path] = dict()
+
+        visitor = Visitor(self._definitions, self._path_line_scopes[path], path)
 
         visitor.visit(tree)
 
@@ -98,5 +91,5 @@ class Parser:
         return self._definitions
 
     @property
-    def references(self):
-        return self._references
+    def path_line_scopes(self):
+        return self._path_line_scopes

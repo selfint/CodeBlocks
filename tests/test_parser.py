@@ -1,4 +1,4 @@
-from typing import Tuple, List, Set
+from typing import Dict, Tuple, List, Set
 
 from code_blocks.parser import Parser
 from code_blocks.types import Definition, Reference
@@ -14,14 +14,15 @@ def assert_got_expected_definitions_from_sources(
     assert p.definitions == expected_definitions
 
 
-def assert_got_expected_references_from_sources(
-    sources: List[Tuple[str, Tuple[str, ...]]], expected_references: Set[Reference]
+def assert_got_expected_path_line_scopes_from_sources(
+    sources: List[Tuple[str, Tuple[str, ...]]],
+    expected_path_line_scopes: Dict[Tuple[str, ...], Dict[int, Tuple[str, ...]]],
 ):
     p = Parser()
     for source, path in sources:
         p.consume(source, path)
 
-    assert p.references == expected_references
+    assert p.path_line_scopes == expected_path_line_scopes
 
 
 def test_function_def_detection():
@@ -52,7 +53,7 @@ class Test:
     assert_got_expected_definitions_from_sources(sources, expected_definitions)
 
 
-def test_scope_detection():
+def test_definition_scope_detection():
     source = """
 class Test:
     def foo():
@@ -68,6 +69,39 @@ class Test:
     }
 
     assert_got_expected_definitions_from_sources(sources, expected_definitions)
+
+
+def test_line_scope_detection_one_file():
+    source = """
+class Test:
+    def __init__(self):
+        pass
+
+    def foo(self):
+        pass
+
+class Two:
+    def __init__(self):
+        pass
+    """
+
+    path = ("test", "foo.py")
+
+    sources = [(source, path)]
+    expected_line_scopes = {
+        path: {
+            2: (),
+            3: ("Test",),
+            4: ("Test", "__init__"),
+            6: ("Test",),
+            7: ("Test", "foo"),
+            9: (),
+            10: ("Two",),
+            11: ("Two", "__init__"),
+        }
+    }
+
+    assert_got_expected_path_line_scopes_from_sources(sources, expected_line_scopes)
 
 
 def test_definition_eq():
@@ -107,43 +141,6 @@ class Test:
     }
 
     assert_got_expected_definitions_from_sources(sources, expected_definitions)
-
-
-def test_function_references():
-    source = """
-def foo():
-    pass
-    
-foo()
-    """
-
-    path = ("bar.py",)
-    sources = [(source, path)]
-
-    expected_references = {Reference(5, 0, tuple(), path)}
-
-    assert_got_expected_references_from_sources(sources, expected_references)
-
-
-def test_method_references():
-    source = """
-class Test:
-    def foo():
-        pass
-    
-t = Test()
-t.foo()
-    """
-
-    path = ("bar.py",)
-    sources = [(source, path)]
-
-    expected_references = {
-        Reference(6, 4, (), path),
-        Reference(7, 2, (), path),
-    }
-
-    assert_got_expected_references_from_sources(sources, expected_references)
 
 
 def test_multiple_classes_in_one_file():
