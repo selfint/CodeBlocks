@@ -67,7 +67,7 @@ class ThirdClass:
 $ python code_blocks/main.py --project examples/one_file --output examples/one_file/code_blocks.gv
 ```
 
-![alt text](examples/one_file/code_blocks.gv.png "Result")
+![alt text](examples/one_file/code_blocks.gv.svg "Result")
 
 ### Two files examples
 
@@ -110,7 +110,7 @@ if __name__ == "__main__":
 $ python code_blocks/main.py --project examples/two_files --output examples/two_files/code_blocks.gv
 ```
 
-![alt text](examples/two_files/code_blocks.gv.png "Result")
+![alt text](examples/two_files/code_blocks.gv.svg "Result")
 
 ### Three files example
 
@@ -152,7 +152,7 @@ def func_three():
 $ python code_blocks/main.py --project examples/three_files --output examples/three_files/code_blocks.gv
 ```
 
-![alt text](examples/three_files/code_blocks.gv.png "Result")
+![alt text](examples/three_files/code_blocks.gv.svg "Result")
 
 ### Large codebase ([black](https://github.com/psf/black))
 
