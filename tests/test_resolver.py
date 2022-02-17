@@ -53,7 +53,14 @@ def assert_got_expected_resolved_references_from_definitions_and_path_line_scope
     for source, path in sources:
         resolver.consume(source, path)
 
-    resolved_references = resolver.resolve_definitions(definitions, path_line_scopes)
+    try:
+        resolved_references = resolver.resolve_definitions(
+            definitions, path_line_scopes
+        )
+    except:
+        lsp_client.stop()
+
+        raise
 
     try:
         assert resolved_references == expected_resolved_references
