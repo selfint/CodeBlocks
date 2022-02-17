@@ -154,6 +154,10 @@ $ python code_blocks/main.py --project examples/three_files --output examples/th
 
 ![alt text](examples/three_files/code_blocks.gv.svg "Result")
 
+### Code blocks code blocks!
+
+![alt text](examples/code_blocks/code_blocks.gv.svg "Result")
+
 ### Large codebase ([black](https://github.com/psf/black))
 
 ![alt text](examples/black/code_blocks.gv.svg "Result")
