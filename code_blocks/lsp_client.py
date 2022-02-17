@@ -47,7 +47,7 @@ class PathReader:
 
     def stop(self):
         self._read = False
-        self._reader_thread.join()
+        self._reader_thread.join(timeout=1)
 
 
 class LspClient:
