@@ -2,12 +2,11 @@ from pathlib import Path
 import graphviz
 from code_blocks.types import Definition, ResolvedReference
 from typing import Optional, Set, Tuple
-from anytree import Node
 
 
 def build_tree(
     definitions: Set[Definition], resolved_references: Set[ResolvedReference]
-) -> Node:
+) -> dict:
 
     tree_dict = dict()
 
