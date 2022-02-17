@@ -1,104 +1,100 @@
-from collections import defaultdict
 from pathlib import Path
 import graphviz
-from code_blocks.types import Definition, Reference, ResolvedReference
-from typing import DefaultDict, Optional, Set, Tuple
+from code_blocks.types import Definition, ResolvedReference
+from typing import Optional, Set, Tuple
+from anytree import Node
+
+
+def build_tree(
+    definitions: Set[Definition], resolved_references: Set[ResolvedReference]
+) -> Node:
+
+    tree_dict = dict()
+
+    for definition in definitions:
+        definition_parent_hierarchy = tree_dict
+
+        for part in definition.path + definition.scope + (definition.name,):
+            if part not in definition_parent_hierarchy:
+                definition_parent_hierarchy[part] = dict()
+
+            definition_parent_hierarchy = definition_parent_hierarchy[part]
+
+        print("@ TRE @", definition.name, definition_parent_hierarchy, tree_dict)
+
+    for resolved_reference in resolved_references:
+        reference = resolved_reference.reference
+        reference_parent_hierarchy = tree_dict
+
+        for part in reference.path + reference.scope:
+            if part not in reference_parent_hierarchy:
+                reference_parent_hierarchy[part] = dict()
+
+            reference_parent_hierarchy = reference_parent_hierarchy[part]
+
+    return tree_dict
 
 
 class GraphvizVisualizer:
-    def __init__(self) -> None:
-        pass
+    def build_tree_graph(
+        self,
+        path: Tuple[str, ...],
+        tree: dict,
+    ) -> Optional[graphviz.Digraph]:
 
-    @staticmethod
-    def definition_to_id(definition: Definition) -> str:
-        return "#".join(
-            ["#".join(definition.path), "#".join(definition.scope), definition.name]
-        )
+        if len(tree) == 0:
+            return None
 
-    @staticmethod
-    def reference_to_id(reference: Reference) -> str:
-        return "#".join(
-            [
-                "#".join(reference.path),
-                "#".join(reference.scope),
-            ]
-        )
+        path_str = "#".join(path)
+        print("@ VIZ @", path_str)
+        g = graphviz.Digraph(f"cluster_{path_str}" if path_str else None)
+        g.attr("graph", rankdir="LR", label=path_str)
+        if path_str:
+            g.node(name=path_str, label=path_str)
+
+        for k, v in tree.items():
+            path_str = "#".join(path + (k,))
+            print("@ VIZ @", path_str)
+            subgraph = self.build_tree_graph(path + (k,), v)
+            if subgraph is None:
+                g.node(name=path_str, label=path_str)
+            else:
+                g.subgraph(subgraph)
+
+        return g
 
     def visualize(
         self,
         definitions: Set[Definition],
         resolved_references: Set[ResolvedReference],
         output: Optional[Path] = None,
+        view: bool = False,
     ):
-        g = graphviz.Digraph("G", filename=output, format="svg", engine="dot")
+        g = graphviz.Digraph()
         g.attr("graph", rankdir="LR")
 
-        # group all definitions and references by their paths
-        files: DefaultDict[
-            Tuple[str, ...], Tuple[Set[Definition], Set[Reference]]
-        ] = defaultdict(lambda: (set(), set()))
+        tree = build_tree(definitions, resolved_references)
 
-        for definition in definitions:
-            files[definition.path][0].add(definition)
+        print("@ TRE @", str(tree))
 
-        for resolved_reference in resolved_references:
-            if resolved_reference is None:
-                continue
-
-            reference = resolved_reference.reference
-            definition = resolved_reference.definition
-
-            files[definition.path][0].add(definition)
-            files[reference.path][1].add(reference)
-
-        for path, (definitions, references) in files.items():
-            path_str = "/".join(path)
-            subgraph = graphviz.Digraph(f"cluster_{path_str}")
-            subgraph.attr("graph", rankdir="LR")
-            subgraph.attr("graph", label=path_str)
-
-            for definition in definitions:
-                label = (
-                    "#".join(
-                        [
-                            "#".join(definition.path),
-                            "#".join(definition.scope),
-                        ]
-                    )
-                    + "#"
-                    + definition.kind
-                    + " "
-                    + definition.name
-                )
-                subgraph.node(
-                    name=self.definition_to_id(definition),
-                    label=label,
-                )
-
-            for reference in references:
-                label = "#".join(
-                    [
-                        "#".join(reference.path),
-                        "#".join(reference.scope),
-                    ]
-                )
-                subgraph.node(
-                    name=self.reference_to_id(reference),
-                    label=label,
-                )
-
-            g.subgraph(subgraph)
+        subgraph = self.build_tree_graph((), tree)
+        g.subgraph(subgraph)
 
         # dedup edges
         edges = set()
         for resolved_reference in resolved_references:
             if resolved_reference is None:
                 continue
-            tail_name = self.reference_to_id(resolved_reference.reference)
-            head_name = self.definition_to_id(resolved_reference.definition)
+            reference = resolved_reference.reference
+            definition = resolved_reference.definition
+            tail_name = "#".join(reference.path + reference.scope)
+            head_name = "#".join(
+                (definition.path + definition.scope) + (definition.name,)
+            )
+            print("@ CON @", tail_name, head_name)
             edges.add((tail_name, head_name))
 
         for tail_name, head_name in edges:
             g.edge(tail_name=tail_name, head_name=head_name)
 
-        g.view()
+        g.render(filename=output, format="svg", engine="dot", view=view)
