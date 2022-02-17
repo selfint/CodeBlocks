@@ -24,7 +24,9 @@ jobs:
         run: sudo pip3 install pyright
       
       - name: Install poetry
-        run: curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
+        run: |
+          curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
+          source $HOME/.poetry/env
 
       - name: Install
         run: poetry install
