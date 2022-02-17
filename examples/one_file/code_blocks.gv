@@ -1,30 +1,42 @@
-digraph G {
+digraph {
 	graph [rankdir=LR]
-	subgraph "cluster_file.py" {
-		graph [rankdir=LR]
-		graph [label="file.py"]
-		"file.py#ThirdClass#third_class_first_method" [label="file.py#ThirdClass#function third_class_first_method"]
-		"file.py#ThirdClass#third_class_first_method#ThirdClassNestedClass#__init__" [label="file.py#ThirdClass#third_class_first_method#ThirdClassNestedClass#function __init__"]
-		"file.py#SecondClass#__init__" [label="file.py#SecondClass#function __init__"]
-		"file.py#ThirdClass#__init__" [label="file.py#ThirdClass#function __init__"]
-		"file.py##SecondClass" [label="file.py##class SecondClass"]
-		"file.py##ThirdClass" [label="file.py##class ThirdClass"]
-		"file.py##FirstClass" [label="file.py##class FirstClass"]
-		"file.py#ThirdClass#third_class_first_method#ThirdClassNestedClass" [label="file.py#ThirdClass#third_class_first_method#class ThirdClassNestedClass"]
-		"file.py#FirstClass#first_class_first_method" [label="file.py#FirstClass#function first_class_first_method"]
-		"file.py#FirstClass#__init__" [label="file.py#FirstClass#function __init__"]
-		"file.py#SecondClass#second_class_first_method" [label="file.py#SecondClass#function second_class_first_method"]
-		"file.py#SecondClass#second_class_first_method" [label="file.py#SecondClass#second_class_first_method"]
-		"file.py#ThirdClass#third_class_first_method#ThirdClassNestedClass#__init__" [label="file.py#ThirdClass#third_class_first_method#ThirdClassNestedClass#__init__"]
-		"file.py#ThirdClass#third_class_first_method#ThirdClassNestedClass#__init__" [label="file.py#ThirdClass#third_class_first_method#ThirdClassNestedClass#__init__"]
-		"file.py#SecondClass#__init__" [label="file.py#SecondClass#__init__"]
-		"file.py#ThirdClass#third_class_first_method#ThirdClassNestedClass#__init__" [label="file.py#ThirdClass#third_class_first_method#ThirdClassNestedClass#__init__"]
-		"file.py#ThirdClass#third_class_first_method#ThirdClassNestedClass#__init__" [label="file.py#ThirdClass#third_class_first_method#ThirdClassNestedClass#__init__"]
+	{
+		graph [label="" rankdir=LR]
+		subgraph "cluster_file.py" {
+			graph [label="file.py" rankdir=LR]
+			"file.py" [label="file.py"]
+			subgraph "cluster_file.py#ThirdClass" {
+				graph [label="file.py#ThirdClass" rankdir=LR]
+				"file.py#ThirdClass" [label="file.py#ThirdClass"]
+				subgraph "cluster_file.py#ThirdClass#third_class_first_method" {
+					graph [label="file.py#ThirdClass#third_class_first_method" rankdir=LR]
+					"file.py#ThirdClass#third_class_first_method" [label="file.py#ThirdClass#third_class_first_method"]
+					subgraph "cluster_file.py#ThirdClass#third_class_first_method#ThirdClassNestedClass" {
+						graph [label="file.py#ThirdClass#third_class_first_method#ThirdClassNestedClass" rankdir=LR]
+						"file.py#ThirdClass#third_class_first_method#ThirdClassNestedClass" [label="file.py#ThirdClass#third_class_first_method#ThirdClassNestedClass"]
+						"file.py#ThirdClass#third_class_first_method#ThirdClassNestedClass#__init__" [label="file.py#ThirdClass#third_class_first_method#ThirdClassNestedClass#__init__"]
+					}
+				}
+				"file.py#ThirdClass#__init__" [label="file.py#ThirdClass#__init__"]
+			}
+			subgraph "cluster_file.py#FirstClass" {
+				graph [label="file.py#FirstClass" rankdir=LR]
+				"file.py#FirstClass" [label="file.py#FirstClass"]
+				"file.py#FirstClass#first_class_first_method" [label="file.py#FirstClass#first_class_first_method"]
+				"file.py#FirstClass#__init__" [label="file.py#FirstClass#__init__"]
+			}
+			subgraph "cluster_file.py#SecondClass" {
+				graph [label="file.py#SecondClass" rankdir=LR]
+				"file.py#SecondClass" [label="file.py#SecondClass"]
+				"file.py#SecondClass#__init__" [label="file.py#SecondClass#__init__"]
+				"file.py#SecondClass#second_class_first_method" [label="file.py#SecondClass#second_class_first_method"]
+			}
+		}
 	}
+	"file.py#ThirdClass#third_class_first_method#ThirdClassNestedClass#__init__" -> "file.py#SecondClass"
+	"file.py#ThirdClass#third_class_first_method#ThirdClassNestedClass#__init__" -> "file.py#FirstClass"
 	"file.py#ThirdClass#third_class_first_method#ThirdClassNestedClass#__init__" -> "file.py#SecondClass#second_class_first_method"
-	"file.py#ThirdClass#third_class_first_method#ThirdClassNestedClass#__init__" -> "file.py##SecondClass"
+	"file.py#SecondClass#__init__" -> "file.py#FirstClass"
 	"file.py#SecondClass#second_class_first_method" -> "file.py#FirstClass#first_class_first_method"
-	"file.py#ThirdClass#third_class_first_method#ThirdClassNestedClass#__init__" -> "file.py##FirstClass"
 	"file.py#ThirdClass#third_class_first_method#ThirdClassNestedClass#__init__" -> "file.py#FirstClass#first_class_first_method"
-	"file.py#SecondClass#__init__" -> "file.py##FirstClass"
 }

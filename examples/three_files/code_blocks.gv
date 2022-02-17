@@ -1,30 +1,25 @@
 digraph G {
 	graph [rankdir=LR]
-	subgraph "cluster_file_one.py" {
-		graph [rankdir=LR]
-		graph [label="file_one.py"]
-		"file_one.py##func_one" [label="file_one.py##function func_one"]
-		"file_one.py#" [label="file_one.py#"]
-		"file_one.py#" [label="file_one.py#"]
-		"file_one.py#" [label="file_one.py#"]
+	{
+		graph [label="" rankdir=LR]
+		subgraph "cluster_file_two.py" {
+			graph [label="file_two.py" rankdir=LR]
+			"file_two.py" [label="file_two.py"]
+			"file_two.py#func_two" [label="file_two.py#func_two"]
+		}
+		subgraph "cluster_file_one.py" {
+			graph [label="file_one.py" rankdir=LR]
+			"file_one.py" [label="file_one.py"]
+			"file_one.py#func_one" [label="file_one.py#func_one"]
+		}
+		subgraph "cluster_file_three.py" {
+			graph [label="file_three.py" rankdir=LR]
+			"file_three.py" [label="file_three.py"]
+			"file_three.py#func_three" [label="file_three.py#func_three"]
+		}
 	}
-	subgraph "cluster_file_three.py" {
-		graph [rankdir=LR]
-		graph [label="file_three.py"]
-		"file_three.py##func_three" [label="file_three.py##function func_three"]
-	}
-	subgraph "cluster_file_two.py" {
-		graph [rankdir=LR]
-		graph [label="file_two.py"]
-		"file_two.py##func_two" [label="file_two.py##function func_two"]
-		"file_two.py#" [label="file_two.py#"]
-		"file_two.py#func_two" [label="file_two.py#func_two"]
-		"file_two.py#" [label="file_two.py#"]
-	}
-	"file_one.py#" -> "file_two.py##func_two"
-	"file_one.py#" -> "file_one.py##func_one"
-	"file_one.py#" -> "file_two.py##func_two"
-	"file_two.py#" -> "file_three.py##func_three"
-	"file_two.py#" -> "file_three.py##func_three"
-	"file_two.py#func_two" -> "file_three.py##func_three"
+	"file_two.py#func_two" -> "file_three.py#func_three"
+	"file_one.py" -> "file_two.py#func_two"
+	"file_one.py" -> "file_one.py#func_one"
+	"file_two.py" -> "file_three.py#func_three"
 }

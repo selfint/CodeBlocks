@@ -1,27 +1,30 @@
 digraph G {
 	graph [rankdir=LR]
-	subgraph "cluster_file_two.py" {
-		graph [rankdir=LR]
-		graph [label="file_two.py"]
-		"file_two.py#SecondClass#__init__" [label="file_two.py#SecondClass#function __init__"]
-		"file_two.py##SecondClass" [label="file_two.py##class SecondClass"]
-		"file_two.py#SecondClass#second_class_second_method" [label="file_two.py#SecondClass#function second_class_second_method"]
-		"file_two.py#" [label="file_two.py#"]
-		"file_two.py#" [label="file_two.py#"]
-		"file_two.py#" [label="file_two.py#"]
-		"file_two.py#" [label="file_two.py#"]
-		"file_two.py#" [label="file_two.py#"]
+	{
+		graph [label="" rankdir=LR]
+		subgraph "cluster_file_two.py" {
+			graph [label="file_two.py" rankdir=LR]
+			"file_two.py" [label="file_two.py"]
+			subgraph "cluster_file_two.py#SecondClass" {
+				graph [label="file_two.py#SecondClass" rankdir=LR]
+				"file_two.py#SecondClass" [label="file_two.py#SecondClass"]
+				"file_two.py#SecondClass#second_class_second_method" [label="file_two.py#SecondClass#second_class_second_method"]
+				"file_two.py#SecondClass#__init__" [label="file_two.py#SecondClass#__init__"]
+			}
+		}
+		subgraph "cluster_file_one.py" {
+			graph [label="file_one.py" rankdir=LR]
+			"file_one.py" [label="file_one.py"]
+			subgraph "cluster_file_one.py#FirstClass" {
+				graph [label="file_one.py#FirstClass" rankdir=LR]
+				"file_one.py#FirstClass" [label="file_one.py#FirstClass"]
+				"file_one.py#FirstClass#__init__" [label="file_one.py#FirstClass#__init__"]
+				"file_one.py#FirstClass#first_class_first_method" [label="file_one.py#FirstClass#first_class_first_method"]
+			}
+		}
 	}
-	subgraph "cluster_file_one.py" {
-		graph [rankdir=LR]
-		graph [label="file_one.py"]
-		"file_one.py#FirstClass#first_class_first_method" [label="file_one.py#FirstClass#function first_class_first_method"]
-		"file_one.py##FirstClass" [label="file_one.py##class FirstClass"]
-		"file_one.py#FirstClass#__init__" [label="file_one.py#FirstClass#function __init__"]
-	}
-	"file_two.py#" -> "file_two.py#SecondClass#second_class_second_method"
-	"file_two.py#" -> "file_two.py##SecondClass"
-	"file_two.py#" -> "file_one.py#FirstClass#first_class_first_method"
-	"file_two.py#" -> "file_one.py##FirstClass"
-	"file_two.py#" -> "file_one.py##FirstClass"
+	"file_two.py" -> "file_two.py#SecondClass"
+	"file_two.py" -> "file_one.py#FirstClass"
+	"file_two.py" -> "file_one.py#FirstClass#first_class_first_method"
+	"file_two.py" -> "file_two.py#SecondClass#second_class_second_method"
 }
