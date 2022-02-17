@@ -9,7 +9,7 @@ from typing import Tuple, List, Set
 from code_blocks.resolver import Resolver
 from code_blocks.lsp_client import LspClient
 from code_blocks.lsp_server import LspServer
-from code_blocks.types import ResolvedReference, Reference, Definition
+from code_blocks.types import PathLineScopes, ResolvedReference, Reference, Definition
 
 
 class LspTestEnv:
@@ -38,10 +38,10 @@ class LspTestEnv:
         shutil.rmtree(self._tempdir, ignore_errors=True)
 
 
-def assert_got_expected_resolved_references_from_definitions_and_references(
+def assert_got_expected_resolved_references_from_definitions_and_path_line_scopes(
     sources: List[Tuple[str, Tuple[str, ...]]],
     definitions: Set[Definition],
-    references: Set[Reference],
+    path_line_scopes: PathLineScopes,
     expected_resolved_references: Set[ResolvedReference],
 ):
     test_env = LspTestEnv(sources)
@@ -50,8 +50,13 @@ def assert_got_expected_resolved_references_from_definitions_and_references(
 
     resolver = Resolver(lsp_client, test_env.root_uri)
 
+    for source, path in sources:
+        resolver.consume(source, path)
+
+    resolved_references = resolver.resolve_definitions(definitions, path_line_scopes)
+
     try:
-        assert resolver.resolve(definitions, references) == expected_resolved_references
+        assert resolved_references == expected_resolved_references
 
     finally:
         lsp_client.stop()
@@ -68,7 +73,15 @@ foo()
     sources = [(source, path)]
 
     definitions = {Definition(2, 4, tuple(), path, "foo", "function")}
-    references = {Reference(5, 0, tuple(), path)}
+    references = {Reference(5, tuple(), path)}
+
+    path_line_scopes = {
+        path: {
+            2: (),
+            3: ("foo",),
+            5: (),
+        }
+    }
 
     expected_resolved_references = {
         ResolvedReference(
@@ -76,8 +89,8 @@ foo()
         )
     }
 
-    assert_got_expected_resolved_references_from_definitions_and_references(
-        sources, definitions, references, expected_resolved_references
+    assert_got_expected_resolved_references_from_definitions_and_path_line_scopes(
+        sources, definitions, path_line_scopes, expected_resolved_references
     )
 
 
@@ -97,16 +110,26 @@ foo()
     sources = [(source1, path1), (source2, path2)]
 
     definitions = {Definition(2, 4, tuple(), path1, "foo", "function")}
-    references = {Reference(4, 0, tuple(), path2)}
+    references = [Reference(4, tuple(), path2), Reference(2, (), path2)]
 
-    expected_resolved_references = {
-        ResolvedReference(
-            reference=list(references)[0], definition=list(definitions)[0]
-        )
+    path_line_scopes = {
+        path1: {
+            2: (),
+            3: ("foo",),
+        },
+        path2: {
+            2: (),
+            4: (),
+        },
     }
 
-    assert_got_expected_resolved_references_from_definitions_and_references(
-        sources, definitions, references, expected_resolved_references
+    expected_resolved_references = {
+        ResolvedReference(reference=references[0], definition=list(definitions)[0]),
+        ResolvedReference(reference=references[1], definition=list(definitions)[0]),
+    }
+
+    assert_got_expected_resolved_references_from_definitions_and_path_line_scopes(
+        sources, definitions, path_line_scopes, expected_resolved_references
     )
 
 
@@ -140,11 +163,25 @@ def func_three():
 
     sources = [(source1, path1), (source2, path2), (source3, path3)]
 
-    from code_blocks.parser import Parser
-
-    p = Parser()
-    for source, path in sources:
-        p.consume(source, path)
+    path_line_scopes = {
+        ("file_one.py",): {
+            2: (),
+            4: (),
+            5: ("func_one",),
+            7: (),
+            8: (),
+        },
+        ("file_two.py",): {
+            2: (),
+            4: (),
+            5: ("func_two",),
+            7: (),
+        },
+        ("file_three.py",): {
+            2: (),
+            3: ("func_three",),
+        },
+    }
 
     definitions = [
         Definition(
@@ -174,9 +211,11 @@ def func_three():
     ]
 
     references = [
-        Reference(row=7, col=0, scope=(), path=("file_one.py",)),
-        Reference(row=8, col=0, scope=(), path=("file_one.py",)),
-        Reference(row=7, col=0, scope=(), path=("file_two.py",)),
+        Reference(row=7, scope=(), path=("file_one.py",)),
+        Reference(row=8, scope=(), path=("file_one.py",)),
+        Reference(row=7, scope=(), path=("file_two.py",)),
+        Reference(row=2, scope=(), path=("file_one.py",)),
+        Reference(row=2, scope=(), path=("file_two.py",)),
     ]
 
     d = definitions
@@ -186,14 +225,16 @@ def func_three():
         ResolvedReference(reference=r[0], definition=d[0]),
         ResolvedReference(reference=r[1], definition=d[1]),
         ResolvedReference(reference=r[2], definition=d[2]),
+        ResolvedReference(reference=r[3], definition=d[1]),
+        ResolvedReference(reference=r[4], definition=d[2]),
     }
 
-    assert_got_expected_resolved_references_from_definitions_and_references(
-        sources, set(definitions), set(references), expected_resolved_references
+    assert_got_expected_resolved_references_from_definitions_and_path_line_scopes(
+        sources, set(definitions), path_line_scopes, expected_resolved_references
     )
 
 
-def test_resolve_class():
+def test_resolve_class_constructor():
     source = """
 class Test:
     def __init__(self):
@@ -212,14 +253,23 @@ t = Test()
         ),
     ]
 
-    references = [Reference(row=6, col=4, scope=(), path=path)]
+    references = [Reference(row=6, scope=(), path=path)]
+
+    path_line_scopes = {
+        path: {
+            2: (),
+            3: ("Test",),
+            4: ("Test", "__init__"),
+            6: (),
+        }
+    }
 
     expected_resolved_references = {
         ResolvedReference(reference=references[0], definition=definitions[0])
     }
 
-    assert_got_expected_resolved_references_from_definitions_and_references(
-        sources, set(definitions), set(references), expected_resolved_references
+    assert_got_expected_resolved_references_from_definitions_and_path_line_scopes(
+        sources, set(definitions), path_line_scopes, expected_resolved_references
     )
 
 
@@ -250,15 +300,27 @@ t.foo()
     ]
 
     references = [
-        Reference(row=9, col=4, scope=(), path=path),
-        Reference(row=10, col=2, scope=(), path=path),
+        Reference(row=9, scope=(), path=path),
+        Reference(row=10, scope=(), path=path),
     ]
+
+    path_line_scopes = {
+        path: {
+            2: (),
+            3: ("Test",),
+            4: ("Test", "__init__"),
+            6: ("Test",),
+            7: ("Test", "foo"),
+            9: (),
+            10: (),
+        }
+    }
 
     expected_resolved_references = {
         ResolvedReference(reference=references[0], definition=definitions[0]),
         ResolvedReference(reference=references[1], definition=definitions[2]),
     }
 
-    assert_got_expected_resolved_references_from_definitions_and_references(
-        sources, set(definitions), set(references), expected_resolved_references
+    assert_got_expected_resolved_references_from_definitions_and_path_line_scopes(
+        sources, set(definitions), path_line_scopes, expected_resolved_references
     )

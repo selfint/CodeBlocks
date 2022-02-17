@@ -11,30 +11,32 @@ from code_blocks.resolver import Resolver
 
 
 def main(project: Path, output: Optional[Path] = None):
-    parser = Parser()
-
-    for root, _, files in os.walk(project):
-        for f in files:
-            path = Path(root) / f
-            if path.suffix == ".py":
-                relative_path = path.relative_to(project).parts
-                parser.consume(path.read_text(), relative_path)
-
-    definitions, references = parser.definitions, parser.references
-
-    print(f"Got {definitions=}")
-    print(f"Got {references=}")
-
     lsp_server = LspServer(str(project))
     print("LSP server started")
 
     lsp_client = LspClient(lsp_server)
     print("LSP client connected")
 
+    print("Scanning project")
+    parser = Parser()
     resolver = Resolver(lsp_client, project.as_uri())
 
-    resolved_references = resolver.resolve(definitions, references)
-    print(f"Got {resolved_references=}")
+    for root, _, files in os.walk(project):
+        for f in files:
+            path = Path(root) / f
+            if path.suffix == ".py":
+                relative_path = path.relative_to(project).parts
+                source = path.read_text()
+                parser.consume(source, relative_path)
+                resolver.consume(source, relative_path)
+
+    definitions, path_line_scopes = parser.definitions, parser.path_line_scopes
+
+    print(f"Got files: {len(path_line_scopes.keys())}")
+    print(f"Got definitions: {len(definitions)}")
+
+    resolved_references = resolver.resolve_definitions(definitions, path_line_scopes)
+    print(f"Resolved: {len(resolved_references)}")
 
     visualizer = GraphvizVisualizer()
     visualizer.visualize(definitions, resolved_references, output)

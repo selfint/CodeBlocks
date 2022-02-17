@@ -1,12 +1,14 @@
 from collections import defaultdict
 import os
 from pathlib import Path
-from typing import Any, Optional, Set, Type
+from typing import Any, List, Optional, Set, Tuple, Type
 from urllib.parse import unquote, urlparse
 from urllib.request import url2pathname
 
+from sansio_lsp_client import References
 
-from code_blocks.types import Definition, Reference, ResolvedReference
+
+from code_blocks.types import Definition, PathLineScopes, Reference, ResolvedReference
 from code_blocks.lsp_client import LspClient
 from sansio_lsp_client.events import Definition as DefinitionEvent
 from sansio_lsp_client.events import Event
@@ -30,135 +32,92 @@ class Resolver:
     def __init__(self, lsp_client: LspClient, root_uri: str):
         self._lsp_client = lsp_client
         self._root_uri = root_uri
+        self._root_path = uri_to_path(self._root_uri)
 
-    def _get_next_event(self, event_type: Type[Event] = Event) -> Any:
-        self._lsp_client._await_event(event_type)
+    def consume(self, source: str, path: Tuple[str, ...]):
 
-    def reference_to_text_document_position(
-        self, reference: Reference
-    ) -> TextDocumentPosition:
-        """
-        Convert a Reference to a TextDocumentPosition
-        :param reference: Reference to convert.
-        :return: TextDocumentPosition of reference.
-        """
+        # convert reference relative path to full path uri
+        path_uri = f"{self._root_uri}/{os.path.sep.join(path)}"
 
-        path_uri = f"{self._root_uri}/{os.path.sep.join(reference.path)}"
-        text_document_identifier = TextDocumentIdentifier(uri=path_uri)
-        position = Position(line=reference.row, character=reference.col)
-
-        text_document_position = TextDocumentPosition(
-            textDocument=text_document_identifier, position=position
+        # create LSP objects pointing to reference file and position
+        text_document_item = TextDocumentItem(
+            uri=path_uri, languageId="python", version=1, text=source
         )
 
-        return text_document_position
+        # notify LSP we opened the file
+        self._lsp_client.notify_open(text_document_item)
 
-    def get_matching_definition(
-        self, definitions: Set[Definition], definition_event: DefinitionEvent
-    ) -> Optional[Definition]:
-        """Get the matching Definition for a given DefinitionEvent, from the
-        given defintions set.
+    def resolve_definitions(
+        self, definitions: Set[Definition], path_line_scopes: PathLineScopes
+    ) -> Set[ResolvedReference]:
+        """Get all references to all given definitions.
 
         Args:
-            definitions (Set[Definition]): Possible matching definitions
-            definition_event (DefinitionEvent): DefenitionEvent from LSP
+            definitions (Set[Definition]): Definitions to get references of.
 
         Returns:
-            Optional[Definition]: Matching Definition if found, None if none were found
+            Set[ResolvedReference]: All references to the given definitions.
         """
 
-        # make sure defintion event has a result
-        if definition_event.result is None:
-            return None
+        resolved_references: Set[ResolvedReference] = set()
 
-        # get the location
-        location = definition_event.result
-        if isinstance(location, list):
-            location = location[0]
-
-        # LSP starts rows from 0, we start from 1
-        row = location.range.start.line + 1
-        col = location.range.start.character
-
-        # get relative path from root dir
-        root_path = len(uri_to_path(self._root_uri).parts)
-        def_path = tuple(uri_to_path(location.uri).parts)[root_path:]
-
-        # build the expected location tuple
-        expected_defintion_location = (def_path, row, col)
-
-        # look for matching defintions
         for definition in definitions:
-            defintion_location = (definition.path, definition.row, definition.col)
-
-            if defintion_location == expected_defintion_location:
-                return definition
-
-    def resolve(
-        self, definitions: Set[Definition], references: Set[Reference]
-    ) -> Set[ResolvedReference]:
-        """
-        Resolve the given references to the given definitions.
-
-        :param definitions: Definitions that references can be resolved to.
-        :param references: References that need to be resolved.
-        :return: Set of resolved references.
-        """
-
-        # group all references by their file
-        file_reference_groups = defaultdict(set)
-        for reference in references:
-            file_reference_groups[reference.path].add(reference)
-
-        resolved_references = set()
-        for file_path, file_references in file_reference_groups.items():
-
-            # convert reference relative path to full path uri
-            path_uri = f"{self._root_uri}/{os.path.sep.join(file_path)}"
-
-            # load source file
-            text = uri_to_path(path_uri).read_text()
-
-            # create LSP objects pointing to reference file and position
-            text_document_item = TextDocumentItem(
-                uri=path_uri, languageId="python", version=1, text=text
+            references = self.get_definition_resolved_references(
+                definition, path_line_scopes
             )
-            text_document_identifier = TextDocumentIdentifier(uri=path_uri)
-
-            # notify LSP we opened the file
-            self._lsp_client.notify_open(text_document_item)
-
-            for reference in file_references:
-                resolved_reference = self.resolve_reference(definitions, reference)
-                resolved_references.add(resolved_reference)
-
-            # notify LSP we closed the file
-            self._lsp_client.notify_close(text_document_identifier)
+            resolved_references = resolved_references.union(references)
 
         return resolved_references
 
-    def resolve_reference(
-        self, definitions: Set[Definition], reference: Reference
-    ) -> Optional[ResolvedReference]:
-        """Resolve a given reference to one of the given definitions.
+    def get_definition_resolved_references(
+        self, definition: Definition, path_line_scopes: PathLineScopes
+    ) -> Set[ResolvedReference]:
 
-        Args:
-            definitions (Set[Definition]): Possible definitions to resolve reference to.
-            reference (Reference): Reference to resolve to a definition.
+        # get reference locations from LSP
+        references: References = self.get_definition_references(definition)
 
-        Returns:
-            Optional[ResolvedReference]: ResolvedReference of given reference if found,
-                                         None if not.
-        """
+        # return an empty set if no references were found
+        if references.result is None:
+            return set()
+
+        # resolve all references to the definition
+        resolved_references = set()
+        for reference_location in references.result:
+
+            # get location path relative to root path
+            location_path = uri_to_path(reference_location.uri)
+            relative_path = location_path.relative_to(self._root_path)
+
+            # get reference position
+            row = reference_location.range.start.line + 1
+            col = reference_location.range.start.character
+
+            # make sure the reference isn't the definition itself
+            if relative_path.parts == definition.path:
+                if row == definition.row and col == definition.col:
+                    continue
+
+            # get reference scope
+            scope = path_line_scopes[relative_path.parts][row]
+
+            # build resolved reference to the definition
+            reference = Reference(row, scope, relative_path.parts)
+            resolved_reference = ResolvedReference(reference, definition)
+
+            resolved_references.add(resolved_reference)
+
+        return resolved_references
+
+    def get_definition_references(self, definition: Definition) -> References:
 
         # convert reference relative path to full path uri
-        path_uri = f"{self._root_uri}/{os.path.sep.join(reference.path)}"
+        path_uri = f"{self._root_uri}/{os.path.sep.join(definition.path)}"
 
         # create LSP objects pointing to reference file and position
         text_document_identifier = TextDocumentIdentifier(uri=path_uri)
 
         # LSP starts rows from 0, we start from 1, so we need to subtract 1
-        position = Position(line=reference.row - 1, character=reference.col)
+        position = Position(line=definition.row - 1, character=definition.col)
 
         # get text document position of reference
         text_document_position = TextDocumentPosition(
@@ -166,18 +125,8 @@ class Resolver:
         )
 
         # request definition of reference
-        definition_event = self._lsp_client.request_definition(text_document_position)
-
-        # get matching definition for definition event
-        matching_definition = self.get_matching_definition(
-            definitions, definition_event
+        references: References = self._lsp_client.request_references(
+            text_document_position
         )
 
-        # create a resolved reference if a matching definition was found
-        if matching_definition is not None:
-            return ResolvedReference(
-                reference=reference,
-                definition=matching_definition,
-            )
-        else:
-            return None
+        return references

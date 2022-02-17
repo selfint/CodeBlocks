@@ -1,4 +1,7 @@
-from typing import NamedTuple, Tuple
+from typing import Dict, NamedTuple, Tuple
+
+
+PathLineScopes = Dict[Tuple[str, ...], Dict[int, Tuple[str, ...]]]
 
 
 class Definition(NamedTuple):
@@ -12,7 +15,6 @@ class Definition(NamedTuple):
 
 class Reference(NamedTuple):
     row: int
-    col: int
     scope: Tuple[str, ...]
     path: Tuple[str, ...]
 
