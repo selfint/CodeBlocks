@@ -1,6 +1,5 @@
 import time
-from pathlib import Path
-from queue import Empty, Queue
+from queue import Queue
 from threading import Thread
 from typing import Any, Optional, Type
 
@@ -24,41 +23,9 @@ from sansio_lsp_client.structs import (
 from code_blocks.lsp_server import LspServer
 
 
-class PathReader:
-    def __init__(self, path: Path, queue: "Queue[bytes]") -> None:
-        self._read = True
-        self._reader_thread = Thread(target=self._path_to_queue, args=(path, queue))
-        self._reader_thread.start()
-
-    def _path_to_queue(self, path: Path, queue: "Queue[bytes]"):
-        """Push any bytes written to given path to the given queue.
-
-        Will stop reading when _read is set to False.
-
-        Args:
-            path (Path): Path to read bytes from
-            queue (Queue[bytes]): Queue to push bytes to
-        """
-
-        with path.open("rb") as f:
-            while self._read:
-                b = f.read1(1)
-                queue.put(b)
-
-    def stop(self):
-        self._read = False
-        self._reader_thread.join(timeout=1)
-
-
 class LspClient:
     def __init__(self, lsp_server: LspServer) -> None:
         self._lsp_server = lsp_server
-
-        self._lsp_stdin = Path(f"/proc/{self._lsp_server._lsp_proc_id}/fd/0")
-        self._lsp_stdout = Path(f"/proc/{self._lsp_server._lsp_proc_id}/fd/1")
-
-        self._lsp_stdout_q: "Queue[bytes]" = Queue()
-        self._lsp_stdout_reader = PathReader(self._lsp_stdout, self._lsp_stdout_q)
 
         # disable progress reporting
         CAPABILITIES["window"]["workDoneProgress"] = False
@@ -80,7 +47,6 @@ class LspClient:
         self.send()
 
     def stop(self):
-        self._lsp_stdout_reader.stop()
         self._stop_client_event_reader()
 
     def _start_client_event_reader(self):
@@ -94,14 +60,8 @@ class LspClient:
 
     def _read_client_events(self):
         while self._read_events:
-            try:
-                data = self._lsp_stdout_q.get(timeout=0.5)
-            except Empty:
-                if self._read_events:
-                    continue
-                else:
-                    break
-            else:
+            data = self._lsp_server.read_bytes()
+            if data is not None:
                 for event in self._client.recv(data):
                     self._client_events.put(event)
 
@@ -150,8 +110,7 @@ class LspClient:
 
     def send(self):
         send_buf = self._client.send()
-        print("# SEN #", send_buf.decode())
-        self._lsp_stdin.write_bytes(send_buf)
+        self._lsp_server.send(send_buf)
 
     def request_definition(
         self, text_document_position: TextDocumentPosition
