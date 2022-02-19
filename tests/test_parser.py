@@ -1,4 +1,4 @@
-from typing import Dict, Tuple, List, Set
+from typing import Dict, List, Set, Tuple
 
 from code_blocks.parser import Parser
 from code_blocks.types import Definition, Reference

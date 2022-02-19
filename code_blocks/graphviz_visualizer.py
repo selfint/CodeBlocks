@@ -1,7 +1,9 @@
 from pathlib import Path
-import graphviz
-from code_blocks.types import Definition, ResolvedReference
 from typing import Optional, Set, Tuple
+
+import graphviz
+
+from code_blocks.types import Definition, ResolvedReference
 
 
 def build_tree(

@@ -1,6 +1,5 @@
 from typing import Dict, NamedTuple, Tuple
 
-
 PathLineScopes = Dict[Tuple[str, ...], Dict[int, Tuple[str, ...]]]
 
 

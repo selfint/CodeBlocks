@@ -2,14 +2,14 @@ import os
 import shutil
 import subprocess
 import tempfile
-from pathlib import Path
 import time
-from typing import Tuple, List, Set
+from pathlib import Path
+from typing import List, Set, Tuple
 
-from code_blocks.resolver import Resolver
 from code_blocks.lsp_client import LspClient
 from code_blocks.lsp_server import LspServer
-from code_blocks.types import PathLineScopes, ResolvedReference, Reference, Definition
+from code_blocks.resolver import Resolver
+from code_blocks.types import Definition, PathLineScopes, Reference, ResolvedReference
 
 
 class LspTestEnv:

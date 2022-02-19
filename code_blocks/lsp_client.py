@@ -4,15 +4,15 @@ from queue import Empty, Queue
 from threading import Thread
 from typing import Any, Optional, Type
 
-from sansio_lsp_client.client import Client, CAPABILITIES
+from sansio_lsp_client.client import CAPABILITIES, Client
 from sansio_lsp_client.events import ConfigurationRequest
 from sansio_lsp_client.events import Definition as DefinitionEvent
 from sansio_lsp_client.events import (
     Event,
     Initialized,
+    PublishDiagnostics,
     References,
     RegisterCapabilityRequest,
-    PublishDiagnostics,
     ShowMessageRequest,
 )
 from sansio_lsp_client.structs import (

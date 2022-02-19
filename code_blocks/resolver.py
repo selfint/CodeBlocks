@@ -1,23 +1,22 @@
-from collections import defaultdict
 import os
+from collections import defaultdict
 from pathlib import Path
 from typing import Any, List, Optional, Set, Tuple, Type
 from urllib.parse import unquote, urlparse
 from urllib.request import url2pathname
 
 from sansio_lsp_client import References
-
-
-from code_blocks.types import Definition, PathLineScopes, Reference, ResolvedReference
-from code_blocks.lsp_client import LspClient
 from sansio_lsp_client.events import Definition as DefinitionEvent
 from sansio_lsp_client.events import Event
 from sansio_lsp_client.structs import (
+    Position,
     TextDocumentIdentifier,
     TextDocumentItem,
     TextDocumentPosition,
-    Position,
 )
+
+from code_blocks.lsp_client import LspClient
+from code_blocks.types import Definition, PathLineScopes, Reference, ResolvedReference
 
 
 def uri_to_path(uri: str) -> Path:

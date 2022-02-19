@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import ast
-from typing import Dict, List, Union, Any, Tuple, Set
+from typing import Any, Dict, List, Set, Tuple, Union
 
 from code_blocks.types import Definition, PathLineScopes
 
