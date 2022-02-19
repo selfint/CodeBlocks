@@ -4,7 +4,7 @@ import queue
 from pathlib import Path
 from queue import Queue
 from threading import Thread
-from typing import Optional
+from typing import IO, Optional
 
 
 class LspServer:
@@ -17,9 +17,14 @@ class LspServer:
             stdout=subprocess.PIPE,
         )
 
+        # make sure stdin/out were started
+        assert self._lsp_server_proc.stdin is not None, "Failed to get stdin"
+        assert self._lsp_server_proc.stdout is not None, "Failed to get stdout"
+
         self._root_uri = Path(root_dir).resolve().absolute().as_uri()
         self._lsp_proc_id = self._lsp_server_proc.pid
-
+        self._stdin: IO = self._lsp_server_proc.stdin
+        self._stdout: IO = self._lsp_server_proc.stdout
         self._stdin_q: "Queue[bytes]" = Queue()
         self._stdout_q: "Queue[bytes]" = Queue()
 
@@ -42,14 +47,14 @@ class LspServer:
             # send stdin
             if stdin is not None:
                 print("# SEN #", stdin.decode())
-                self._lsp_server_proc.stdin.write(stdin)
-                self._lsp_server_proc.stdin.flush()
+                self._stdin.write(stdin)
+                self._stdin.flush()
 
     def _read_stdout(self):
         while not self._stop:
 
             # check if server wrote stdout
-            stdout = self._lsp_server_proc.stdout.read(1)
+            stdout = self._stdout.read(1)
 
             # push any stdout bytes we got to the stdout queue
             if len(stdout) > 0:
