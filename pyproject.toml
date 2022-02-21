@@ -8,6 +8,7 @@ authors = ["Tom Selfin <selfint@gmail.com>"]
 python = "^3.10"
 sansio-lsp-client = "^0.10.0"
 graphviz = "^0.19.1"
+pandas = "^1.4.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^7.0.1"
