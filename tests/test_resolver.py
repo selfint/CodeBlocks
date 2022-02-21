@@ -2,7 +2,6 @@ import os
 import shutil
 import subprocess
 import tempfile
-import time
 from pathlib import Path
 from typing import List, Set, Tuple
 
@@ -14,16 +13,26 @@ from code_blocks.types import Definition, PathLineScopes, Reference, ResolvedRef
 
 class LspTestEnv:
     def __init__(self, sources: List[Tuple[str, Tuple[str, ...]]]):
-        self._sources = sources
-
-        self._tempdir = tempfile.mkdtemp(prefix="codeblocks-lsp-test-env")
+        self._tempdir = Path(tempfile.mkdtemp(prefix="codeblocks-lsp-test-env"))
 
         for source, path in sources:
-            full_path = Path(self._tempdir) / os.path.sep.join(path)
+            full_path = self._tempdir / os.path.sep.join(path)
             full_path.parent.mkdir(parents=True, exist_ok=True)
             full_path.write_text(source)
 
-        self.lsp_server = LspServer(self._tempdir)
+        # start the lsp server in the temp dir, using our virtual environment
+        self._lsp_proc = subprocess.Popen(
+            (
+                "poetry run bash -c "
+                f"'cd {self._tempdir} "
+                f"&& pyright-langserver --stdio'"
+            ),
+            shell=True,
+            stdin=subprocess.PIPE,
+            stdout=subprocess.PIPE,
+        )
+
+        self.lsp_server = LspServer(self._lsp_proc.pid, self._tempdir)
 
     @property
     def lsp_proc_id(self) -> int:
@@ -34,6 +43,7 @@ class LspTestEnv:
         return f"file://{self._tempdir}"
 
     def __del__(self):
+        self._lsp_proc.terminate()
         self.lsp_server.stop()
         shutil.rmtree(self._tempdir, ignore_errors=True)
 
@@ -67,6 +77,7 @@ def assert_got_expected_resolved_references_from_definitions_and_path_line_scope
 
     finally:
         lsp_client.stop()
+        test_env._lsp_proc.terminate()
 
 
 def test_resolve_single_file_single_method():
@@ -331,3 +342,8 @@ t.foo()
     assert_got_expected_resolved_references_from_definitions_and_path_line_scopes(
         sources, set(definitions), path_line_scopes, expected_resolved_references
     )
+
+
+if __name__ == "__main__":
+    import pytest
+    pytest.main(args="-k const -s".split(" "))

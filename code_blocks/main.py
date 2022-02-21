@@ -1,6 +1,7 @@
 import argparse
 import os
 from pathlib import Path
+import subprocess
 from typing import Optional
 
 from code_blocks.graphviz_visualizer import GraphvizVisualizer
@@ -10,8 +11,16 @@ from code_blocks.parser import Parser
 from code_blocks.resolver import Resolver
 
 
-def main(project: Path, output: Optional[Path] = None, view: bool = False):
-    lsp_server = LspServer(str(project))
+def main(project: Path, project_venv: Path, output: Optional[Path] = None, view: bool = False):
+    pyright_langserver = subprocess.Popen(
+        f"cd {project}"
+        f" && source {project_venv}/bin/activate"
+        f" && pyright-langserver --stdio",
+        stdout=subprocess.PIPE,
+        stdin=subprocess.PIPE,
+        shell=True,
+    )
+    lsp_server = LspServer(pyright_langserver.pid, project)
     print("LSP server started")
 
     lsp_client = LspClient(lsp_server)
@@ -47,6 +56,9 @@ def main(project: Path, output: Optional[Path] = None, view: bool = False):
     print("Shutting down LSP server")
     lsp_server.stop()
 
+    print("Shutting down pyright language server")
+    pyright_langserver.terminate()
+
     print("Done")
 
 
@@ -54,6 +66,7 @@ if __name__ == "__main__":
     arg_parser = argparse.ArgumentParser()
 
     arg_parser.add_argument("-p", "--project", type=Path, help="Path to project")
+    arg_parser.add_argument("-e", "--project-venv", type=Path, help="Path to project virtual environment")
     arg_parser.add_argument(
         "-o", "--output", type=Path, help="Path to desired output file", required=False
     )
@@ -69,6 +82,7 @@ if __name__ == "__main__":
     args = arg_parser.parse_args()
 
     project: Path = args.project
+    project_venv: Path = args.project_venv
     output: Path = args.output
     view: bool = args.view
 
@@ -77,4 +91,4 @@ if __name__ == "__main__":
 
     project = project.resolve().absolute()
 
-    main(project, output, view)
+    main(project, project_venv, output, view)

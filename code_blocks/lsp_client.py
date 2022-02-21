@@ -31,7 +31,7 @@ class LspClient:
         CAPABILITIES["window"]["workDoneProgress"] = False
 
         # start client (implicitly sends an "initialize" request to the lsp)
-        self._client = Client(self._lsp_server._lsp_proc_id, self._lsp_server._root_uri)
+        self._client = Client(self._lsp_server.lsp_proc_id, self._lsp_server.root_uri)
         self._client_events: "Queue[Event]" = Queue()
 
         # start client event reader
